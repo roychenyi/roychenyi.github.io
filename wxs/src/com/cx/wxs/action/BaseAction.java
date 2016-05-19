@@ -62,6 +62,19 @@ public class BaseAction {
 		userDto=userService.getUuser(userDto);
 		return userDto;
 	}
+	/**
+	 * 通过用户名获取用户信息
+	 * @param name
+	 * @return
+	 * @author 陈义
+	 * @date   2016-5-19下午10:17:32
+	 */
+	public UUserDto getUserDtoByUsername(String name){
+		UUserDto userDto=new UUserDto();
+		userDto.setUsername(name);
+		userDto=userService.getUuser(userDto);
+		return userDto;
+	}
 
 
 }

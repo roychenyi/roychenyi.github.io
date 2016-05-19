@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
+import com.cx.wxs.action.BaseUserAction;
 import com.cx.wxs.dto.BConfigDto;
 import com.cx.wxs.dto.BSiteDto;
 import com.cx.wxs.dto.DCatalogDto;
@@ -45,7 +46,7 @@ import com.cx.wxs.utils.ClientInfo;
  * @date   2016-3-21 下午9:03:08
  */
 @Controller
-public class UserAction {
+public class UserAction extends BaseUserAction{
 	
 	@Resource
 	private UUserService uuService;
@@ -194,29 +195,8 @@ public class UserAction {
 		userDto.setPopedom(popedom);
 		userDto.setRoleId(2);
 		if(uuService.addUuser(userDto)>0){
-			StringBuffer url = request.getRequestURL();  
-			String tempContextUrl = url.delete(url.length() - request.getRequestURI().length(), url.length()).append(request.getServletContext().getContextPath()).append("/").toString(); 
-	        tempContextUrl+="register/check";
-			try {
-				tempContextUrl+="?username="+userDto.getUsername()+"&prev_url="+prev_url+"&popedom="+popedom+"&nocahe="+new Date().getTime();
-				// 邮件内容
-				String template=TemplateUtils.getRegisterCheckTemplate();
-				String notify_content = MessageFormat.format(template,userDto.getNickname(),tempContextUrl,tempContextUrl);
-//				String email_content = "<h1>欢迎验证</h1><p>请点击下面链接进行验证，若点击不成功，请充值url地址到浏览器跳转，谢谢合作。<br>地址：<a href=\""+tempContextUrl+"\" target=\"_blank\">"+tempContextUrl+"</a></p>";
-//				Parser html = new Parser();
-//				html.setEncoding("UTF-8");
-//				html.setInputHTML(email_content);
-//				Node[] nodes = html.extractAllNodesThatMatch(
-//						HtmlNodeFilters.titleFilter).toNodeArray();
-				String title = "文学社平台注册激活";
-				String[] receivers=new String[]{userDto.getUsername()};
-				emailService.sendEmail(title, receivers, notify_content, EmailType.VALIDATE);
-				System.out.println("验证链接已发送！");
-			} catch (Exception e) {
-				e.printStackTrace();
-				return null;
-			}
 			userDto.setUrl(prev_url);
+			this.sendRegisterCheckMail(request, userDto);
 			userDto.setStatusFlag("1");
 		}else{
 			userDto.setStatusFlag("-1");
@@ -528,6 +508,29 @@ public class UserAction {
 			flag="0";
 		}
 		return flag;
+	}
+	/**
+	 * 发送注册链接
+	 * @param request
+	 * @param response
+	 * @param userDto
+	 * @return
+	 * @author 陈义
+	 * @date   2016-5-19下午10:19:36
+	 */
+	@ResponseBody 
+	@RequestMapping(value="/register/sendmail")
+	public UUserDto sendRegisterMail(HttpServletRequest request,HttpServletResponse response,UUserDto userDto){
+		String url=RequestUtils.getDomain(request);
+		url+="/login1";
+		userDto=this.getUserDtoByUsername(userDto.getUsername());
+		userDto.setUrl(url);
+		if(this.sendRegisterCheckMail(request, userDto)){
+			userDto.setStatusFlag("1");
+		}else{
+			userDto.setStatusFlag("-1");
+		}
+		return userDto;
 	}
 	
 	public String sendPasswordNotify(){
