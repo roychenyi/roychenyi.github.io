@@ -1,7 +1,7 @@
 #set($layout = "layout/index.vm") 
 #set($page_title="文学社-首页")
-#set($carousel=true)
-#set($rank=true)
+##set($carousel=true)
+##set($rank=true)
  <!--主体部分-->
 
            <section>
