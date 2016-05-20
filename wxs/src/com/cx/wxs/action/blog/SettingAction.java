@@ -238,6 +238,7 @@ public class SettingAction extends BaseAction{
 		catalogDto.setUUserDto(userDto);
 		if(catalogDto.getCatalogId()==null){
 			catalogDto.setCreateTime(new Timestamp(date.getTime()));
+			catalogDto.setArticleCount(0);  //设置文章数为0
 			int catalogId= dCatalogService.addDCatalog(catalogDto);
 			if(catalogId>0){
 				catalogDto.setCatalogId(catalogId);

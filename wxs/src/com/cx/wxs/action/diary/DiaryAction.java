@@ -311,6 +311,9 @@ public class DiaryAction extends BaseDiaryAction{
 		role=this.getDiaryRole(role, author, request);
 		diaryDto.setRole(Short.parseShort(role.toString()));
 		dDiaryDtos=diaryService.getDDiaryList(diaryDto);
+		if(dDiaryDtos==null){
+			return new ArrayList<DDiaryDto>();
+		}
 		return dDiaryDtos;
 	}
 	/***

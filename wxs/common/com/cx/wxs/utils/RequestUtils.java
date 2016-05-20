@@ -120,9 +120,9 @@ public class RequestUtils {
 	    }
 	    Cookie cookie = getCookie(request, name);
 	    if(null != cookie){
-	      cookie.setPath("/");
-	      cookie.setValue("");
+	      cookie.setValue(null);
 	      cookie.setMaxAge(0);
+	      cookie.setPath("/");
 	      response.addCookie(cookie);
 	    }
 	  }

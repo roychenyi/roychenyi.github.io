@@ -34,15 +34,17 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
-	<!-- 支持aop注解 -->
-	<aop:aspectj-autoproxy />
+	
 	<!-- 静态资源解析 包括 ：js、css、img、.. -->
 	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/upload/" mapping="/upload/**" />
 	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/fonts/" mapping="/fonts/**" />
-	<mvc:resources location="/upload/" mapping="/upload/**"></mvc:resources>
 
+	<!-- 支持aop注解 -->
+	<aop:aspectj-autoproxy />
+	
 	<!-- 加载velocity.properties -->
 	<bean id="velocityConfig"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">

@@ -93,7 +93,7 @@
 	<!-- <servlet-mappring> <servlet-name>EmailSenderServlet</servlet-name> 
 		</servlet-mappring> -->
 
-   <servlet-mapping>   
+<!--   <servlet-mapping>   
          <servlet-name>default</servlet-name>   
          <url-pattern>*.css</url-pattern>   
      </servlet-mapping>   
@@ -107,6 +107,11 @@
          <servlet-name>default</servlet-name>   
          <url-pattern>*.jpg</url-pattern>   
      </servlet-mapping>   
+     
+     <servlet-mapping>   
+         <servlet-name>default</servlet-name>   
+         <url-pattern>*.png</url-pattern>   
+     </servlet-mapping> 
     
      <servlet-mapping>   
          <servlet-name>default</servlet-name>   
@@ -117,7 +122,7 @@
          <servlet-name>default</servlet-name>   
          <url-pattern>*.ico</url-pattern>   
      </servlet-mapping> 
-
+-->
 	<!-- 页面编码设置 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
