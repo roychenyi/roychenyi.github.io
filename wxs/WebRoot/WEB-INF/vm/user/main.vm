@@ -82,22 +82,26 @@
                 <div id="rightMenu" class="col-md-3 no-padding">
                     <div class="ibox">
                         <div class="ibox-title">社团</div>
-                        <div class="ibox-content">社团活动</div>
+                        <div class="ibox-content">
+						程序猿很忙，还没做好~~~
+						</div>
                     </div>
                     <div class="ibox">
                         <div class="ibox-title">日志</div>
-                        <div class="ibox-content">日志列表</div>
+                        <div class="ibox-content">
+						程序猿很忙，还没做好~~~
+						</div>
                     </div>
                                         <div class="ibox">
                         <div class="ibox-title">用户好友</div>
                         <div class="ibox-content">
-                            测试
+                            程序猿很忙，还没做好~~~
                         </div>
                     </div>
 					 <div class="ibox">
                         <div class="ibox-title">最近访客</div>
                         <div class="ibox-content">
-                            测试
+                           程序猿很忙，还没做好~~~
                         </div>
                     </div>
                 </div>
