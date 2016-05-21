@@ -102,7 +102,10 @@ public class DiaryAction extends BaseDiaryAction{
 	public DDiaryDto articleAdd(@PathVariable("vip") String vip, HttpServletRequest request,HttpServletResponse reqResponse,Integer diaryId1 ,DDiaryDto diaryDto){
 
 		UUserDto userDto=(UUserDto) request.getSession().getAttribute("user");
-
+        //设置是否投稿
+		if(diaryDto.getContribute()==null){
+			diaryDto.setContribute((short)0);
+		}
 		try{
 		diaryDto.setContent(URLDecoder.decode(diaryDto.getContent(),"UTF-8"));
 		}catch (Exception e) {
@@ -145,9 +148,7 @@ public class DiaryAction extends BaseDiaryAction{
 			}
 		}else{
 		//	short contribute =new Short(request.getParameter("contribute"));
-			if(diaryDto.getContribute()==null){
-				diaryDto.setContribute((short)0);
-			}
+			
 		//	diaryDto.setContribute(contribute);
 			diaryDto.setBSiteDto(userDto.getBSiteDto());
 			diaryDto.setUUserDto(userDto);
