@@ -62,7 +62,7 @@
                                 <div class="form-group">
 									文章类型：
 									<select name="sysTypeDto.typeId">
-										<option ></option>
+								##		<option ></option>
                                     #foreach($sysType in $sysTypeList)
 										#if($sysType.typeId==$diary.sysTypeDto.typeId)
 											<option value="$sysType.typeId" selected>$sysType.name</option>

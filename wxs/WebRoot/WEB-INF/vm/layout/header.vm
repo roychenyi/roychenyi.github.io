@@ -15,7 +15,7 @@
                 <button  aria-controls="navbar" aria-expanded="false" data-target="#search" data-toggle="collapse" class="navbar-toggle collapsed" type="button" id="top-search">
                     <i class="fa fa-search"></i>
                 </button>
-                <a href="#rootUrl()" class="navbar-brand">文学社网站</a>
+                <a href="#rootUrl()" class="navbar-brand">文学社平台</a>
             </div>
 
             <div class="navbar-collapse collapse" id="navbar">

@@ -1,0 +1,21 @@
+#set($disable_seachable=true)
+
+#html_doctype()
+<head>
+	#parse("layout/head.vm")
+</head>
+<body class="top-navigation gray-bg" >
+#parse("layout/header.vm")
+
+$screen_content
+
+#parse("layout/footer.vm")	
+#jquery
+<!-- Custom and plugin javascript -->
+<script src="#rootUrl()/js/plugins/pace/pace.min.js"></script>
+<script src="#rootUrl()/js/main.js"></script>
+#if($extjs)
+$extjs
+#end
+</body>	
+</html>

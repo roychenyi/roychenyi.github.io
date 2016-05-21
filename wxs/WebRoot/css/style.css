@@ -1,7 +1,7 @@
 /*@import url("http://fonts.useso.com/css?family=Open+Sans:300,400,600,700&amp;lang=en");*/
 /*
  *
- *   H+ - Admin Theme
+ *   cx.wxs - chenyi
  *   version 2.2.0
  *
 */
@@ -3918,7 +3918,7 @@ body.modal-open {
     padding-top: 110px;
 }
 .loginscreen.middle-box {
-     width-min: 200px; 
+    width-min: 200px;
 }
 .loginColumns {
     max-width: 800px;
@@ -6617,7 +6617,7 @@ body.skin-3 {
 }
 /*fix-layout*/
 .fix-layout{
-	display: block;
+    display: block;
     position: fixed;
     z-index: 14;
     bottom: 60px;
@@ -6625,7 +6625,7 @@ body.skin-3 {
     margin-right: -10px;
 }
 .fix-layout a{
-	height:40px;
+    height:40px;
     width:40px;
     display:inherit;
     color: transparent;
@@ -6644,7 +6644,7 @@ body.skin-3 {
 }
 
 .fix-layout a i{
-	display: inline-block;
+    display: inline-block;
     font-size: 20px;
     width: 30px;
     height:40px;
@@ -6652,6 +6652,95 @@ body.skin-3 {
     line-height: 40px\9;
     overflow: hidden;
     color: #fff;
+}
+
+.index-page{
+    width: 100%;
+    height: 100%;
+    padding: 15% 0 0 0;
+    position:relative;
+}
+.index-page .slogan{
+    text-align: center;
+}
+
+.index-page .page-scroll {
+    text-align: center;
+}
+.index-page-text{
+    font-size: 18px;
+}
+.slogan h2,h3,h4{
+    color: #FFF;
+    text-shadow: none;
+
+    font-family: Montserrat, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 0px;
+    border-color: #000;
+    border-style: none;
+    text-shadow: -1px 0 1px #000;
+}
+.slogan h2{
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+}
+/*.slogan h3{
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 300;
+}*/
+.slogan h4{
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 200;
+}
+.page-scroll .btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.page-scroll .btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+.page-scroll .btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+@media (max-width:480px) {
+
+    .page-scroll a.btn-circle {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        padding: 7px 0;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+
 }
 /*回到顶部*/
 /* #gotop{
@@ -6684,8 +6773,7 @@ body.skin-3 {
 } */
 
 
-
-
+<!--avatar -->
 .avatar-view {
     display: block;
     margin: 0 auto;

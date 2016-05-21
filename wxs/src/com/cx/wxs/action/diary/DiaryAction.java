@@ -144,8 +144,11 @@ public class DiaryAction extends BaseDiaryAction{
 				diaryDto.setStatusFlag("-1");
 			}
 		}else{
-			short contribute =new Short(request.getParameter("contribute"));
-			diaryDto.setContribute(contribute);
+		//	short contribute =new Short(request.getParameter("contribute"));
+			if(diaryDto.getContribute()==null){
+				diaryDto.setContribute((short)0);
+			}
+		//	diaryDto.setContribute(contribute);
 			diaryDto.setBSiteDto(userDto.getBSiteDto());
 			diaryDto.setUUserDto(userDto);
 			diaryDto.setWriteTime(new Timestamp(date.getTime()));
@@ -163,7 +166,7 @@ public class DiaryAction extends BaseDiaryAction{
 	@RequestMapping(value="/article_edite/{diaryId}")
 	public ModelAndView toArticleEdite(@PathVariable("vip") String vip,@PathVariable("diaryId") Integer diaryId,
 			HttpServletRequest request,HttpServletResponse reqResponse,DDiaryDto diaryDto ){
-		ModelAndView mv=new ModelAndView("diary/d_edit");
+		ModelAndView mv=new ModelAndView("diary/d_edite");
 		UUserDto userDto=(UUserDto) request.getSession().getAttribute("user");
 		UUserDto userDto1=this.getUserDtoByNickname(vip);
 		try{

@@ -82,7 +82,7 @@ public class SessionFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 String requestUrl = request.getRequestURI().replace(request.getContextPath(), "");    
-	      System.out.println(requestUrl);  
+	 //     System.out.println(requestUrl);  
 	        if(null != allowUrls && allowUrls.length>=1)  
 	            for(String url : allowUrls) {    
 	                if(requestUrl.contains(url)) {    

@@ -2,7 +2,7 @@
  * Created by chenyi on 2016/05/11.
  */
 $(document).ready(function(){
-    $(document).scroll(function(){
+/*    $(document).scroll(function(){
         var  scrollTop =  $(document).scrollTop(),
              top1=$('#leftMenu').offset().top,
              top2=$('#articleLoading').offset().top,
@@ -22,7 +22,7 @@ $(document).ready(function(){
         if(scrollTop>top2-500){
             UserMain.loadArticle();
         }
-    });
+    });*/
     UserMain.loadArticle();
 });
 
