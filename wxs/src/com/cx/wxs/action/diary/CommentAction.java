@@ -136,7 +136,7 @@ public class CommentAction extends BaseDiaryAction{
 				dReply2Dtos.add(dReply2Dto);
 				dReply1Dto.setDReply2Dtos(dReply2Dtos);
 				//评论数更新
-				/*if(diaryDto.getReplyCount()==null||diaryDto.getReplyCount()==0){
+				if(diaryDto.getReplyCount()==null||diaryDto.getReplyCount()==0){
 					diaryDto.setReplyCount(1);
 				}else{
 					if((diaryDto.getReplyCount()+1)<dReply1Dto.getRow()){
@@ -144,7 +144,7 @@ public class CommentAction extends BaseDiaryAction{
 					}else{
 						diaryDto.setReplyCount(diaryDto.getReplyCount()+1);
 					}
-				}*/
+				}
 				diaryService.updateDDiary(diaryDto);
 				this.addDCommentCount(diaryDto);
 				dReply1Dto.setStatusFlag("1");

@@ -41,47 +41,7 @@ public class ImageAction {
 	@Resource
 	private UUserService uUserService;
 
-	/**
-	 * @return the bSiteService
-	 */
-	public BSiteService getbSiteService() {
-		return bSiteService;
-	}
-
-	/**
-	 * @param bSiteService the bSiteService to set
-	 */
-	public void setbSiteService(BSiteService bSiteService) {
-		this.bSiteService = bSiteService;
-	}
-
-	/**
-	 * @return the uUserService
-	 */
-	public UUserService getuUserService() {
-		return uUserService;
-	}
-
-	/**
-	 * @param uUserService the uUserService to set
-	 */
-	public void setuUserService(UUserService uUserService) {
-		this.uUserService = uUserService;
-	}
-
-	/**
-	 * @return the iImageService
-	 */
-	public IImageService getiImageService() {
-		return iImageService;
-	}
-
-	/**
-	 * @param iImageService the iImageService to set
-	 */
-	public void setiImageService(IImageService iImageService) {
-		this.iImageService = iImageService;
-	}
+	
 	@RequestMapping(value="/updateuserlogo")
 	@ResponseBody
 	public IImageDto updateUserLogo( @PathVariable("vip") String vip,
@@ -137,8 +97,8 @@ public class ImageAction {
 					 imageDto.setUUserDto(userDto);
 					 imageDto.setName(date.getTime()+".jpg");
 					 imageDto.setFileName(name);
-					 imageDto.setUrl(resourcePath+"/"+date.getTime()+".jpg");
-					 imageDto.setPreviewUrl(resourcePath+"/"+date.getTime()+"_200.jpg");
+					 imageDto.setUrl(resourcePath+date.getTime()+".jpg");
+					 imageDto.setPreviewUrl(resourcePath+date.getTime()+"_200.jpg");
 					 imageDto.setTime(new Timestamp(date.getTime()));
 					 imageDto.setWidth((short)imageUtils.getImageWidth(file.getPath()));
 					 imageDto.setHeight((short)imageUtils.getImageHeight(file.getPath()));
@@ -146,8 +106,8 @@ public class ImageAction {
 					 imageDto.setClientAgent(ClientInfo.getAgent(request));
 					 imageDto.setClientType((short)(ClientInfo.isMoblie(request)?1:0));
 					 imageDto.setStatus((short)1);
-					 imageDto.setExt3(resourcePath+"/"+date.getTime()+"_s_200.jpg");
-					 imageDto.setExt4(resourcePath+"/"+date.getTime()+"_s_100.jpg");
+					 imageDto.setExt3(resourcePath+date.getTime()+"_s_200.jpg");
+					 imageDto.setExt4(resourcePath+date.getTime()+"_s_100.jpg");
 					//设置相册，头像设置进入默认相册
 					 IAlbumDto albumDto=new IAlbumDto();
 					 albumDto.setAlbumId(1);
@@ -155,10 +115,10 @@ public class ImageAction {
 					 int id= iImageService.addIImage(imageDto);
 					 if(id>0){
 						 BSiteDto siteDto=userDto.getBSiteDto();
-						 siteDto.setLogo(resourcePath+"/"+date.getTime()+"_s_100.jpg");
+						 siteDto.setLogo(resourcePath+date.getTime()+"_s_100.jpg");
 						 siteDto.setLastTime( new Timestamp(date.getTime()));
 						 bSiteService.updateBSite(siteDto);
-						 userDto.setPortrait(resourcePath+"/"+date.getTime()+"_s_50.jpg");
+						 userDto.setPortrait(resourcePath+date.getTime()+"_s_50.jpg");
 						 uUserService.updateUuser(userDto);
 						 userDto=uUserService.getUuser(userDto);
 						 imageDto.setStatusFlag("1");

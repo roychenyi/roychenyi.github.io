@@ -87,8 +87,9 @@ public class RequestUtils {
 		cookie.setMaxAge(maxAge);
 		String serverName = request.getServerName();
 		String domain = getDomainOfServerName(serverName);
+		System.out.println("cookie域:"+domain);
 		if(domain!=null && domain.indexOf('.')!=-1){
-			cookie.setDomain('.' + domain);
+			cookie.setDomain(domain);
 		}
 		cookie.setPath("/");
 		response.addCookie(cookie);
@@ -120,11 +121,20 @@ public class RequestUtils {
 	    }
 	    Cookie cookie = getCookie(request, name);
 	    if(null != cookie){
-	      cookie.setPath("/");
-	      cookie.setValue("");
+	    	System.out.println("cookie值："+cookie.getValue());
+	      cookie.setValue(null);
+	      String serverName = request.getServerName();
+			String domain = getDomainOfServerName(serverName);
+			System.out.println("cookie域:"+domain);
+			if(domain!=null && domain.indexOf('.')!=-1){
+				cookie.setDomain(domain);
+			}
 	      cookie.setMaxAge(0);
+	      cookie.setPath("/");
 	      response.addCookie(cookie);
 	    }
+	    Cookie cookie1 =getCookie(request, name);
+	    System.out.println("cookie2值："+cookie1.getValue());
 	  }
 	
 	/**

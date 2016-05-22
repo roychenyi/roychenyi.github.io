@@ -15,7 +15,7 @@
                 <button  aria-controls="navbar" aria-expanded="false" data-target="#search" data-toggle="collapse" class="navbar-toggle collapsed" type="button" id="top-search">
                     <i class="fa fa-search"></i>
                 </button>
-                <a href="#rootUrl()" class="navbar-brand">文学社网站</a>
+                <a href="#rootUrl()" class="navbar-brand">文学社平台</a>
             </div>
 
             <div class="navbar-collapse collapse" id="navbar">
@@ -47,12 +47,13 @@
                             </li>
                             <li><a href="#rootUrl()/$user.nickname/article/article_add"><i class="fa fa-edit"></i>写日志</a>
                             </li>
-                            <li><a href="">消息</a>
+                     <!--       <li><a href="">消息</a>
                             </li>
+							-->
 							<li><a href="#rootUrl()/change/newpassword">修改密码</a>
                             </li>
 							<li>
-                        <a href="#rootUrl()/logout">
+                        <a href="#rootUrl()/logout" onclick="javascript:jQuery.cookie('user', null);" >
                             <i class="fa fa-sign-out"></i> 退出
                         </a>
                     </li>

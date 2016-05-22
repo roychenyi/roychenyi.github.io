@@ -38,3 +38,9 @@
 #set($JsysClub="<script src='#rootUrl()/js/admin/sys-club.js'></script>")
 ##系统敏感词
 #set($JsysIllegal="<script src='#rootUrl()/js/admin/SysIllegal.js'></script>")
+##wow
+#set($Jwow="<script src='#rootUrl()/js/pligins/wow.min.js'></script>")
+##easing
+#set($Jeasing="<script src='#rootUrl()/js/pligins/jquery.easing.min.js'></script>")
+##scrollTo
+#set($JscrollTo="<script src='#rootUrl()/js/pligins/jquery.scrollTo.min.js'></script>")

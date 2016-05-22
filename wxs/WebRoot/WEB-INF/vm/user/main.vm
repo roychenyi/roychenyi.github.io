@@ -20,7 +20,7 @@
 						<div class="text-center">
 						<img  #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" title="$author.nickname" #else src="#rootUrl()/images/face.png" #end   style="width: 100px;height: 100px;"/>
                         <h1 > $author.nickname</h1>
-                        <p ><a class="btn btn-success">勾搭</a>&nbsp;&nbsp;&nbsp;<a class="btn btn-success">消息</a></p>
+                   ##     <p ><a class="btn btn-success">勾搭</a>&nbsp;&nbsp;&nbsp;<a class="btn btn-success">消息</a></p>
 						</div>
 						<div id="data">
                             <p>性别：#if($author.sex==1) 男  #elseif($author.sex==0) 女 #else 保密  #end</p>
@@ -82,22 +82,26 @@
                 <div id="rightMenu" class="col-md-3 no-padding">
                     <div class="ibox">
                         <div class="ibox-title">社团</div>
-                        <div class="ibox-content">社团活动</div>
+                        <div class="ibox-content">
+						程序猿很忙，还没做好~~~
+						</div>
                     </div>
                     <div class="ibox">
                         <div class="ibox-title">日志</div>
-                        <div class="ibox-content">日志列表</div>
+                        <div class="ibox-content">
+						程序猿很忙，还没做好~~~
+						</div>
                     </div>
                                         <div class="ibox">
                         <div class="ibox-title">用户好友</div>
                         <div class="ibox-content">
-                            测试
+                            程序猿很忙，还没做好~~~
                         </div>
                     </div>
 					 <div class="ibox">
                         <div class="ibox-title">最近访客</div>
                         <div class="ibox-content">
-                            测试
+                           程序猿很忙，还没做好~~~
                         </div>
                     </div>
                 </div>

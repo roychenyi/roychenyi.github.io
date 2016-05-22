@@ -7,13 +7,41 @@
 	</div>
 	 <div class="footer" >
         <div class="row">
-            <div class="col-md-5">数据连接列表：<br>测试</div>
+			<div class="col-md-12 text-center">
+                    <strong>一切为梦想而生</strong>
+					<h2>任性做自己才是最幸福最奢侈的事情</h2>
+			</div>
+            
+			<div class="col-md-6 text-center">
+		     <div style="padding:0 10%;" class="text-left">
+                <strong>本站所用技术：</strong><br>
+				bootstrap3<br>
+				No jsp ,is Vecitoty<br>
+				springmvc+spring4.2.2+hibernate4.3.11<br>
+			    MySQL5.6+linux(cent OS7.1)(1GHz 1G-Mem 1M-speed)<br>
+				技术为梦想而生，我们还有很长的路要走。QQ交流学习群：175990916
+			 </div>
+			</div>
+			<div class="col-md-6 text-center">
+				
+			<div style="padding:0 10%;" class="text-left">
+				<strong >目前实现功能： </strong><br>
+			          个人专属主页<br>
+				文章的编辑、更新、发布、评论、点赞、收藏等功能<br>
+				更新个人头像<br>
+				设置个人信息<br>
+			 </div>			
+			</div>
+			<div class="col-md-12">友情链接：</div> 
         </div>
         <div class="pull-right">
-            By：<a href="#" target="_blank">陈义</a>
+         ##   By：<a href="#" target="_blank">陈义</a>
         </div>
         <div>
-            <strong>Copyright</strong> C+ &copy; 2016
+            <strong>Copyright</strong>  &copy; 2016 &nbsp;&nbsp; By
+            <a href="http://早安.我爱你">早安.我爱你</a>&nbsp;|
+            <a href="http://wenyifan.club">文艺范(fanyifan.club)</a>版权所有
+           &nbsp; ICP证：鄂ICP备15009887号
         </div>
     </div>
 </footer>
