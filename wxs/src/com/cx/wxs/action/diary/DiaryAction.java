@@ -102,7 +102,10 @@ public class DiaryAction extends BaseDiaryAction{
 	public DDiaryDto articleAdd(@PathVariable("vip") String vip, HttpServletRequest request,HttpServletResponse reqResponse,Integer diaryId1 ,DDiaryDto diaryDto){
 
 		UUserDto userDto=(UUserDto) request.getSession().getAttribute("user");
-
+        //设置是否投稿
+		if(diaryDto.getContribute()==null){
+			diaryDto.setContribute((short)0);
+		}
 		try{
 		diaryDto.setContent(URLDecoder.decode(diaryDto.getContent(),"UTF-8"));
 		}catch (Exception e) {
@@ -144,8 +147,9 @@ public class DiaryAction extends BaseDiaryAction{
 				diaryDto.setStatusFlag("-1");
 			}
 		}else{
-			short contribute =new Short(request.getParameter("contribute"));
-			diaryDto.setContribute(contribute);
+		//	short contribute =new Short(request.getParameter("contribute"));
+			
+		//	diaryDto.setContribute(contribute);
 			diaryDto.setBSiteDto(userDto.getBSiteDto());
 			diaryDto.setUUserDto(userDto);
 			diaryDto.setWriteTime(new Timestamp(date.getTime()));
@@ -163,7 +167,7 @@ public class DiaryAction extends BaseDiaryAction{
 	@RequestMapping(value="/article_edite/{diaryId}")
 	public ModelAndView toArticleEdite(@PathVariable("vip") String vip,@PathVariable("diaryId") Integer diaryId,
 			HttpServletRequest request,HttpServletResponse reqResponse,DDiaryDto diaryDto ){
-		ModelAndView mv=new ModelAndView("diary/d_edit");
+		ModelAndView mv=new ModelAndView("diary/d_edite");
 		UUserDto userDto=(UUserDto) request.getSession().getAttribute("user");
 		UUserDto userDto1=this.getUserDtoByNickname(vip);
 		try{
