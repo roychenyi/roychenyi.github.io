@@ -302,7 +302,7 @@ public class QrCode {
         String imgPath = "d:/a.jpg";  
 
 //        String encoderContent = "http://www.baidu.com"; 
-        String encoderContent = "http://www.xn--49s54v.xn--6qq986b3xl";
+        String encoderContent = "http://www.wenyifan.club";
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        encoderContent = br.readLine();
        
