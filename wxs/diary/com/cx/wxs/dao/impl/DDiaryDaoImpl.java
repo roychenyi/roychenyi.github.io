@@ -285,7 +285,7 @@ public class DDiaryDaoImpl extends BaseDaoImpl<DDiary, Integer> implements DDiar
 				params.put("title", "%"+dDiaryDto.getTitle()+"%");
 			}
 			if(StringUtils.isNotEmpty(dDiaryDto.getContent())){
-				stringBuffer.append(" and  (  a.content like :content)");
+				stringBuffer.append(" or  (  a.content like :content)");
 				params.put("content","%"+ dDiaryDto.getContent()+"%");
 			}
 			if(dDiaryDto.getRole()!=null){
