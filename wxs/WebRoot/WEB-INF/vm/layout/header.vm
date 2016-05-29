@@ -66,7 +66,7 @@
                     </li>
                 </ul>
 				#end
-                <form action="#rootUrl/getDiaryByLikeTitleOrContent" class="navbar-form navbar-right hidden-xs" role="search">
+                <form action="#rootUrl/search" class="navbar-form navbar-right hidden-xs" role="search">
                     <div class="form-group">
                         <input type="text" name="content" class="form-control" placeholder="Search">
                         <button type="button" class="btn btn-sm btn-primary" onclick="this.form.submit()">搜索</button>
