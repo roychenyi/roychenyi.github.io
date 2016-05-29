@@ -308,6 +308,7 @@ public class QrCode {
        
         QrCode handler = new QrCode();  
         
+        
         handler.encoderQRCode(encoderContent, imgPath, imgType, size);
 //        OutputStream out=null;
 //        handler.encoderQRCode(encoderContent, out, "png", size);  
