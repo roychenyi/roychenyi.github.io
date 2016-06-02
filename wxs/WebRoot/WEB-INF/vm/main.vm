@@ -59,7 +59,7 @@ $html.image_src($user.portrait)<br>
             </div>
         </section>
 			-->
-<section id="page1" class="index-page" style="background: url(#rootUrl()/images/index1.jpg) no-repeat 0 0;">
+<section id="page1" class="index-page" style="background: url(#rootUrl()/images/index1.jpg) no-repeat 0 0;background-position:center center;">
 
     <div class="slogan">
         <h1>准备好了吗？</h1>
