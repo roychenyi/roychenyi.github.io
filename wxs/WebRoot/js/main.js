@@ -116,6 +116,15 @@ $(document).ready(function () {
     //关闭点击触发导航栏下拉，实现鼠标移入触发
     $(document).off('click.bs.dropdown.data-api');
     dropdownOpen();
+    //搜索
+    $('#search button').click(function(){
+    var content=$('#search').find('input').val();
+    if(content==''||content==null){
+    return false;
+    }else{
+    $('#search').submit();
+    }
+    });;
 });
 
 /**

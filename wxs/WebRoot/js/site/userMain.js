@@ -7,7 +7,7 @@ $(document).ready(function(){
              top1=$('#leftMenu').offset().top,
              top2=$('#articleLoading').offset().top,
               Y = $('#leftMenu').offset().left; 
-        if(scrollTop>top1){
+/*        if(scrollTop>top1){
             var navbarH=$('#navbar').height();
             var width=$('#leftMenu').width();
             var footerH=$('footer').height();
@@ -18,7 +18,7 @@ $(document).ready(function(){
             }
         }else{
             $('#leftMenu>div').removeAttr('style');
-        }
+        }*/
         if(scrollTop>top2-500){
             UserMain.loadArticle();
         }

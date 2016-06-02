@@ -28,7 +28,7 @@
 </div>
                         <div class="blog_titil">
 							<div>#if($author.username==$user.username) 
-							<div id="face-photo" class="avatar-view"  title="点击更新头像"><img class="img-circle" #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" #else src="#rootUrl()/images/face.png" #end title="$author.nickname" /></div>	
+							<div id="face-photo" class="avatar-view"  title="点击更新头像"><img class="img-circle" #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" #else src="#rootUrl()/images/face.png" #end title="$author.nickname" style="width: 100px;height: 100px;" /></div>	
 						    #else
 								<img class="img-circle" #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" title="$author.nickname" #else src="#rootUrl()/images/face.png" #end   style="width: 100px;height: 100px;"/>
 							#end

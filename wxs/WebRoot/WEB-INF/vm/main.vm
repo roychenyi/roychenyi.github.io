@@ -59,7 +59,11 @@ $html.image_src($user.portrait)<br>
             </div>
         </section>
 			-->
+<<<<<<< HEAD
 <section id="page1" class="index-page" style="background: url(#rootUrl()/images/index1.jpg) no-repeat 0 0;background-position:center center;">
+=======
+<section id="page1" class="index-page" style="background: url(#rootUrl()/images/index1.jpg) no-repeat 0 0;background-position:center center; ">
+>>>>>>> b281c48b3208c4a14d1777b6b240c87ecd19896d
 
     <div class="slogan">
         <h1>准备好了吗？</h1>
@@ -68,17 +72,17 @@ $html.image_src($user.portrait)<br>
         <h3>或许，我们会孤独；或许，我们失望失态失去别人的期望；或许，我只是孤独的文字旅行者</h3>
         <h3>没关系，我们只是想做我自己，即使没有认同，即使小众，即使孤独，我只想做最真实的我，独一无二的我</h3>
     </div>
-    <div class="page-scroll">
+<!--    <div class="page-scroll">
         <a href="#login" class="btn btn-circle">
             <i class="fa fa-angle-double-down animated"></i>
         </a>
     </div>
-
+-->
 </section>
 <!-- /Section: intro -->
 
 <!-- Section: about -->
-<section id="page2" class=" index-page text-center" style="background: url(#rootUrl()/images/index2.jpg) no-repeat 0 0;">
+<section id="page2" class=" index-page text-center" style="background: url(#rootUrl()/images/index2.jpg) no-repeat 0 0;background-position:center center;">
 <div class="slogan">
     <h3>陌生的城市里你是否会感受一份寂寞醉人？</h3>
     <h3>有时候，你也会感觉疲倦</h3>
@@ -91,7 +95,7 @@ $html.image_src($user.portrait)<br>
 
 
 <!-- Section: services -->
-<section id="page3" class="index-page" style="background: url(#rootUrl()/images/index3.jpg) no-repeat 0 0;">
+<section id="page3" class="index-page" style="background: url(#rootUrl()/images/index3.jpg) no-repeat 0 0;background-position:center center;">
     <div class="slogan">
         <h2>致喜欢文字有梦想你</h2>
         <h4>不开心是一天，开心也是一天，何不开开心心每一天</h4>
@@ -104,15 +108,15 @@ $html.image_src($user.portrait)<br>
 
 
 <!-- Section: contact -->
-<section id="page4" class="index-page">
+<!-- <section id="page4" class="index-page">
     <div id="login" class="middle-box text-center loginscreen  animated fadeInDown">
                 <div>
-           <!--        <div>
+                   <div>
 
-                        <h1 class="logo-name">文</h1>
+                       
 
                     </div>
-					-->
+					
                     <h3>欢迎登陆</h3>
                      #if($flag==0)
 						<p id="error_text" class="text-danger text-left"><small>验证码错误</small></p>
@@ -159,3 +163,4 @@ $html.image_src($user.portrait)<br>
 		
 
 </section>	
+-->

@@ -6670,7 +6670,7 @@ body.skin-3 {
 .index-page-text{
     font-size: 18px;
 }
-.slogan h2,h3,h4{
+.slogan h2,.slogan h3,.slogan h4{
     color: #FFF;
     text-shadow: none;
 
