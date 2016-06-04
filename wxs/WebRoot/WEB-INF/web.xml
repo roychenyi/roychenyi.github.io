@@ -7,7 +7,7 @@
 	<!-- 设置session 的过期时间为60分钟 -->
 	<session-config>
 		<session-timeout>60</session-timeout>
-	</session-config>
+	</session-config> 
 
 	<!-- 加载spring容器 -->
 	<context-param>
