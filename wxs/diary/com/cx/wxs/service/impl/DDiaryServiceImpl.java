@@ -77,12 +77,14 @@ public class DDiaryServiceImpl implements DDiaryService {
     		Integer count=dDiaryDao.getDiaryCount(dDiaryDto);
     		int pageCount=0;
     		if(dDiaryDto.getRows()!=null){
-    			pageCount=count/dDiaryDto.getRows();
+    			pageCount=count/dDiaryDto.getRows()+count%dDiaryDto.getRows()>0?1:0;
+    		//	pageCount+=count%dDiaryDto.getRows()>0?1:0;
     		}else{
-    			pageCount=count/10;
+    			pageCount=count/10+(count%10>0?1:0);
+    		//	pageCount+=(count%10>0)?1:0;
     		}
     		list.get(0).setRows(count);
-    		list.get(0).setPageCount((count%10>0)?pageCount+1:pageCount);
+    		list.get(0).setPageCount(pageCount);
     	}
     	
         return this.getPreview(list);

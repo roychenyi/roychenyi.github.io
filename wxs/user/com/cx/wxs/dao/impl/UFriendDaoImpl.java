@@ -25,7 +25,7 @@ import com.cx.wxs.utils.StringUtils;
  * @date   2015-12-8 下午4:16:50
  */
 @Repository("UFriendDao")
-public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFriendDao{
+public  class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFriendDao{
 
 
 	private BeanToDto<UFriend, UFriendDto> beanToDto=new BeanToDto<UFriend,UFriendDto>();
@@ -60,7 +60,7 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 			UFriendDto friendDto=new UFriendDto();
 			if(list!=null&&list.size()>0){
 				UFriend friend= list.get(0);
-				friendDto= ToUFriendDto(friend);
+				friendDto= beanToDto.T1ToD1(friend, new UFriendDto());
 				return friendDto;
 			}
 		}
@@ -82,23 +82,38 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 			stringBuffer.append(" and a.UFriendGroup.groupId =:groupId");
 			params.put("groupId",ufriendDto.getUFriendGroupDto().getGroupId());
 			}
-			if(ufriendDto.getUserDto().getUserId()!=null){
-				stringBuffer.append(" and a.UUserByUserId.userId=:userid");
-				params.put("userid",ufriendDto.getUserDto().getUserId());
+			if(ufriendDto.getUUserDto().getUserId()!=null){
+				stringBuffer.append(" and a.UUserDto.userId=:userid");
+				params.put("userid",ufriendDto.getUUserDto().getUserId());
 			}
 			if(ufriendDto.getFriendDto().getUserId()!=null){
-				stringBuffer.append(" and a.UUserByFriendId.userId=:friendid");
+				stringBuffer.append(" and a.FriendDto.userId=:friendid");
 				params.put("friendid",ufriendDto.getFriendDto().getUserId());
+			}
+			if(ufriendDto.getStatus()!=null){
+				stringBuffer.append(" and a.status=:status");
+				params.put("status",ufriendDto.getStatus());
+			}else{
+				stringBuffer.append(" and a.status = 1");
 			}
 			List<UFriendDto> list=new ArrayList<UFriendDto>();
 			List<UFriend> list1=new ArrayList<UFriend>();
 			if(ufriendDto.getPage()!=null&&ufriendDto.getRows()!=null){
 				list1=this.find(stringBuffer.toString(),params,ufriendDto.getPage(),ufriendDto.getRows());
 			}else{
-				list1=this.find(stringBuffer.toString(),params);
+				list1=this.find(stringBuffer.toString(),params,1,10);
 			}
-			for(UFriend friend:list1){
-				UFriendDto friendDto=ToUFriendDto(friend);
+			for(int i=0;i<list1.size();i++){
+				UFriend friend=list1.get(i);
+				UFriendDto friendDto=new UFriendDto();
+				friendDto=beanToDto.T1ToD1(friend, friendDto);
+				if(ufriendDto.getRows()!=null&&ufriendDto.getPage()!=null){
+					friendDto.setPage(ufriendDto.getPage());
+					friendDto.setRow((ufriendDto.getPage()-1)*friendDto.getRows()+i+1);
+				}else{
+					friendDto.setPage(1);
+					friendDto.setRow(i+1);
+				}
 				list.add(friendDto);
 			}
 			return list;
@@ -114,7 +129,7 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 	@Override
 	public Integer addUfriend(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		if(ufriendDto!=null&&ufriendDto.getUserDto()!=null&&ufriendDto.getFriendDto()!=null&&ufriendDto.getUFriendGroupDto()!=null){
+		if(ufriendDto!=null&&ufriendDto.getUUserDto()!=null&&ufriendDto.getFriendDto()!=null&&ufriendDto.getUFriendGroupDto()!=null){
 		     UFriend ufriend=beanToDto.D1ToT1(new UFriend(), ufriendDto);
 			return this.save(ufriend);
 		}
@@ -129,13 +144,13 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 		// TODO Auto-generated method stub
 		if(ufriendDto!=null&ufriendDto.getUid()!=null){
 		StringBuffer stringBuffer =new StringBuffer(DbType.UPDATE.toString());
-		String[] fl = new String[]{"uid","page","rows"};//过滤掉的字段
+		String[] fl = new String[]{"uid","page","rows","addTime"};//过滤掉的字段
 		Map<String, Object> map = ufriendDto.createSetPropertiesVal(ufriendDto, "a", fl);
 		Map<String, Object> params = (Map<String, Object>) map.get(StringUtils.PARAMS);		
-		stringBuffer.append(" form "+UFriend.class.getName()+" a ");
+		stringBuffer.append(" from "+UFriend.class.getName()+" a ");
 		stringBuffer.append(map.get(StringUtils.SET_HQL));
 		stringBuffer.append(" where a.id=:uid");
-		params.put("uid",ufriendDto.getUid());
+		params.put("uid",ufriendDto.getId());
 		return this.executeHql(stringBuffer.toString(),params);
 		}
 		return 0;
@@ -152,7 +167,7 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 			stringBuffer.append(" from "+UFriend.class.getName()+" a ");
 			stringBuffer.append(" where a.id=:uid");
 			Map<String,Object> params=new HashMap<String,Object>();
-			params.put("uid",ufriendDto.getUid());
+			params.put("uid",ufriendDto.getId());
 			return this.executeHql(stringBuffer.toString(),params);
 		}
 		return 0;
@@ -176,12 +191,12 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 	@Override
 	public Integer getFriendCountByGroup(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		if(ufriendDto.getUFriendGroupDto().getGroupId()!=null&&ufriendDto.getUserDto().getUserId()!=null){
+		if(ufriendDto.getUFriendGroupDto().getGroupId()!=null&&ufriendDto.getUUserDto().getUserId()!=null){
 			StringBuffer stringBuffer=new StringBuffer();
 			Map<String,Object> params=new HashMap<String,Object>();
 			stringBuffer.append("select count(*) from "+UFriend.class.getName()+" a ");
-			stringBuffer.append(" where a.UUserByUserId.userId=:userid and a.UFriendGroup.groupId =:groupid");
-			params.put("userid",ufriendDto.getUserDto().getUserId());
+			stringBuffer.append(" where a.UUser.userId=:userid and a.UFriendGroup.groupId =:groupid");
+			params.put("userid",ufriendDto.getUUserDto().getUserId());
 			params.put("groupid",ufriendDto.getUFriendGroupDto().getGroupId());
 			return this.count(stringBuffer.toString(), params);
 		}
@@ -194,12 +209,12 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 	@Override
 	public Integer getFriendCountByUser(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		if(ufriendDto.getUserDto().getUserId()!=null){
+		if(ufriendDto.getUUserDto().getUserId()!=null){
 			StringBuffer stringBuffer=new StringBuffer();
 			Map<String,Object> params=new HashMap<String,Object>();
 			stringBuffer.append("select count(*) from "+UFriend.class.getName()+" a ");
-			stringBuffer.append(" where a.UUserByUserId.userId=:userid ");
-			params.put("userid",ufriendDto.getUserDto().getUserId());
+			stringBuffer.append(" where a.UUser.userId=:userid ");
+			params.put("userid",ufriendDto.getUUserDto().getUserId());
 			return this.count(stringBuffer.toString(), params);
 		}
 		return 0;
@@ -233,6 +248,49 @@ public class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFri
 			
 		}
 		return friend;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.cx.wxs.dao.UFriendDao#getUFriendCount(com.cx.wxs.dto.UFriendDto)
+	 */
+	@Override
+	public Integer getUFriendCount(UFriendDto ufriendDto) {
+		// TODO Auto-generated method stub
+		if(ufriendDto!=null){
+			StringBuffer stringBuffer=new StringBuffer(DbType.SELECT+" count(*) ");
+			Map<String,Object> params=new HashMap<String,Object>();
+			stringBuffer.append(" from "+UFriend.class.getName()+" a ");
+			stringBuffer.append(" where 1=1 ");
+			if(ufriendDto.getUFriendGroupDto().getGroupId()!=null){
+			stringBuffer.append(" and a.UFriendGroup.groupId =:groupId");
+			params.put("groupId",ufriendDto.getUFriendGroupDto().getGroupId());
+			}
+			if(ufriendDto.getUUserDto().getUserId()!=null){
+				stringBuffer.append(" and a.UUserDto.userId=:userid");
+				params.put("userid",ufriendDto.getUUserDto().getUserId());
+			}
+			if(ufriendDto.getFriendDto().getUserId()!=null){
+				stringBuffer.append(" and a.FriendDto.userId=:friendid");
+				params.put("friendid",ufriendDto.getFriendDto().getUserId());
+			}
+			if(ufriendDto.getStatus()!=null){
+				stringBuffer.append(" and a.status=:status");
+				params.put("status",ufriendDto.getStatus());
+			}else{
+				stringBuffer.append(" and a.status = 1");
+			}
+			return this.count(stringBuffer.toString(), params);
+		}
+		return 0;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.cx.wxs.dao.UFriendDao#getUFriendRow(com.cx.wxs.dto.UFriendDto)
+	 */
+	@Override
+	public UFriendDto getUFriendRow(UFriendDto uFriendDto) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -79,5 +79,21 @@ public interface UFriendDao extends IBaseDao<UFriend,Integer>{
 	 * @date   2015-12-8下午6:35:10
 	 */
 	public Integer deleteUfriendByGroupID(UFriendDto ufriendDto);
+	/**
+	 * 获取好友数量
+	 * @param uFriendDto
+	 * @return
+	 * @author 陈义
+	 * @date   2016-6-5下午10:01:30
+	 */
+	public Integer getUFriendCount(UFriendDto uFriendDto);
+	/**
+	 * 获取该好友所在的行
+	 * @param uFriendDto
+	 * @return
+	 * @author 陈义
+	 * @date   2016-6-5下午10:02:29
+	 */
+	public UFriendDto getUFriendRow(UFriendDto uFriendDto);
 
 }

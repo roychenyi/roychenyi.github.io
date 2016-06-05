@@ -55,6 +55,10 @@ public class UUserDto extends BeanBase{
     public UUserDto(){
 
     }
+    
+    public UUserDto(Integer userId){
+    	this.userId=userId;
+    }
 
     /** full constructor */
     public UUserDto(Integer userId,USignDto USignDto,BSiteDto BSiteDto,SysRankDto sysRankDto,String username,String password,String nickname,Integer roleId,Short sex,Timestamp birth,String email,String homepage,String qq,String blood,String mobile,Integer provinceId,Integer cityId,Integer schoolId,Integer collegeId,String class_,String portrait,Timestamp regtime,Timestamp lastTime,String lastIp,Short keepDay,Short onlineStatus,Integer rank,Integer articleCount,Integer articleReplyCount,Integer topicCount,Integer topicReplyCount,Integer imageCount,Integer imageReplyCount,Integer guestbookCount,Integer tagCount,Integer fans,Integer follows,Integer popedom,Integer codeId){super();

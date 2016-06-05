@@ -21,12 +21,14 @@ public class UFriend implements java.io.Serializable {
 
 	private Integer id;
 	private UFriendGroup UFriendGroup;
-	private Integer userId;
-	private Integer friendId;
+	private UUser UUser;
+	private UUser Friend;
 	private Integer friendType;
 	private Integer friendRole;
 	private Timestamp addTime;
+	private Timestamp updateTime;
 	private Short status;
+	private Short care;
 
 	// Constructors
 
@@ -35,28 +37,30 @@ public class UFriend implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public UFriend(Integer id, UFriendGroup UFriendGroup, Integer userId,
-			Integer friendId, Integer friendType, Timestamp addTime) {
+	public UFriend(Integer id, UFriendGroup UFriendGroup, UUser UUser,
+			UUser Friend, Integer friendType, Timestamp addTime) {
 		this.id = id;
 		this.UFriendGroup = UFriendGroup;
-		this.userId = userId;
-		this.friendId = friendId;
+		this.UUser=UUser;
+		this.Friend = Friend;
 		this.friendType = friendType;
 		this.addTime = addTime;
 	}
 
 	/** full constructor */
-	public UFriend(Integer id, UFriendGroup UFriendGroup, Integer userId,
-			Integer friendId, Integer friendType, Integer friendRole,
-			Timestamp addTime, Short status) {
+	public UFriend(Integer id, UFriendGroup UFriendGroup, UUser UUser,
+			UUser Friend, Integer friendType, Integer friendRole,
+			Timestamp addTime, Timestamp updateTime, Short status, Short care) {
 		this.id = id;
 		this.UFriendGroup = UFriendGroup;
-		this.userId = userId;
-		this.friendId = friendId;
+		this.UUser=UUser;
+		this.Friend = Friend;
 		this.friendType = friendType;
 		this.friendRole = friendRole;
 		this.addTime = addTime;
+		this.updateTime = updateTime;
 		this.status = status;
+		this.care = care;
 	}
 
 	// Property accessors
@@ -80,23 +84,35 @@ public class UFriend implements java.io.Serializable {
 		this.UFriendGroup = UFriendGroup;
 	}
 
-	@Column(name = "user_id", nullable = false)
-	public Integer getUserId() {
-		return this.userId;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id", nullable = false)
+	public UUser getUUser() {
+		return UUser;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	/**
+	 * @param uUser the uUser to set
+	 */
+	public void setUUser(UUser uUser) {
+		UUser = uUser;
 	}
 
-	@Column(name = "friend_id", nullable = false)
-	public Integer getFriendId() {
-		return this.friendId;
+	/**
+	 * @return the friend
+	 */
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "friend_id", nullable = false)
+	public UUser getFriend() {
+		return Friend;
 	}
 
-	public void setFriendId(Integer friendId) {
-		this.friendId = friendId;
+	/**
+	 * @param friend the friend to set
+	 */
+	public void setFriend(UUser friend) {
+		Friend = friend;
 	}
+
 
 	@Column(name = "friend_type", nullable = false)
 	public Integer getFriendType() {
@@ -125,6 +141,15 @@ public class UFriend implements java.io.Serializable {
 		this.addTime = addTime;
 	}
 
+	@Column(name = "update_time", length = 19)
+	public Timestamp getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(Timestamp updateTime) {
+		this.updateTime = updateTime;
+	}
+
 	@Column(name = "status")
 	public Short getStatus() {
 		return this.status;
@@ -132,6 +157,15 @@ public class UFriend implements java.io.Serializable {
 
 	public void setStatus(Short status) {
 		this.status = status;
+	}
+
+	@Column(name = "care")
+	public Short getCare() {
+		return this.care;
+	}
+
+	public void setCare(Short care) {
+		this.care = care;
 	}
 
 }

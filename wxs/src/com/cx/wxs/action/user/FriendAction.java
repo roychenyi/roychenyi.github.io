@@ -27,7 +27,7 @@ import com.cx.wxs.service.UUserService;
  * @date   2016-5-14 下午3:06:29
  */
 @Controller
-@RequestMapping("/{vip}/friend")
+@RequestMapping("/friend")
 public class FriendAction extends BaseAction{
 
 	@Resource
@@ -36,6 +36,14 @@ public class FriendAction extends BaseAction{
 	private UFriendService friendService;
 	@Resource
 	private UFriendGroupService friendGroupService;
+	
+	@RequestMapping(value="/status")
+	@ResponseBody
+	public UFriendDto getFriendStatus(
+			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
+		
+		return friendDto;
+	}
 	/**
 	 * 添加好友
 	 * @param request
@@ -45,9 +53,9 @@ public class FriendAction extends BaseAction{
 	 * @author 陈义
 	 * @date   2016-5-26下午9:46:50
 	 */
-	@RequestMapping(value="add")
+	@RequestMapping(value="/add")
 	@ResponseBody
-	public UFriendDto addFriend(@PathVariable("vip") String vip,
+	public UFriendDto addFriend(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
 		UUserDto userDto=(UUserDto) request.getSession().getAttribute("user");
 		
@@ -62,9 +70,9 @@ public class FriendAction extends BaseAction{
 	 * @author 陈义
 	 * @date   2016-6-4下午3:13:35
 	 */
-	@ResourceMapping(value="delete")
+	@ResourceMapping(value="/delete")
 	@ResponseBody
-	public UFriendDto deleteFriend(@PathVariable("vip") String vip,
+	public UFriendDto deleteFriend(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
 		
 		return friendDto;
@@ -79,9 +87,9 @@ public class FriendAction extends BaseAction{
 	 * @author 陈义
 	 * @date   2016-6-4下午3:25:12
 	 */
-	@ResourceMapping(value="classify")
+	@ResourceMapping(value="/classify")
 	@ResponseBody
-	public UFriendDto FriendClassify(@PathVariable("vip") String vip,
+	public UFriendDto FriendClassify(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
 		return friendDto;
 	}
@@ -95,9 +103,9 @@ public class FriendAction extends BaseAction{
 	 * @author 陈义
 	 * @date   2016-6-4下午3:21:01
 	 */
-	@ResourceMapping(value="list1")
+	@ResourceMapping(value="/list1")
 	@ResponseBody
-	public ModelAndView getFriendList1(@PathVariable("vip") String vip,
+	public ModelAndView getFriendList1(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
 		ModelAndView mv=new ModelAndView();
 		return mv;
@@ -111,8 +119,8 @@ public class FriendAction extends BaseAction{
      * @author 陈义
      * @date   2016-6-4下午3:13:48
      */
-	@ResourceMapping(value="list")
-	public List<UFriendDto> getFriendList(@PathVariable("vip") String vip,
+	@ResourceMapping(value="/list")
+	public List<UFriendDto> getFriendList(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
 		List<UFriendDto> list =new ArrayList<UFriendDto>();
 		return list;

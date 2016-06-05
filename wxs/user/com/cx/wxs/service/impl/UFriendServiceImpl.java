@@ -2,8 +2,10 @@ package com.cx.wxs.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cx.wxs.dao.UFriendDao;
 import com.cx.wxs.dto.UFriendDto;
 import com.cx.wxs.service.UFriendService;
 
@@ -14,13 +16,15 @@ import com.cx.wxs.service.UFriendService;
 @Service("UFriendService")
 public class UFriendServiceImpl implements UFriendService{
 
+	@Autowired
+	private UFriendDao uFriendDao;
 	/* (non-Javadoc)
 	 * @see com.cx.wxs.service.UFriendService#getUfriendByID(com.cx.wxs.dto.UFriendDto)
 	 */
 	@Override
 	public UFriendDto getUfriendByID(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		return uFriendDao.getUfriendByID(ufriendDto);
 	}
 
 	/* (non-Javadoc)
@@ -29,7 +33,19 @@ public class UFriendServiceImpl implements UFriendService{
 	@Override
 	public List<UFriendDto> getUfriendList(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		List<UFriendDto> list=uFriendDao.getUfriendList(ufriendDto);
+		if(list!=null&&list.size()>0){
+			Integer count=uFriendDao.getUFriendCount(ufriendDto);
+			int pageCount=0;
+			if(ufriendDto.getRows()!=null){
+				pageCount=count/ufriendDto.getRows()+count%ufriendDto.getRows()>0?1:0;
+			}else{
+				pageCount=count/10+count%10>0?1:0;
+			}
+			list.get(0).setRows(count);
+			list.get(0).setPageCount(pageCount);
+		}
+		return list;
 	}
 
 	/* (non-Javadoc)
@@ -38,7 +54,7 @@ public class UFriendServiceImpl implements UFriendService{
 	@Override
 	public Integer getFriendCountByGroup(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		return uFriendDao.getFriendCountByGroup(ufriendDto);
 	}
 
 	/* (non-Javadoc)
@@ -47,7 +63,7 @@ public class UFriendServiceImpl implements UFriendService{
 	@Override
 	public Integer getFriendCountByUser(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		return uFriendDao.getFriendCountByUser(ufriendDto);
 	}
 
 	/* (non-Javadoc)
@@ -56,7 +72,7 @@ public class UFriendServiceImpl implements UFriendService{
 	@Override
 	public Integer addUfriend(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		return uFriendDao.addUfriend(ufriendDto);
 	}
 
 	/* (non-Javadoc)
@@ -65,7 +81,7 @@ public class UFriendServiceImpl implements UFriendService{
 	@Override
 	public Integer updateUfriend(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		return uFriendDao.updateUfriend(ufriendDto);
 	}
 
 	/* (non-Javadoc)
@@ -74,7 +90,7 @@ public class UFriendServiceImpl implements UFriendService{
 	@Override
 	public Integer deleteUfriend(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		return uFriendDao.deleteUfriend(ufriendDto);
 	}
 
 	/* (non-Javadoc)
@@ -83,7 +99,7 @@ public class UFriendServiceImpl implements UFriendService{
 	@Override
 	public Integer deleteUfriendByGroupID(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		return null;
+		return uFriendDao.deleteUfriendByGroupID(ufriendDto);
 	}
 
 }

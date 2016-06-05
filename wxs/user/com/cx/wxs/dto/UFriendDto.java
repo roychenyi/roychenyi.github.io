@@ -12,12 +12,14 @@ import com.cx.wxs.po.UUser;
 public class UFriendDto extends BeanBase{
     private Integer id;
     private UFriendGroupDto UFriendGroupDto;
-    private UUserDto userDto;
-    private UUserDto friendDto;
+    private UUserDto UUserDto;
+    private UUserDto FriendDto;
     private Integer friendType;
     private Integer friendRole;
     private Timestamp addTime;
-    private Short status;
+    private Timestamp updateTime;
+	private Short status;
+	private Short care;
 
     /** default constructor */
     public UFriendDto(){
@@ -25,15 +27,18 @@ public class UFriendDto extends BeanBase{
     }
 
     /** full constructor */
-    public UFriendDto(Integer id,UFriendGroupDto UFriendGroupDto,UUserDto userDto,UUserDto friendDto,Integer friendType,Integer friendRole,Timestamp addTime,Short status){super();
+    public UFriendDto(Integer id,UFriendGroupDto UFriendGroupDto,UUserDto UUserDto,UUserDto FriendDto,Integer friendType,Integer friendRole,Timestamp addTime
+    		,Timestamp updateTime,Short status,Short care){super();
         this.id=id;
         this.UFriendGroupDto=UFriendGroupDto;
-        this.userDto=userDto;
-        this.friendDto=friendDto;
+        this.UUserDto=UUserDto;
+        this.FriendDto=FriendDto;
         this.friendType=friendType;
         this.friendRole=friendRole;
         this.addTime=addTime;
+        this.updateTime=updateTime;
         this.status=status;
+        this.care=care;
     }
     public Integer getId(){
         return id;
@@ -49,22 +54,21 @@ public class UFriendDto extends BeanBase{
         this.UFriendGroupDto=UFriendGroupDto;
     }
 
-    
 
-	public UUserDto getUserDto() {
-		return userDto;
+	public UUserDto getUUserDto() {
+		return UUserDto;
 	}
 
-	public void setUserDto(UUserDto userDto) {
-		this.userDto = userDto;
+	public void setUUserDto(UUserDto uUserDto) {
+		UUserDto = uUserDto;
 	}
 
 	public UUserDto getFriendDto() {
-		return friendDto;
+		return FriendDto;
 	}
 
 	public void setFriendDto(UUserDto friendDto) {
-		this.friendDto = friendDto;
+		FriendDto = friendDto;
 	}
 
 	public Integer getFriendType(){
@@ -88,12 +92,32 @@ public class UFriendDto extends BeanBase{
         this.addTime=addTime;
     }
 
-    public Short getStatus(){
-        return status;
-    }
-    public void setStatus(Short status){
-        this.status=status;
-    }
+    
+	public Timestamp getUpdateTime() {
+		return updateTime;
+	}
+
+
+	public void setUpdateTime(Timestamp updateTime) {
+		this.updateTime = updateTime;
+	}
+	
+	public Short getStatus(){
+		return status;
+	}
+	public void setStatus(Short status){
+		this.status=status;
+	}
+
+	public Short getCare() {
+		return care;
+	}
+
+
+	public void setCare(Short care) {
+		this.care = care;
+	}
+
 
 
 }

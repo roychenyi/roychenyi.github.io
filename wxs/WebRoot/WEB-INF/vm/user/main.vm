@@ -21,7 +21,7 @@
 						<img  #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" title="$author.nickname" #else src="#rootUrl()/images/face.png" #end   style="width: 100px;height: 100px;"/>
                         <h1 > $author.nickname</h1>
                         <p ><div id="friend"><a id="follow" class="btn btn-success" href="javascript:;">勾搭</a>
-						   <span class="dropdown" name="dropdown">&nbsp;
+						   <span id="followed" class="dropdown" name="dropdown">&nbsp;
 							<a class="dropdown-toggle btn btn-success" href="javascrit:;" data-toggle="data-toggle">已关注<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li id="cancel_follow" ><a href="javascript:;">取消关注</a></li>
@@ -29,7 +29,7 @@
 
                                         </ul></span>
 						  </div>
-							<div id="message">&nbsp;&nbsp;&nbsp;<a class="btn btn-success" >消息</a></div>
+						##	<div id="message">&nbsp;&nbsp;&nbsp;<a class="btn btn-success" >消息</a></div>
 						</p>
 						</div>
 						<div id="data">

@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cx.wxs.dao.UFriendGroupDao;
 import com.cx.wxs.dto.UFriendDto;
 import com.cx.wxs.dto.UFriendGroupDto;
 import com.cx.wxs.service.UFriendGroupService;
@@ -18,6 +20,8 @@ import com.cx.wxs.service.UFriendService;
 @Service("UFriendGroupService")
 public class UFriendGroupServiceImpl implements UFriendGroupService{
 
+	@Autowired
+	private UFriendGroupDao uFriendGroupDao;
 	/* (non-Javadoc)
 	 * @see com.cx.wxs.service.UFriendGroupService#getUfriendGroupByID(com.cx.wxs.dto.UFriendGroupDto)
 	 */

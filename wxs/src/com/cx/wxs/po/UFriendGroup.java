@@ -1,5 +1,6 @@
 package com.cx.wxs.po;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -31,6 +32,9 @@ public class UFriendGroup implements java.io.Serializable {
 	private String name;
 	private Integer groupType;
 	private Integer groupCount;
+	private Timestamp addTime;
+	private Timestamp updateTime;
+	private Short status;
 	private List<UFriend> UFriends = new ArrayList<UFriend>(0);
 
 	// Constructors
@@ -47,11 +51,15 @@ public class UFriendGroup implements java.io.Serializable {
 
 	/** full constructor */
 	public UFriendGroup(UUser UUser, String name, Integer groupType,
-			Integer groupCount, List<UFriend> UFriends) {
+			Integer groupCount, Timestamp addTime, Timestamp updateTime,
+			Short status, List<UFriend> UFriends) {
 		this.UUser = UUser;
 		this.name = name;
 		this.groupType = groupType;
 		this.groupCount = groupCount;
+		this.addTime = addTime;
+		this.updateTime = updateTime;
+		this.status = status;
 		this.UFriends = UFriends;
 	}
 
@@ -102,6 +110,33 @@ public class UFriendGroup implements java.io.Serializable {
 
 	public void setGroupCount(Integer groupCount) {
 		this.groupCount = groupCount;
+	}
+	
+	@Column(name = "add_time", length = 19)
+	public Timestamp getAddTime() {
+		return this.addTime;
+	}
+
+	public void setAddTime(Timestamp addTime) {
+		this.addTime = addTime;
+	}
+
+	@Column(name = "update_time", length = 19)
+	public Timestamp getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(Timestamp updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	@Column(name = "status")
+	public Short getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Short status) {
+		this.status = status;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "UFriendGroup")
