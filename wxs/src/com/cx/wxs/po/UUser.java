@@ -93,7 +93,8 @@ public class UUser implements java.io.Serializable {
 	private List<SBox> SBoxes = new ArrayList<SBox>(0);
 	private List<VReply2> VReply2sForCommentator = new ArrayList<VReply2>(0);
 	private List<SReply2> SReply2sForUserId = new ArrayList<SReply2>(0);
-	private List<UFriend> UFriends=new ArrayList<UFriend>(0);
+	private List<UFriend> UFriendByUser=new ArrayList<UFriend>(0);
+	private List<UFriend> UFriendByFriend=new ArrayList<UFriend>(0);
 	private List<UFriendGroup> UFriendGroups = new ArrayList<UFriendGroup>(0);
 	private List<MGuestbook> MGuestbooks = new ArrayList<MGuestbook>(0);
 	private List<IAlbum> IAlbums = new ArrayList<IAlbum>(0);
@@ -153,7 +154,7 @@ public class UUser implements java.io.Serializable {
 			List<BSite> BSites, List<SUpvote> SUpvotes, List<IReply1> IReply1s,
 			List<IUpvote> IUpvotes, List<SysLoginRecord> sysLoginRecords,
 			List<SBox> SBoxes, List<VReply2> VReply2sForCommentator,
-			List<SReply2> SReply2sForUserId,List<UFriend> UFriends, List<UFriendGroup> UFriendGroups,
+			List<SReply2> SReply2sForUserId,List<UFriend> UFriendByUser,List<UFriend> UFriendByFriend, List<UFriendGroup> UFriendGroups,
 			List<MGuestbook> MGuestbooks, List<IAlbum> IAlbums,
 			List<SAccess> SAccesses, List<VReply2> VReply2sForUserId,
 			List<VCount> VCounts, List<DAnnex> DAnnexes, List<UBook> UBooks,
@@ -226,7 +227,8 @@ public class UUser implements java.io.Serializable {
 		this.SBoxes = SBoxes;
 		this.VReply2sForCommentator = VReply2sForCommentator;
 		this.SReply2sForUserId = SReply2sForUserId;
-		this.UFriends=UFriends;
+		this.UFriendByUser=UFriendByUser;
+		this.UFriendByFriend=UFriendByFriend;
 		this.UFriendGroups = UFriendGroups;
 		this.MGuestbooks = MGuestbooks;
 		this.IAlbums = IAlbums;
@@ -838,14 +840,24 @@ public class UUser implements java.io.Serializable {
 		this.SReply2sForUserId = SReply2sForUserId;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "Friend")
-	public List<UFriend> getUFriends() {
-		return UFriends;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "UUser")
+	public List<UFriend> getUFriendByUser() {
+		return UFriendByUser;
 	}
 
-	public void setUFriends(List<UFriend> uFriends) {
-		UFriends = uFriends;
+	public void setUFriendByUser(List<UFriend> uFriendByUser) {
+		UFriendByUser = uFriendByUser;
 	}
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "friend")
+	public List<UFriend> getUFriendByFriend() {
+		return UFriendByFriend;
+	}
+
+	public void setUFriendByFriend(List<UFriend> uFriendByFriend) {
+		UFriendByFriend = uFriendByFriend;
+	}
+
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "UUser")
 	public List<UFriendGroup> getUFriendGroups() {
