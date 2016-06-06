@@ -12,7 +12,7 @@
 #end
 *#
  <div class="row">
-                <div id="leftMenu" class="col-md-2 no-padding">
+                <div id="leftMenu" class="col-md-3 no-padding">
 					<div>
                     <div class="ibox">
                     <div class="ibox-title">个人资料</div>
@@ -45,10 +45,25 @@
                         </div>
                     </div>
                     </div>
-
+					 <div class="ibox">
+                        <div class="ibox-title">关注</div>
+                        <div class="ibox-content" >
+							<div id="friendList" class="row">
+							</div>
+                           
+                        </div>
+                    </div>
+					<div class="ibox">
+						<div class="ibox-title">粉丝</div>
+                        <div class="ibox-content" >
+							<div id="fansList" class="row">
+							</div>
+                           
+                        </div>
+					</div>
 					</div>
                 </div>
-                <div id="centerContent" class="col-md-7 no-padding-min">
+                <div id="centerContent" class="col-md-6 no-padding-min">
 					<div id="articleList" >
 					#if($diaryList&&$diaryList.size()>0)
 					<input type="hidden" id="page" name="page" value="$diaryList[0].page">
@@ -103,14 +118,7 @@
 						程序猿很忙，还没做好~~~
 						</div>
                     </div>
-                                        <div class="ibox">
-                        <div class="ibox-title">用户好友</div>
-                        <div class="ibox-content" >
-							<div id="friendList" class="row">
-							</div>
-                           
-                        </div>
-                    </div>
+                   
 					 <div class="ibox">
                         <div class="ibox-title">最近访客</div>
                         <div class="ibox-content">
