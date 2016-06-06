@@ -849,7 +849,7 @@ public class UUser implements java.io.Serializable {
 		UFriendByUser = uFriendByUser;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "friend")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "FFriend")
 	public List<UFriend> getUFriendByFriend() {
 		return UFriendByFriend;
 	}

@@ -44,3 +44,5 @@
 #set($Jeasing="<script src='#rootUrl()/js/pligins/jquery.easing.min.js'></script>")
 ##scrollTo
 #set($JscrollTo="<script src='#rootUrl()/js/pligins/jquery.scrollTo.min.js'></script>")
+##friend
+#set($Jfriend="<script src='#rootUrl()/js/site/friend.js'></script>")

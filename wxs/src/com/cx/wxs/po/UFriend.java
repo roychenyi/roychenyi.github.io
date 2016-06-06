@@ -1,9 +1,12 @@
 package com.cx.wxs.po;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,7 +25,7 @@ public class UFriend implements java.io.Serializable {
 	private Integer id;
 	private UFriendGroup UFriendGroup;
 	private UUser UUser;
-	private UUser Friend;
+	private UUser FFriend;
 	private Integer friendType;
 	private Integer friendRole;
 	private Timestamp addTime;
@@ -38,23 +41,23 @@ public class UFriend implements java.io.Serializable {
 
 	/** minimal constructor */
 	public UFriend(Integer id, UFriendGroup UFriendGroup, UUser UUser,
-			UUser Friend, Integer friendType, Timestamp addTime) {
+			UUser FFriend, Integer friendType, Timestamp addTime) {
 		this.id = id;
 		this.UFriendGroup = UFriendGroup;
 		this.UUser=UUser;
-		this.Friend = Friend;
+		this.FFriend = FFriend;
 		this.friendType = friendType;
 		this.addTime = addTime;
 	}
 
 	/** full constructor */
 	public UFriend(Integer id, UFriendGroup UFriendGroup, UUser UUser,
-			UUser Friend, Integer friendType, Integer friendRole,
+			UUser fFriend, Integer friendType, Integer friendRole,
 			Timestamp addTime, Timestamp updateTime, Short status, Short care) {
 		this.id = id;
 		this.UFriendGroup = UFriendGroup;
 		this.UUser=UUser;
-		this.Friend = Friend;
+		this.FFriend = fFriend;
 		this.friendType = friendType;
 		this.friendRole = friendRole;
 		this.addTime = addTime;
@@ -65,6 +68,7 @@ public class UFriend implements java.io.Serializable {
 
 	// Property accessors
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return this.id;
@@ -75,7 +79,7 @@ public class UFriend implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "group_id", nullable = false)
+	@JoinColumn(name = "group_id")
 	public UFriendGroup getUFriendGroup() {
 		return this.UFriendGroup;
 	}
@@ -102,15 +106,15 @@ public class UFriend implements java.io.Serializable {
 	 */
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "friend_id", nullable = false)
-	public UUser getFriend() {
-		return Friend;
+	public UUser getFFriend() {
+		return FFriend;
 	}
 
 	/**
 	 * @param friend the friend to set
 	 */
-	public void setFriend(UUser friend) {
-		Friend = friend;
+	public void setFFriend(UUser friend) {
+		FFriend = friend;
 	}
 
 

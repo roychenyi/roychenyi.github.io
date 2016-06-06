@@ -13,7 +13,7 @@ public class UFriendDto extends BeanBase{
     private Integer id;
     private UFriendGroupDto UFriendGroupDto;
     private UUserDto UUserDto;
-    private UUserDto FriendDto;
+    private UUserDto FFriendDto;
     private Integer friendType;
     private Integer friendRole;
     private Timestamp addTime;
@@ -27,12 +27,12 @@ public class UFriendDto extends BeanBase{
     }
 
     /** full constructor */
-    public UFriendDto(Integer id,UFriendGroupDto UFriendGroupDto,UUserDto UUserDto,UUserDto FriendDto,Integer friendType,Integer friendRole,Timestamp addTime
+    public UFriendDto(Integer id,UFriendGroupDto UFriendGroupDto,UUserDto uUserDto,UUserDto friendDto,Integer friendType,Integer friendRole,Timestamp addTime
     		,Timestamp updateTime,Short status,Short care){super();
         this.id=id;
         this.UFriendGroupDto=UFriendGroupDto;
-        this.UUserDto=UUserDto;
-        this.FriendDto=FriendDto;
+        this.UUserDto=uUserDto;
+        this.FFriendDto=friendDto;
         this.friendType=friendType;
         this.friendRole=friendRole;
         this.addTime=addTime;
@@ -63,12 +63,12 @@ public class UFriendDto extends BeanBase{
 		UUserDto = uUserDto;
 	}
 
-	public UUserDto getFriendDto() {
-		return FriendDto;
+	public UUserDto getFFriendDto() {
+		return FFriendDto;
 	}
 
-	public void setFriendDto(UUserDto friendDto) {
-		FriendDto = friendDto;
+	public void setFFriendDto(UUserDto friendDto) {
+		FFriendDto = friendDto;
 	}
 
 	public Integer getFriendType(){

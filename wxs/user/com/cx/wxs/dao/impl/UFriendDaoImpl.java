@@ -70,20 +70,20 @@ public  class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFr
 	}
 	@Override
 	public UFriendDto getUFriend(UFriendDto uFriendDto){
-		if(uFriendDto!=null&& uFriendDto.getUUserDto()!=null&&uFriendDto.getFriendDto()!=null){
+		if(uFriendDto!=null&& uFriendDto.getUUserDto()!=null&&uFriendDto.getFFriendDto()!=null){
 			StringBuffer stringBuffer=new StringBuffer();
 			Map<String,Object> params=new HashMap<String,Object>();
 			stringBuffer.append(" from "+UFriend.class.getName()+" a ");
 			stringBuffer.append(" where 1=1 ");
-			stringBuffer.append(" and a.UUserDto.userId=:userid");
-			stringBuffer.append(" and a.FriendDto.userId=:friendId");
-			stringBuffer.append(" and status=1");
+			stringBuffer.append(" and a.UUser.userId=:userId ");
+			stringBuffer.append(" and a.FFriend.userId=:friendId ");
+			stringBuffer.append(" and status=1 ");
 			params.put("userId",uFriendDto.getUUserDto().getUserId());
-			params.put("friendId",uFriendDto.getFriendDto().getUserId());
+			params.put("friendId",uFriendDto.getFFriendDto().getUserId());
 			List<UFriend> list=this.find(stringBuffer.toString(), params);
 			if(list!=null&&list.size()>0){
-				// UFriend	uFriend=list.get(0);
-				//	uFriendDto=beanToDto.T1ToD1(uFriend, uFriendDto);
+				 UFriend	uFriend=list.get(0);
+				 uFriendDto=beanToDto.T1ToD1(uFriend, uFriendDto);
 				return uFriendDto;
 			}
 		}
@@ -101,17 +101,17 @@ public  class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFr
 			Map<String,Object> params=new HashMap<String,Object>();
 			stringBuffer.append(" from "+UFriend.class.getName()+" a ");
 			stringBuffer.append(" where 1=1 ");
-			if(ufriendDto.getUFriendGroupDto().getGroupId()!=null){
+			if(ufriendDto.getUFriendGroupDto()!=null){
 				stringBuffer.append(" and a.UFriendGroup.groupId =:groupId");
 				params.put("groupId",ufriendDto.getUFriendGroupDto().getGroupId());
 			}
-			if(ufriendDto.getUUserDto().getUserId()!=null){
-				stringBuffer.append(" and a.UUserDto.userId=:userid");
+			if(ufriendDto.getUUserDto()!=null){
+				stringBuffer.append(" and a.UUser.userId=:userid");
 				params.put("userid",ufriendDto.getUUserDto().getUserId());
 			}
-			if(ufriendDto.getFriendDto().getUserId()!=null){
-				stringBuffer.append(" and a.FriendDto.userId=:friendid");
-				params.put("friendid",ufriendDto.getFriendDto().getUserId());
+			if(ufriendDto.getFFriendDto()!=null){
+				stringBuffer.append(" and a.Friend.userId=:friendid");
+				params.put("friendid",ufriendDto.getFFriendDto().getUserId());
 			}
 			if(ufriendDto.getStatus()!=null){
 				stringBuffer.append(" and a.status=:status");
@@ -152,10 +152,11 @@ public  class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFr
 	@Override
 	public Integer addUfriend(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
-		if(ufriendDto!=null&&ufriendDto.getUUserDto()!=null&&ufriendDto.getFriendDto()!=null&&ufriendDto.getUFriendGroupDto()!=null){
+		if(ufriendDto!=null&&ufriendDto.getUUserDto()!=null&&ufriendDto.getFFriendDto()!=null){
 			UFriend ufriend=beanToDto.D1ToT1(new UFriend(), ufriendDto);
 			Date date=new Date();
 			ufriend.setAddTime(new Timestamp(date.getTime()));
+			ufriend.setFriendType(0);
 			ufriend.setStatus((short)1);
 			return this.save(ufriend);
 		}
@@ -218,13 +219,15 @@ public  class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFr
 		if(uFriendDto!=null&uFriendDto.getId()!=null){
 			StringBuffer stringBuffer =new StringBuffer(DbType.UPDATE.toString());
 			Map<String,Object> params=new HashMap<String,Object>();
-			stringBuffer.append(" from "+UFriend.class.getName()+" a where 1=1");
-			stringBuffer.append(" and a.id=:id ");
-			params.put("id",uFriendDto.getId());
-			stringBuffer.append(" and a.updateTime=:time ");
+			stringBuffer.append(" from "+UFriend.class.getName()+" a ");
+			stringBuffer.append(" set a.updateTime=:time");
+			stringBuffer.append(",a.status=0");
+			stringBuffer.append(" where a.id=:id ");
 			Date date=new Date();
 			params.put("time",new Timestamp(date.getTime()));
-			stringBuffer.append(" and a.status = 0 ");
+			params.put("id",uFriendDto.getId());
+			
+			
 			return this.executeHql(stringBuffer.toString(),params);
 		}else{
 			return 0;
@@ -306,17 +309,17 @@ public  class UFriendDaoImpl extends BaseDaoImpl<UFriend,Integer> implements UFr
 			Map<String,Object> params=new HashMap<String,Object>();
 			stringBuffer.append(" from "+UFriend.class.getName()+" a ");
 			stringBuffer.append(" where 1=1 ");
-			if(ufriendDto.getUFriendGroupDto().getGroupId()!=null){
+			if(ufriendDto.getUFriendGroupDto()!=null){
 				stringBuffer.append(" and a.UFriendGroup.groupId =:groupId");
 				params.put("groupId",ufriendDto.getUFriendGroupDto().getGroupId());
 			}
-			if(ufriendDto.getUUserDto().getUserId()!=null){
-				stringBuffer.append(" and a.UUserDto.userId=:userid");
+			if(ufriendDto.getUUserDto()!=null){
+				stringBuffer.append(" and a.UUser.userId=:userid");
 				params.put("userid",ufriendDto.getUUserDto().getUserId());
 			}
-			if(ufriendDto.getFriendDto().getUserId()!=null){
-				stringBuffer.append(" and a.FriendDto.userId=:friendid");
-				params.put("friendid",ufriendDto.getFriendDto().getUserId());
+			if(ufriendDto.getFFriendDto()!=null){
+				stringBuffer.append(" and a.Friend.userId=:friendid");
+				params.put("friendid",ufriendDto.getFFriendDto().getUserId());
 			}
 			if(ufriendDto.getStatus()!=null){
 				stringBuffer.append(" and a.status=:status");

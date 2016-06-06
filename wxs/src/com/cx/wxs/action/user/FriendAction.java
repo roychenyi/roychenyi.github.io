@@ -81,12 +81,12 @@ public class FriendAction extends BaseAction{
 	 * @author 陈义
 	 * @date   2016-6-4下午3:13:35
 	 */
-	@ResourceMapping(value="/delete")
+	@RequestMapping(value="/delete")
 	@ResponseBody
 	public UFriendDto deleteFriend(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
 		Integer status= friendService.nullifyFriend(friendDto);
-		if(status>1){
+		if(status>0){
 			friendDto.setStatusFlag("1");
 		}else{
 			friendDto.setStatusFlag("-1");
@@ -103,7 +103,7 @@ public class FriendAction extends BaseAction{
 	 * @author 陈义
 	 * @date   2016-6-4下午3:25:12
 	 */
-	@ResourceMapping(value="/classify")
+	@RequestMapping(value="/classify")
 	@ResponseBody
 	public UFriendDto FriendClassify(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
@@ -119,12 +119,12 @@ public class FriendAction extends BaseAction{
 	 * @author 陈义
 	 * @date   2016-6-4下午3:21:01
 	 */
-	@ResourceMapping(value="/list1")
+	@RequestMapping(value="/list1")
 	@ResponseBody
-	public ModelAndView getFriendList1(
+	public List<UFriendDto> getFriendList1(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
-		ModelAndView mv=new ModelAndView();
-		return mv;
+		List<UFriendDto> list=friendService.getUfriendList(friendDto);
+		return list;
 	}
     /**
      * 好友列表
@@ -135,11 +135,15 @@ public class FriendAction extends BaseAction{
      * @author 陈义
      * @date   2016-6-4下午3:13:48
      */
-	@ResourceMapping(value="/list")
-	public List<UFriendDto> getFriendList(
+	@RequestMapping(value="/list")
+	public ModelAndView getFriendList(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
-		List<UFriendDto> list =new ArrayList<UFriendDto>();
-		return list;
+		ModelAndView mv=new ModelAndView();
+	    List<UFriendDto> list=friendService.getUfriendList(friendDto);
+	    UUserDto userDto=friendDto.getUUserDto();
+	    userDto=userService.getUuser(userDto);
+	    mv.addObject("author", userDto);
+		return mv;
 	}
 	
 }

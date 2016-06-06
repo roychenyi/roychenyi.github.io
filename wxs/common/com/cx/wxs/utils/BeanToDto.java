@@ -156,7 +156,7 @@ public class BeanToDto<T1 extends Serializable,D1 extends Serializable> {
 						String first=field.getName().substring(0,1).toUpperCase();
 						fieldName=first+field.getName().substring(1,field.getName().length());
 						fieldName+="Dto";
-						if(fieldName.contains("UUser")){
+						if(field.getGenericType().toString().contains("UUser")){
 							fieldType=Class.forName("com.cx.wxs.dto.UUserDto");	
 						}else{
 						fieldType=Class.forName("com.cx.wxs.dto."+fieldName);
@@ -202,13 +202,14 @@ public class BeanToDto<T1 extends Serializable,D1 extends Serializable> {
 				if(field.getGenericType().toString().contains("class com.cx.wxs.")){
 					Object o1= invokeMethodGET(d1,field.getName(),null);				
 					if(o1!=null){
-				//		System.out.println(field.getGenericType().toString()+"::"+field.getName());
+						System.out.println(field.getGenericType().toString()+"::"+field.getName());
 						String fieldName=field.getName();
+						System.out.println("fieldName:"+fieldName);
 						Class<?> fieldType=field.getType();
 						if(field.getGenericType().toString().contains(".dto.")){
 							String first=field.getName().substring(0,1).toUpperCase();
-							fieldName=first+field.getName().substring(1,(field.getName().length()-3));
-							if(fieldName.contains("UUser")){
+							fieldName=first+field.getName().substring(1,(field.getName().length()-3));				
+							if(field.getGenericType().toString().contains("UUser")){
 								fieldType=Class.forName("com.cx.wxs.po.UUser");
 							}else{
 							fieldType=Class.forName("com.cx.wxs.po."+fieldName);

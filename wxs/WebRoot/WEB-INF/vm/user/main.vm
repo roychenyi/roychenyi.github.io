@@ -1,7 +1,7 @@
 #set($layout = "layout/user/l_user.vm")
 #set($page_title="$author.BSiteDto.title")
 #parse("conf/js.vm")
-#set($extjs=$JuserMain)
+#set($extjs=$JuserMain+$Jlayer+$Jfriend)
 #* 
 #if($author.username==$user.username)
 #parse("conf/js.vm")
@@ -20,14 +20,15 @@
 						<div class="text-center">
 						<img  #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" title="$author.nickname" #else src="#rootUrl()/images/face.png" #end   style="width: 100px;height: 100px;"/>
                         <h1 > $author.nickname</h1>
-                        <p ><div id="friend"><a id="follow" class="btn btn-success" href="javascript:;">勾搭</a>
+                        <p ><div id="friend" class="hidden"><a id="follow" class="btn btn-success" href="javascript:;" onclick="friend.add()">勾搭</a>
 						   <span id="followed" class="dropdown" name="dropdown">&nbsp;
 							<a class="dropdown-toggle btn btn-success" href="javascrit:;" data-toggle="data-toggle">已关注<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li id="cancel_follow" ><a href="javascript:;">取消关注</a></li>
+                                            <li id="cancel_follow" ><a href="javascript:;" onclick="friend.nullfiy()">取消关注</a></li>
                                             <li id='group_manage' ><a data-url='' href='javascript:;' >分组管理</a></li>
 
                                         </ul></span>
+										<input type="hidden" id="friendId" value=""/>
 						  </div>
 						##	<div id="message">&nbsp;&nbsp;&nbsp;<a class="btn btn-success" >消息</a></div>
 						</p>
@@ -104,8 +105,10 @@
                     </div>
                                         <div class="ibox">
                         <div class="ibox-title">用户好友</div>
-                        <div class="ibox-content">
-                            程序猿很忙，还没做好~~~
+                        <div class="ibox-content" >
+							<div id="friendList" class="row">
+							</div>
+                           
                         </div>
                     </div>
 					 <div class="ibox">
