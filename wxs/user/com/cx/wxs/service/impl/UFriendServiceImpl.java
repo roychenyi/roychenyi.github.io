@@ -27,6 +27,16 @@ public class UFriendServiceImpl implements UFriendService{
 		return uFriendDao.getUfriendByID(ufriendDto);
 	}
 
+	@Override
+	public UFriendDto getUFriend(UFriendDto uFriendDto){
+		UFriendDto friendDto=uFriendDao.getUFriend(uFriendDto);
+		if(friendDto==null){
+			uFriendDto.setStatusFlag("-1");
+		}else{
+			uFriendDto.setStatusFlag("1");
+		}
+		return uFriendDto;
+	}
 	/* (non-Javadoc)
 	 * @see com.cx.wxs.service.UFriendService#getUfriendList(com.cx.wxs.dto.UFriendDto)
 	 */
@@ -100,6 +110,10 @@ public class UFriendServiceImpl implements UFriendService{
 	public Integer deleteUfriendByGroupID(UFriendDto ufriendDto) {
 		// TODO Auto-generated method stub
 		return uFriendDao.deleteUfriendByGroupID(ufriendDto);
+	}
+	@Override
+	public Integer nullifyFriend(UFriendDto uFriendDto){
+		return uFriendDao.nullifyFriend(uFriendDto);
 	}
 
 }

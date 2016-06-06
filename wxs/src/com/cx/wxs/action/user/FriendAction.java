@@ -4,7 +4,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -41,7 +43,7 @@ public class FriendAction extends BaseAction{
 	@ResponseBody
 	public UFriendDto getFriendStatus(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
-		
+		friendDto=friendService.getUFriend(friendDto);
 		return friendDto;
 	}
 	/**
@@ -58,7 +60,16 @@ public class FriendAction extends BaseAction{
 	public UFriendDto addFriend(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
 		UUserDto userDto=(UUserDto) request.getSession().getAttribute("user");
-		
+		friendDto.setUUserDto(userDto);
+		Date date=new Date();
+		friendDto.setAddTime(new Timestamp(date.getTime()));
+		Integer id= friendService.addUfriend(friendDto);
+		if(id>0){
+			friendDto.setId(id);
+			friendDto.setStatusFlag("1");
+		}else{
+			friendDto.setStatusFlag("-1");
+		}
 		return friendDto;
 	}
 	/**
@@ -74,7 +85,12 @@ public class FriendAction extends BaseAction{
 	@ResponseBody
 	public UFriendDto deleteFriend(
 			HttpServletRequest request,HttpServletResponse response,UFriendDto friendDto){
-		
+		Integer status= friendService.nullifyFriend(friendDto);
+		if(status>1){
+			friendDto.setStatusFlag("1");
+		}else{
+			friendDto.setStatusFlag("-1");
+		}
 		return friendDto;
 	}
 	/**

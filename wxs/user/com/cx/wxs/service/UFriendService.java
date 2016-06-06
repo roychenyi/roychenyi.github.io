@@ -18,6 +18,14 @@ public interface UFriendService {
 	 * @date   2015-12-7下午5:16:21
 	 */
 	public UFriendDto getUfriendByID(UFriendDto ufriendDto);
+	/**
+	 * 通过两个用户获取两个用户是否是朋友关系
+	 * @param uFriendDto
+	 * @return
+	 * @author 陈义
+	 * @date   2016-6-6上午10:26:04
+	 */
+	public UFriendDto getUFriend(UFriendDto uFriendDto);
 	
 	/***
 	 * 通过用户group获取friend的列表
@@ -77,4 +85,12 @@ public interface UFriendService {
 	 * @date   2015-12-8下午6:35:10
 	 */
 	public Integer deleteUfriendByGroupID(UFriendDto ufriendDto);
+	/**
+	 * 作废好友关系
+	 * @param uFriendDto
+	 * @return
+	 * @author 陈义
+	 * @date   2016-6-6上午11:41:25
+	 */
+	public Integer nullifyFriend(UFriendDto uFriendDto);
 }
