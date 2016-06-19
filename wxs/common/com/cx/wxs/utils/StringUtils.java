@@ -1757,7 +1757,14 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	public static String firstLowerCase(String str){
 		return str.substring(0,1).toLowerCase()+str.substring(1);
 	}
-	
+	/***
+	 * 截取字符串
+	 * @param str
+	 * @param subSLength
+	 * @return
+	 * @author 陈义
+	 * @date   2016-6-19上午11:15:00
+	 */
 	public static String compressLength(String str,int subSLength){
 		if (str == null)    
             return "";    

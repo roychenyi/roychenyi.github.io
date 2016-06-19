@@ -61,11 +61,12 @@
 		</property>
 	</bean>
 
-	<bean id="testVelocity" class="com.cx.wxs.velocity.testVelocity"></bean>
-	<bean id="htmlVelocity" class="com.cx.wxs.velocity.HtmlVelocityTool"></bean>
-	<bean id="linkVelocity" class="org.apache.velocity.tools.view.LinkTool"></bean>
-	<bean id="stringUtils" class="com.cx.wxs.utils.StringUtils"></bean>
+<!-- 	<bean id="testVelocity" class="com.cx.wxs.velocity.testVelocity"></bean>
+ 	<bean id="htmlVelocity" class="com.cx.wxs.velocity.HtmlVelocityTool"></bean>
+	
+	 <bean id="stringUtils" class="com.cx.wxs.utils.StringUtils"></bean>
 	<bean id="weatherTool" class="com.cx.wxs.velocity.WeatherVelocity"></bean>
+	 -->
 	<!-- View resolvers can also be configured with ResourceBundles or XML files. 
 		If you need different view resolving based on Locale, you have to use the 
 		resource bundle resolver. 配置velocity 模板解析配置 -->
@@ -88,23 +89,24 @@
 		<property name="toolboxConfigLocation" value="WEB-INF/vm/conf/velocity-toolbox.xml" />
 		<property name="attributesMap">
 			<map>
-				<entry key="test">
+				<!-- <entry key="test">
 					<ref bean="testVelocity" />
 				</entry>
 				<entry key="test1">
 					<ref bean="testVelocity" />
-				</entry>
+				</entry> -->
 
 				<!-- <entry key="link2"> <ref bean="linkVelocity"/> </entry> -->
-				<entry key="html">
+			<!-- 	<entry key="html">
 					<ref bean="htmlVelocity" />
-				</entry>
+				</entry> 
 				<entry key="StringUtils">
 				    <ref bean="stringUtils"/>
 				</entry>
 				<entry key="weatherTool">
 				<ref bean="weatherTool"/>
 				</entry>
+				-->
 			</map>
 		</property>
 	</bean>

@@ -16,11 +16,11 @@
                                         </ul>
                                         </li>
 										#end
- <li class="pull-right">#if($next_diary.title)<a href="#rootUrl()/$author.nickname/article/details/$next_diary.diaryId">下一篇:$StringUtils.compressLength($next_diary.title,12)</a>#else <a>已经是最后一篇了</a> #end
+ <li class="pull-right">#if($next_diary.title)<a href="#rootUrl()/$author.nickname/article/details/$next_diary.diaryId">下一篇:$next_diary.title</a>#else <a>已经是最后一篇了</a> #end
 </li>  <li class="pull-right">|</li>                                
 
 <li class="pull-right">
-	#if($prev_diary.title)<a href="#rootUrl()/$author.nickname/article/details/$prev_diary.diaryId">上一篇：$StringUtils.compressLength($prev_diary.title,12)</a> #else <a>已经是第一篇了</a> #end
+	#if($prev_diary.title)<a href="#rootUrl()/$author.nickname/article/details/$prev_diary.diaryId">上一篇：$prev_diary.title</a> #else <a>已经是第一篇了</a> #end
 </li>
  </ul>
 </div>
