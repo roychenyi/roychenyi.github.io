@@ -59,57 +59,6 @@ public class IndexAction {
 	private DDiaryService dDiaryService;
 	
 
-	/**
-	 * @return the emailService
-	 */
-	public EmailService getEmailService() {
-		return emailService;
-	}
-
-	/**
-	 * @param emailService the emailService to set
-	 */
-	public void setEmailService(EmailService emailService) {
-		this.emailService = emailService;
-	}
-	
-	
-
-	/**
-	 * @return the userService
-	 */
-	public UUserService getUserService() {
-		return userService;
-	}
-
-	/**
-	 * @param userService the userService to set
-	 */
-	public void setUserService(UUserService userService) {
-		this.userService = userService;
-	}
-
-	/**
-	 * @return the wxsService
-	 */
-	public WWxsService getWxsService() {
-		return wxsService;
-	}
-
-	/**
-	 * @param wxsService the wxsService to set
-	 */
-	public void setWxsService(WWxsService wxsService) {
-		this.wxsService = wxsService;
-	}
-
-	public DDiaryService getdDiaryService() {
-		return dDiaryService;
-	}
-
-	public void setdDiaryService(DDiaryService dDiaryService) {
-		this.dDiaryService = dDiaryService;
-	}
 
 	/***
 	 * 首页

@@ -66,7 +66,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/proxool-0.8.3.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/QRCode.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/rhq-pluginAnnotations-3.0.4.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-aop-4.2.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-aspects-4.2.2.RELEASE.jar"/>
