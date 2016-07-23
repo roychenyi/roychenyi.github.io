@@ -17,6 +17,7 @@ import com.cx.wxs.dto.DDiaryDto;
 import com.cx.wxs.dto.DUpvoteDto;
 import com.cx.wxs.dto.UUserDto;
 import com.cx.wxs.service.DCatalogService;
+import com.cx.wxs.service.DDiaryService;
 
 /**
  * @author 陈义
@@ -28,6 +29,8 @@ public class CatalogAction extends BaseDiaryAction{
 
 	@Resource
 	private DCatalogService catalogService;
+	@Resource
+	private DDiaryService diaryService;
 	/**
 	 * 获取文章分类目录
 	 * @param vip
@@ -48,6 +51,8 @@ public class CatalogAction extends BaseDiaryAction{
 	    List<DCatalogDto> list=catalogService.getDCatalogList(catalogDto);
 		return list;
 	}
+	
+
 	
 	
 	
