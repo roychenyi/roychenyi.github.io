@@ -51,25 +51,12 @@ import com.cx.wxs.utils.ClientInfo;
  * @author 陈义
  * @date   2016-4-7 下午4:03:13
  */
-@Controller
+@Controller("DdiaryAction")
 @RequestMapping("/{vip}/article")
 public class DiaryAction extends BaseDiaryAction{
-	@Resource
-	private UUserService userService;
+
 	@Resource
 	private DDiaryService diaryService;
-	@Resource
-	private BSiteService siteService;
-	@Resource
-	private BConfigService configService;
-	@Resource
-	private DCatalogService catalogService;
-	@Resource
-	private SysTypeService sysTypeService;
-	@Resource
-	private DAccessService accessService;
-    @Resource
-    private DFavoriteService favoriteService;
 	@Resource
 	private DReply1Service reply1Service;
 	@Resource

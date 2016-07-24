@@ -16,7 +16,7 @@ import com.cx.wxs.service.DDiaryService;
  * @date   2016-6-24 下午11:23:47
  *首页的文章管理
  */
-@Controller
+@Controller("IndexDiaryAction")
 public class DiaryAction {
 
 	@Resource
