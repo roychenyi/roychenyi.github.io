@@ -61,19 +61,29 @@
 </div>
 </div>
 #parse("layout/footer.vm")	
-#jquery
+##jquery
+$Jjquery
+$Jbootstarp
+$JmetisMenu
+$Jslimscroll
+<!-- Custom and plugin javascript -->
+$Jmian
+$Jpace
+$Jhanger
 #if($author.username==$user.username&&$author.BSiteDto.logo)
 
 #parse("layout/user/l_avatar.vm")
 
 #end
 <!-- Custom and plugin javascript -->
-<script src="#libstatic()/js/plugins/pace/pace.min.js"></script>
-<script src="#mystatic()/js/main.js"></script>
-<script src='#mystatic()/js/site/hanger.js'></script>
+##<script src="#libstatic()/js/plugins/pace/pace.min.js"></script>
+##<script src="#mystatic()/js/main.js"></script>
+##<script src='#mystatic()/js/site/hanger.js'></script>
 #if($author.username==$user.username)
-	<script src='#libstatic()/js/plugins/cropper/cropper.min.js'></script>
-	<script src='#libstatic()/js/plugins/cropper/cropper-tool.js'></script>
+	$Jcropper
+	$Jcropper-tool
+	##<script src='#libstatic()/js/plugins/cropper/cropper.min.js'></script>
+	##<script src='#libstatic()/js/plugins/cropper/cropper-tool.js'></script>
 	#end
 #if($extjs)
 $extjs

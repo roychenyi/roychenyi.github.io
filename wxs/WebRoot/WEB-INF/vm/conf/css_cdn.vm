@@ -5,7 +5,7 @@
 #set($Cmycss="/static/my/css")
 
 #set($Cbootstrap="<link href='http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet'>")   
-#set($Cfont-awesome="<link href='cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'>")
+#set($Cfont-awesome="<link href='http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'>")
 #set($Canimate="<link href='http://apps.bdimg.com/libs/animate.css/3.1.0/animate.min.css' rel='stylesheet'> ")   
 ##timeCircles 时间倒计时
 #set($CtimeCircles="<link href='http://cdn.staticfile.org/timecircles/1.5.3/TimeCircles.min.css' rel='stylesheet' />")

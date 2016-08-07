@@ -1,5 +1,5 @@
 #set($disable_seachable=true)
-#parse("conf/js.vm")
+##parse("conf/js.vm")
 #html_doctype()
 <head>
 	#parse("layout/head.vm")
@@ -10,10 +10,17 @@
 $screen_content
 
 #parse("layout/footer.vm")	
-#jquery
+##jquery
+$Jjquery
+$Jbootstarp
+$JmetisMenu
+$Jslimscroll
 <!-- Custom and plugin javascript -->
-<script src="#rootUrl()/js/plugins/pace/pace.min.js"></script>
-<script src="#rootUrl()/js/main.js"></script>
+$Jmian
+$Jpace
+##<!-- Custom and plugin javascript -->
+##<script src="#rootUrl()/js/plugins/pace/pace.min.js"></script>
+##<script src="#rootUrl()/js/main.js"></script>
 #if($extjs)
 $extjs
 #end

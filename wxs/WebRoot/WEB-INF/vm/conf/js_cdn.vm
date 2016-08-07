@@ -14,7 +14,7 @@
 ##cookie
 #set($Jcookie="<script src='http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.js'></script>")
 ##layer
-#set($Jlayer="http://apps.bdimg.com/libs/layer/2.1/layer.js")
+#set($Jlayer="<script src='http://apps.bdimg.com/libs/layer/2.1/layer.js'></script>")
 ##handlebars
 #set($Jhandlebars="http://apps.bdimg.com/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js")
 ##dataTables
@@ -33,7 +33,7 @@
 ##用户检查
 #set($JuserCheck="<script src='$Jmyjs/user-check.js'></script>")
 ##主函数
-#set($Jmian="<script src='$Jmyjs/mian.js'></script><br>")
+#set($Jmian="<script src='$Jmyjs/main.js'></script><br>")
 ##cropper
 #set($Jcropper="http://cdn.staticfile.org/cropper/2.2.1/cropper.min.js")
 #set($Jcropper-tool="<script src='$Jlibjs/plugins/cropper/cropper-tool.js'></script>")
