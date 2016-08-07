@@ -1,6 +1,6 @@
 #set($layout = "layout/index.vm")
 #set($page_title="空间设置-"+$user.nickname)
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$Jsetting+$Jlayer+$Jcookie)
 
 <div class="row"> 

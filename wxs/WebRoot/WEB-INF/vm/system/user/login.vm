@@ -1,6 +1,6 @@
 #set($layout = "layout/normal.vm")
 #set($page_title="后台登陆")
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$Jlayer+$JuserCheck)
 ##set($extjs="<!--javascrpt-plugins-layer--><script src='#rootUrl()/js/plugins/layer/layer.js'></script><script src='#rootUrl()/js/user-check.js'></script>")
 ##页面主体

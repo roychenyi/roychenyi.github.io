@@ -1,5 +1,6 @@
 #set($layout = "layout/index.vm")
 #set($page_title="隐私设置-"+$user.nickname)
+#parse("layout/global.vm")
 
 <div class="row"> 
     <div class="col-md-4">

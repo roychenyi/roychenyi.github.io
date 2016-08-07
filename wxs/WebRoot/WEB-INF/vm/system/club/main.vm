@@ -1,6 +1,6 @@
 #set($layout = "layout/system/l_admin.vm")
 #set($page_title="文学社管理")
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$Jlayer+$JsysClub)
 <div class="col-lg-4">
         <div class="ibox float-e-margins">

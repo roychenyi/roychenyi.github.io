@@ -1,4 +1,4 @@
 #set($layout = "layout/system/l_admin.vm")
 #set($page_title="地理信息管理")
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$JsysClub)

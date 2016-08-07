@@ -1,0 +1,10 @@
+##全局变量控制
+
+##设置URL
+#set($home_url="http://localhost:8080/dlog")
+##localhost 本地环境设置
+#parse("conf/js.vm")
+#parse("conf/css.vm")
+##生产环境设置，使用CDN
+##parse("conf/js_cdn.vm")
+##parse("conf/css_cdn.vm")

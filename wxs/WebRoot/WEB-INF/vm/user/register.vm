@@ -1,6 +1,6 @@
 #set($layout = "layout/index.vm")
 #set($page_title="注册")
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$Jlayer+$JuserCheck)
 ##set($extjs="<!--javascrpt-plugins-layer--><script src='$link.getContextURL()/js/plugins/layer/layer.js'></script><script src='#rootUrl()/js/user-check.js'></script>")
 

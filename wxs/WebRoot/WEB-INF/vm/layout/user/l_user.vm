@@ -4,7 +4,7 @@
 <head>
 	#parse("layout/head.vm")
 	#if($author.username==$user.username)
-		<link href='#rootUrl()/js/plugins/cropper/cropper.min.css' rel='stylesheet' />
+		<link href='#libstatic()/js/plugins/cropper/cropper.min.css' rel='stylesheet' />
 	#end
 </head>
 <body class="top-navigation gray-bg">## style="background: url(#rootUrl()/images/head_bg.jpg) no-repeat 0 0;background-color: #E2E2E2;">
@@ -14,7 +14,7 @@
     <div class="wrapper wrapper-content">
         <div class="container">
 			<div class="row">
-                <div class="blog_headarea" style="background-image: url(#rootUrl()/images/head_bg.jpg);">
+                <div class="blog_headarea" style="background-image: url(#libstatic()/images/head_bg.jpg);">
 ##<div class="pull-right">统计</div>
 <!--挂件-->
 <div id="hanger" class="blog_hanger">
@@ -68,12 +68,12 @@
 
 #end
 <!-- Custom and plugin javascript -->
-<script src="#rootUrl()/js/plugins/pace/pace.min.js"></script>
-<script src="#rootUrl()/js/main.js"></script>
-<script src='#rootUrl()/js/site/hanger.js'></script>
+<script src="#libstatic()/js/plugins/pace/pace.min.js"></script>
+<script src="#mystatic()/js/main.js"></script>
+<script src='#mystatic()/js/site/hanger.js'></script>
 #if($author.username==$user.username)
-	<script src='#rootUrl()/js/plugins/cropper/cropper.min.js'></script>
-	<script src='#rootUrl()/js/plugins/cropper/cropper-tool.js'></script>
+	<script src='#libstatic()/js/plugins/cropper/cropper.min.js'></script>
+	<script src='#libstatic()/js/plugins/cropper/cropper-tool.js'></script>
 	#end
 #if($extjs)
 $extjs

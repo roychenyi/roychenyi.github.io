@@ -24,6 +24,7 @@ import com.cx.wxs.service.IImageService;
 import com.cx.wxs.service.UUserService;
 import com.cx.wxs.utils.DateUtils;
 import com.cx.wxs.utils.ClientInfo;
+import com.cx.wxs.utils.PropertiesUtils;
 import com.cx.wxs.utils.imageUtils;
 
 /**
@@ -49,13 +50,14 @@ public class ImageAction {
 			@RequestParam(value = "avatar_file") MultipartFile imageFile, HttpServletRequest request,HttpServletResponse response){
 		IImageDto imageDto=new IImageDto();
 		//获取服务器的实际路径
- 		String realPath = request.getSession().getServletContext().getRealPath("/");
+ 	//	String realPath = request.getSession().getServletContext().getRealPath("/");
 	    System.out.println("x:"+x+"y:"+y+"width:"+width+"height:"+height+"degree:"+degree);
-		System.out.println(realPath);
+	//	System.out.println(realPath);
 		//需要上传的路径，我的路径根据用户的和当前日期划分路径
-		String resourcePath="upload/image";
+		String resourcePath=PropertiesUtils.getString(PropertiesUtils.UPLOAD_PATH);
+		String imagePath="/image";
 		UUserDto userDto=(UUserDto) request.getSession().getAttribute("user");
-		resourcePath+="/"+userDto.getUserId();
+		imagePath+="/"+userDto.getUserId();
 	
 		 if(imageFile!=null){
 			 try{
@@ -66,8 +68,9 @@ public class ImageAction {
 			 int year=DateUtils.getYear(date);
 			 int month=DateUtils.getMonth(date);
 			 int day=DateUtils.getDay(date);
-			 resourcePath+="/"+year+"/"+month+"/"+day+"/";
-			 File dir=new File(realPath+resourcePath);
+			 imagePath+="/"+year+"/"+month+"/"+day+"/";
+			 resourcePath+=imagePath;
+			 File dir=new File(resourcePath);
 			 if(!dir.exists()){
 				 dir.mkdirs();
 			 }
@@ -75,7 +78,7 @@ public class ImageAction {
 			 File file=new File(dir,date.getTime()+".jpg");
 			 imageFile.transferTo(file);
 			 if(file.exists()){
-				 String src=realPath+resourcePath+date.getTime();
+				 String src=resourcePath+date.getTime();
 				 
 				 boolean[] flag=new boolean[6];
 				 //旋转后剪裁图片
@@ -90,6 +93,7 @@ public class ImageAction {
 				 flag[5]= imageUtils.scale2(src+".jpg", src+"_200.jpg", 200, 200, true);
 				 
 				 if(flag[0]&&flag[1]&&flag[2]&&flag[3]&&flag[4]&&flag[5]){
+					 imagePath="/upload"+imagePath;
 					 //图像处理完成，将数据写入数据库中
 					 imageDto.setYear((short) year);
 					 imageDto.setMount((short)month);
@@ -97,8 +101,8 @@ public class ImageAction {
 					 imageDto.setUUserDto(userDto);
 					 imageDto.setName(date.getTime()+".jpg");
 					 imageDto.setFileName(name);
-					 imageDto.setUrl(resourcePath+date.getTime()+".jpg");
-					 imageDto.setPreviewUrl(resourcePath+date.getTime()+"_200.jpg");
+					 imageDto.setUrl(imagePath+date.getTime()+".jpg");
+					 imageDto.setPreviewUrl(imagePath+date.getTime()+"_200.jpg");
 					 imageDto.setTime(new Timestamp(date.getTime()));
 					 imageDto.setWidth((short)imageUtils.getImageWidth(file.getPath()));
 					 imageDto.setHeight((short)imageUtils.getImageHeight(file.getPath()));
@@ -106,8 +110,8 @@ public class ImageAction {
 					 imageDto.setClientAgent(ClientInfo.getAgent(request));
 					 imageDto.setClientType((short)(ClientInfo.isMoblie(request)?1:0));
 					 imageDto.setStatus((short)1);
-					 imageDto.setExt3(resourcePath+date.getTime()+"_s_200.jpg");
-					 imageDto.setExt4(resourcePath+date.getTime()+"_s_100.jpg");
+					 imageDto.setExt3(imagePath+date.getTime()+"_s_200.jpg");
+					 imageDto.setExt4(imagePath+date.getTime()+"_s_100.jpg");
 					//设置相册，头像设置进入默认相册
 					 IAlbumDto albumDto=new IAlbumDto();
 					 albumDto.setAlbumId(1);
@@ -115,10 +119,10 @@ public class ImageAction {
 					 int id= iImageService.addIImage(imageDto);
 					 if(id>0){
 						 BSiteDto siteDto=userDto.getBSiteDto();
-						 siteDto.setLogo(resourcePath+date.getTime()+"_s_100.jpg");
+						 siteDto.setLogo(imagePath+date.getTime()+"_s_100.jpg");
 						 siteDto.setLastTime( new Timestamp(date.getTime()));
 						 bSiteService.updateBSite(siteDto);
-						 userDto.setPortrait(resourcePath+date.getTime()+"_s_50.jpg");
+						 userDto.setPortrait(imagePath+date.getTime()+"_s_50.jpg");
 						 uUserService.updateUuser(userDto);
 						 userDto=uUserService.getUuser(userDto);
 						 imageDto.setStatusFlag("1");

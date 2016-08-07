@@ -1,10 +1,17 @@
 ##css的基本路径
-#set($CcssURL="#rootUrl()/css")
+##set($Clibcss="#libstatic()/css")
+##set($Cmycss="#mystatic()/css")
+#set($Clibcss="/static/lib/css")
+#set($Cmycss="/static/my/css")
+#set($Cbootstrap="<link href='$Clibcss/bootstrap.min.css' rel='stylesheet'>")   
+#set($Cfont-awesome="<link href='$Clibcss/plugins/font-awesome-4.5.0/css/font-awesome.min.css' rel='stylesheet'>")
+#set($Canimate="<link href='$Clibcss/animate.css' rel='stylesheet'> ")   
+#set($Cstyle="<link href='static/my/css/style.css?v=1.0' rel='stylesheet'>")
 ##timeCircles 时间倒计时
-#set($CtimeCircles="<link href='#rootUrl()/css/plugins/TimeCireles/TimeCircles.css' rel='stylesheet' />")
+#set($CtimeCircles="<link href='$Clibcss/plugins/TimeCireles/TimeCircles.css' rel='stylesheet' />")
 ##wangEditor
-#set($CwangEditor="<link href='#rootUrl()/css/plugins/wangEditor/wangEditor.min.css' rel='stylesheet' />")
+#set($CwangEditor="<link href='$Clibcss/plugins/wangEditor/wangEditor.min.css' rel='stylesheet' />")
 ##cropper
-#set($Ccropper="<link href='#rootUrl()/js/plugins/cropper/cropper.min.css' rel='stylesheet' />")
+#set($Ccropper="<link href='/static/lib/js/plugins/cropper/cropper.min.css' rel='stylesheet' />")
 ##dataTables
-#set($CdataTables="<link href='#rootUrl()/css/plugins/dataTables/dataTables.bootstrap.css' rel='stylesheet' />")
+#set($CdataTables="<link href='/static/lib/css/plugins/dataTables/dataTables.bootstrap.css' rel='stylesheet' />")

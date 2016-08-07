@@ -1,5 +1,6 @@
 #set($layout = "layout/index.vm")
 #set($page_title="404")
+#parse("layout/global.vm")
 
 <!--404页面主体-->
 	<div class="middle-box text-center animated fadeInDown">

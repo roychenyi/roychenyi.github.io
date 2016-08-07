@@ -1,5 +1,5 @@
 #set($disable_seachable=true)
-
+#parse("conf/js.vm")
 #html_doctype()
 <head>
 	#parse("layout/head.vm")

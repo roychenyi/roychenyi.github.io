@@ -1,0 +1,62 @@
+##js目录
+##set($Jlibjs="#libstatic/js")
+##set($Jmyjs="#mystatic()/js")
+#set($Jlibjs="/static/lib/js")
+#set($Jmyjs="/static/my/js")
+
+##lib-js
+#set($Jjquery="<script src='http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js'></script>")
+#set($Jbootstarp="<script src='http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js'></script>")
+#set($JmetisMenu="<script src='http://cdn.staticfile.org/metisMenu/2.2.0/metisMenu.min.js'></script> ")
+#set($Jslimscroll="<script src='http://cdn.staticfile.org/jQuery-slimScroll/1.3.7/jquery.slimscroll.min.js'></script> ")
+#set($Jpace="<script src='http://cdn.staticfile.org/pace/1.0.2/pace.min.js'></script>")
+#set($JTimeCircles="<script src='http://cdn.staticfile.org/timecircles/1.5.3/TimeCircles.min.js'>")
+##cookie
+#set($Jcookie="<script src='http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.js'></script>")
+##layer
+#set($Jlayer="http://apps.bdimg.com/libs/layer/2.1/layer.js")
+##handlebars
+#set($Jhandlebars="http://apps.bdimg.com/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js")
+##dataTables
+#set($JdataTables="<script src='http://cdn.staticfile.org/datatables/1.10.10/js/jquery.dataTables.min.js'></script>"
+     +"<script src='http://cdn.staticfile.org/datatables/1.10.10/js/dataTables.bootstrap.min.js'></script>" )
+##wow
+#set($Jwow="<script src='http://apps.bdimg.com/libs/wow/0.1.6/wow.min.js'></script>")
+##easing
+#set($Jeasing="<script src='http://cdn.staticfile.org/jquery-easing/1.3/jquery.easing.min.js'></script>")
+##scrollTo
+#set($JscrollTo="<script src='http://apps.bdimg.com/libs/jquery-scrollUp/2.1.0/jquery.scrollUp.js'></script>")
+
+##my js
+##定时器
+#set($Jtimer="<script src='$Jmyjs/timer.js'></script><br>")
+##用户检查
+#set($JuserCheck="<script src='$Jmyjs/user-check.js'></script>")
+##主函数
+#set($Jmian="<script src='$Jmyjs/mian.js'></script><br>")
+##cropper
+#set($Jcropper="http://cdn.staticfile.org/cropper/2.2.1/cropper.min.js")
+#set($Jcropper-tool="<script src='$Jlibjs/plugins/cropper/cropper-tool.js'></script>")
+#set($Jcropper-tool1="<script src='$Jlibjs/plugins/cropper/cropper-tool1.js'></script>")
+##setting
+#set($Jsetting="<script src='$Jmyjs/setting.js'></script>")
+##wangEditor
+#set($JwangEditor="<script src='$Jlibjs/plugins/wangEditor/wangEditor.min.js'></script>")
+#set($Jeditor="<script src='$Jlibjs/plugins/wangEditor/edite.js'></script>")
+##article_tool
+#set($Jarticle_tool="<script src='$Jmyjs/diary/article_tool.js'></script>")
+##comment
+#set($Jarticle_comment="<script src='$Jmyjs/diary/article_comment.js'></script>")
+##时间转换器
+#set($Jtime="<script src='$Jlibjs/plugins/time/time.js'></script>")
+##挂件
+#set($Jhanger="<script src='$Jmyjs/site/hanger.js'></script>")
+##用户主函数
+#set($JuserMain="<script src='$Jmyjs/site/userMain.js'></script>")
+##系统社团
+#set($JsysClub="<script src='$Jmyjs/admin/sys-club.js'></script>")
+##系统敏感词
+#set($JsysIllegal="<script src='$Jmyjs/admin/SysIllegal.js'></script>")
+
+##friend
+#set($Jfriend="<script src='$Jmyjs/site/friend.js'></script>")

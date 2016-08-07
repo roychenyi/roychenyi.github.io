@@ -1,10 +1,10 @@
 #set($layout = "layout/index.vm")
 #set($page_title="注册验证结果页")
-#parse("conf/css.vm")
+#parse("layout/global.vm")
 #set($extcss=$CtimeCircles)
 ##set($extcss="<link href='#rootUrl()/css/TimeCireles/TimeCircles.css' rel='stylesheet' />")
 
-set($extjs="<script src='#rootUrl()/js/plugins/TimeCircles/TimeCircles.js'></script><br><script src='#rootUrl()/js/timer.js'></script>"
+set($extjs=$JTimeCircles+$Jtimer
 +"<script>setInterval(function(){window.location='#rootUrl()/login';},1000*5);</script>")
 
 <!--验证成功界面-->

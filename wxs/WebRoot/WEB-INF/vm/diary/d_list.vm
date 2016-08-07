@@ -1,6 +1,6 @@
 #set($layout = "layout/user/l_user.vm")
 #set($page_title="文章列表-"+"$author.nickname")
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$Jlayer+$Jarticle_tool)
 
 <!--日志列表-主体开始-->

@@ -21,14 +21,19 @@
 	</div>
 
 </div>
-</div>
+</div> 
 #parse("layout/footer.vm")	
-#jquery
+##jquery
+$Jjquery
+$Jbootstarp
+$JmetisMenu
+$Jslimscroll
 <!-- Custom and plugin javascript -->
-<script src="#rootUrl()/js/plugins/pace/pace.min.js"></script>
-<script src="#rootUrl()/js/main.js"></script>
+$Jmian
+##<script src="#mystatic()/js/main.js"></script>
 #if($extjs)
 $extjs
 #end
 </body>	
 </html>
+	

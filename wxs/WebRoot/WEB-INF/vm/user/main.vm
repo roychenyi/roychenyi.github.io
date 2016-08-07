@@ -1,6 +1,7 @@
 #set($layout = "layout/user/l_user.vm")
 #set($page_title="$author.BSiteDto.title")
-#parse("conf/js.vm")
+#parse("layout/global.vm")
+
 #set($extjs=$JuserMain+$Jlayer+$Jfriend)
 #* 
 #if($author.username==$user.username)

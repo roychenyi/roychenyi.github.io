@@ -1,5 +1,6 @@
 #set($layout = "layout/index.vm")
 #set($page_title="搜索")
+#parse("layout/global.vm")
 #* 
 #if($author.username==$user.username)
 #parse("conf/js.vm")

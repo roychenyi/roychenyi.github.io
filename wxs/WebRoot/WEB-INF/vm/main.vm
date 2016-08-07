@@ -1,6 +1,6 @@
 #set($layout = "layout/index1.vm") 
 #set($page_title="文学社-首页")
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$Jlayer+$JuserCheck)
  <!--主体部分-->
 
@@ -61,11 +61,12 @@ $html.image_src($user.portrait)<br>
 			-->
 
 
-<section id="page1" class="index-page" style="background: url(#rootUrl()/images/index1.jpg) no-repeat 0 0;background-position:center center; ">
+<section id="page1" class="index-page" style="background: url(#rootUrl()/static/lib/images/index1.jpg) no-repeat 0 0;background-position:center center; ">
 
 
     <div class="slogan">
         <h1>准备好了吗？</h1>
+
         <h2>为梦想启程！</h2>
         <h3>我只愿与喜欢文字的你相遇</h3>
         <h3>或许，我们会孤独；或许，我们失望失态失去别人的期望；或许，我只是孤独的文字旅行者</h3>
@@ -81,7 +82,7 @@ $html.image_src($user.portrait)<br>
 <!-- /Section: intro -->
 
 <!-- Section: about -->
-<section id="page2" class=" index-page text-center" style="background: url(#rootUrl()/images/index2.jpg) no-repeat 0 0;background-position:center center;">
+<section id="page2" class=" index-page text-center" style="background: url(#rootUrl()/static/lib/images/index2.jpg) no-repeat 0 0;background-position:center center;">
 <div class="slogan">
     <h3>陌生的城市里你是否会感受一份寂寞醉人？</h3>
     <h3>有时候，你也会感觉疲倦</h3>
@@ -94,7 +95,7 @@ $html.image_src($user.portrait)<br>
 
 
 <!-- Section: services -->
-<section id="page3" class="index-page" style="background: url(#rootUrl()/images/index3.jpg) no-repeat 0 0;background-position:center center;">
+<section id="page3" class="index-page" style="background: url(#rootUrl()/static/lib/images/index3.jpg) no-repeat 0 0;background-position:center center;">
     <div class="slogan">
         <h2>致喜欢文字有梦想你</h2>
         <h4>不开心是一天，开心也是一天，何不开开心心每一天</h4>

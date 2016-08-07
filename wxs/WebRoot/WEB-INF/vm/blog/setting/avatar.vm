@@ -1,8 +1,7 @@
 #set($layout = "layout/index.vm")
 #set($page_title="头像设置-"+$user.nickname)
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$Jcropper+$Jcropper-tool1+$Jlayer)
-#parse("conf/css.vm")
 #set($extcss=$Ccropper)
 
 <div class="row"> 

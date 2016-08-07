@@ -1,48 +1,60 @@
 ##js目录
-#set($JjsURL="#rootUrl()/js")
-##定时器
-#set($Jtimer="<script src='#rootUrl()/js/timer.js'></script><br>")
-##用户检查
-#set($JuserCheck="<script src='#rootUrl()/js/user-check.js'></script>")
-##主函数
-#set($Jmian="<script src='#rootUrl()/js/mian.js'></script><br>")
+##set($Jlibjs="#libstatic/js")
+##set($Jmyjs="#mystatic()/js")
+#set($Jlibjs="/static/lib/js")
+#set($Jmyjs="/static/my/js")
+
+#set($Jjquery="<script src='$Jlibjs/jquery-2.1.4.min.js'></script>")
+#set($Jbootstarp="<script src='$Jlibjs/bootstrap.min.js'></script>")
+#set($JmetisMenu="<script src='$Jlibjs/plugins/metisMenu/jquery.metisMenu.js'></script> ")
+#set($Jslimscroll="<script src='$Jlibjs/plugins/slimscroll/jquery.slimscroll.min.js'></script> ")
+#set($Jpace="<script src='$Jlibjs/plugins/pace/pace.min.js'></script>")
+#set($JTimeCircles="<script src='$Jlibjs/plugins/TimeCircles/TimeCircles.js'>")
 ##layer
-#set($Jlayer="<script src='#rootUrl()/js/plugins/layer/layer.js'></script>")
-##cropper
-#set($Jcropper="<script src='#rootUrl()/js/plugins/cropper/cropper.min.js'></script>")
-#set($Jcropper-tool="<script src='#rootUrl()/js/plugins/cropper/cropper-tool.js'></script>")
-#set($Jcropper-tool1="<script src='#rootUrl()/js/plugins/cropper/cropper-tool1.js'></script>")
-##setting
-#set($Jsetting="<script src='#rootUrl()/js/setting.js'></script>")
-##wangEditor
-#set($JwangEditor="<script src='#rootUrl()/js/plugins/wangEditor/wangEditor.min.js'></script>")
-#set($Jeditor="<script src='#rootUrl()/js/plugins/wangEditor/edite.js'></script>")
+#set($Jlayer="<script src='$Jlibjs/plugins/layer/layer.js'></script>")
 ##cookie
-#set($Jcookie="<script src='#rootUrl()/js/plugins/cookie/jquery.cookie.js'></script>")
-##article_tool
-#set($Jarticle_tool="<script src='#rootUrl()/js/diary/article_tool.js'></script>")
-##comment
-#set($Jarticle_comment="<script src='#rootUrl()/js/diary/article_comment.js'></script>")
-##时间转换器
-#set($Jtime="<script src='#rootUrl()/js/plugins/time/time.js'></script>")
-##挂件
-#set($Jhanger="<script src='#rootUrl()/js/site/hanger.js'></script>")
-##用户主函数
-#set($JuserMain="<script src='#rootUrl()/js/site/userMain.js'></script>")
+#set($Jcookie="<script src='$Jlibjs/plugins/cookie/jquery.cookie.js'></script>")
 ##handlebars
-#set($Jhandlebars="<script src='#rootUrl()/js/plugins/handlebars/handlebars-v4.0.5.js'></script>")
+#set($Jhandlebars="<script src='$Jlibjs/plugins/handlebars/handlebars-v4.0.5.js'></script>")
 ##dataTables
-#set($JdataTables="<script src='#rootUrl()/js/plugins/dataTables/jquery.dataTables.js'></script>"
-     +"<script src='#rootUrl()/js/plugins/dataTables/dataTables.bootstrap.js'></script>" )
-##系统社团
-#set($JsysClub="<script src='#rootUrl()/js/admin/sys-club.js'></script>")
-##系统敏感词
-#set($JsysIllegal="<script src='#rootUrl()/js/admin/SysIllegal.js'></script>")
+#set($JdataTables="<script src='$Jlibjs/plugins/dataTables/jquery.dataTables.js'></script>"
+     +"<script src='$Jlibjs/plugins/dataTables/dataTables.bootstrap.js'></script>" )
 ##wow
-#set($Jwow="<script src='#rootUrl()/js/pligins/wow.min.js'></script>")
+#set($Jwow="<script src='$Jlibjs/pligins/wow.min.js'></script>")
 ##easing
-#set($Jeasing="<script src='#rootUrl()/js/pligins/jquery.easing.min.js'></script>")
+#set($Jeasing="<script src='$Jlibjs/pligins/jquery.easing.min.js'></script>")
 ##scrollTo
-#set($JscrollTo="<script src='#rootUrl()/js/pligins/jquery.scrollTo.min.js'></script>")
+#set($JscrollTo="<script src='$Jlibjs/pligins/jquery.scrollTo.min.js'></script>")
+	 
+##定时器
+#set($Jtimer="<script src='$Jmyjs/timer.js'></script><br>")
+##用户检查
+#set($JuserCheck="<script src='$Jmyjs/user-check.js'></script>")
+##主函数
+#set($Jmian="<script src='$Jmyjs/main.js'></script><br>")
+##cropper
+#set($Jcropper="<script src='$Jlibjs/plugins/cropper/cropper.min.js'></script>")
+#set($Jcropper-tool="<script src='$Jlibjs/plugins/cropper/cropper-tool.js'></script>")
+#set($Jcropper-tool1="<script src='$Jlibjs/plugins/cropper/cropper-tool1.js'></script>")
+##setting
+#set($Jsetting="<script src='$Jmyjs/setting.js'></script>")
+##wangEditor
+#set($JwangEditor="<script src='$Jlibjs/plugins/wangEditor/wangEditor.min.js'></script>")
+#set($Jeditor="<script src='$Jlibjs/plugins/wangEditor/edite.js'></script>")
+##article_tool
+#set($Jarticle_tool="<script src='$Jmyjs/diary/article_tool.js'></script>")
+##comment
+#set($Jarticle_comment="<script src='$Jmyjs/diary/article_comment.js'></script>")
+##时间转换器
+#set($Jtime="<script src='$Jlibjs/plugins/time/time.js'></script>")
+##挂件
+#set($Jhanger="<script src='$Jmyjs/site/hanger.js'></script>")
+##用户主函数
+#set($JuserMain="<script src='$Jmyjs/site/userMain.js'></script>")
+##系统社团
+#set($JsysClub="<script src='$Jmyjs/admin/sys-club.js'></script>")
+##系统敏感词
+#set($JsysIllegal="<script src='$Jmyjs/admin/SysIllegal.js'></script>")
+
 ##friend
-#set($Jfriend="<script src='#rootUrl()/js/site/friend.js'></script>")
+#set($Jfriend="<script src='$Jmyjs/site/friend.js'></script>")

@@ -1,0 +1,20 @@
+##css的基本路径
+##set($Clibcss="#libstatic()/css")
+##set($Cmycss="#mystatic()/css")
+#set($Clibcss="/static/lib/css")
+#set($Cmycss="/static/my/css")
+
+#set($Cbootstrap="<link href='http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet'>")   
+#set($Cfont-awesome="<link href='cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'>")
+#set($Canimate="<link href='http://apps.bdimg.com/libs/animate.css/3.1.0/animate.min.css' rel='stylesheet'> ")   
+##timeCircles 时间倒计时
+#set($CtimeCircles="<link href='http://cdn.staticfile.org/timecircles/1.5.3/TimeCircles.min.css' rel='stylesheet' />")
+##wangEditor
+#set($CwangEditor="<link href='$Clibcss/plugins/wangEditor/wangEditor.min.css' rel='stylesheet' />")
+##cropper
+#set($Ccropper="<link href='http://cdn.staticfile.org/cropper/2.2.1/cropper.min.css' rel='stylesheet' />")
+##dataTables
+#set($CdataTables="<link href='http://cdn.staticfile.org/datatables/1.10.10/css/dataTables.bootstrap.min.css' rel='stylesheet' />")
+
+##my-css
+#set($Cstyle="<link href='static/my/css/style.css?v=1.0' rel='stylesheet'>")

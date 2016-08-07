@@ -1,9 +1,9 @@
 #set($layout = "layout/user/l_user.vm")
 #set($page_title=$diary.title+"-"+$author.nickname)
 
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$JwangEditor+$Jarticle_comment+$Jlayer+$Jarticle_tool)
-#parse("conf/css.vm")
+
 #set($extcss=$CwangEditor)
 
 <!--日志详情-->

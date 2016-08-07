@@ -1,9 +1,9 @@
 #set($layout = "layout/user/l_user.vm")
 #set($page_title="文字编写-"+"$user.nickname")
 
-#parse("conf/js.vm")
+#parse("layout/global.vm")
 #set($extjs=$JwangEditor+$Jeditor+$Jlayer)
-#parse("conf/css.vm")
+
 #set($extcss=$CwangEditor)
 
 <!--文字编辑器-->

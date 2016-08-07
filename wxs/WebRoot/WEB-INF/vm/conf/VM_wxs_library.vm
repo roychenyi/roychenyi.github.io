@@ -8,19 +8,23 @@
 
 #macro(rootUrl)
 $link.getRoot()#end
+#macro(libstatic)
+$link.getRoot()/static/lib#end
+#macro(mystatic)
+$link.getRoot()/static/my#end
 
 #macro(bootstrap)
-   <link href="#rootUrl()/css/bootstrap.min.css" rel="stylesheet">
-   <link href="#rootUrl()/css/plugins/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
-   <link href="#rootUrl()/css/animate.css" rel="stylesheet">   
+   <link href="#libstatic()/css/bootstrap.min.css" rel="stylesheet">
+   <link href="#libstatic()/css/plugins/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href="#libstatic()/css/animate.css" rel="stylesheet">   
 #end
 
 #macro(jquery)
 <!-- Mainly scripts -->
-<script src="#rootUrl()/js/jquery-2.1.4.min.js"></script>
-<script src="#rootUrl()/js/bootstrap.min.js"></script>
-<script src="#rootUrl()/js/plugins/metisMenu/jquery.metisMenu.js"></script>          <!--创建手风琴效果的可折叠菜单-->
-<script src="#rootUrl()/js/plugins/slimscroll/jquery.slimscroll.min.js"></script> 
+<script src="#libstatic()/js/jquery-2.1.4.min.js"></script>
+<script src="#libstatic()/js/bootstrap.min.js"></script>
+<script src="#libstatic()/js/plugins/metisMenu/jquery.metisMenu.js"></script>          <!--创建手风琴效果的可折叠菜单-->
+<script src="#libstatic()/js/plugins/slimscroll/jquery.slimscroll.min.js"></script> 
 #end
 
  

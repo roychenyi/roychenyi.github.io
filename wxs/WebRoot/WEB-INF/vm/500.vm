@@ -1,5 +1,6 @@
 #set($layout = "layout/index.vm")
 #set($page_title="500-内部服务器错误")
+#parse("layout/global.vm")
 <!--500页面开始-->
     <div class="middle-box text-center animated fadeInDown">
         <h1>500</h1>

@@ -53,7 +53,7 @@
 							<li><a href="#rootUrl()/change/newpassword">修改密码</a>
                             </li>
 							<li>
-                        <a href="#rootUrl()/logout" onclick="javascript:jQuery.cookie('user', null);" >
+                        <a href="#rootUrl()/logout"  > ##onclick="javascript:jQuery.cookie('user', null);"
                             <i class="fa fa-sign-out"></i> 退出
                         </a>
                     </li>
