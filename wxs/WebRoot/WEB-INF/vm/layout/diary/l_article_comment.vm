@@ -9,7 +9,7 @@
 										#foreach($reply1 in $dReply1s)
 											#set($comment_count=($reply1.page - 1) * $reply1.rows + $velocityCount)
                                         <div class="chat-message" id="commentDiv${comment_count}" data-replyId="$reply1.dreplyId">
-                                            <a href="#rootUrl/$reply1.UUserDto.nickname">#if($reply1.UUserDto.portrait)<img class="message-avatar" src="#rootUrl/$reply1.UUserDto.portrait" alt="$reply1.UUserDto.nickname"> #else <img class="img-container" src="#rootUrl()/images/face.png"> #end</a>
+                                            <a href="#rootUrl/$reply1.UUserDto.nickname">#if($reply1.UUserDto.portrait)<img class="message-avatar" src="#rootUrl/$reply1.UUserDto.portrait" alt="$reply1.UUserDto.nickname"> #else <img class="img-container" src="$home_url/images/face.png"> #end</a>
                                             <span><b>${comment_count}楼</b></span>
 											 <span  class="pull-right">
 												<small >$date.format('yyyy/MM/dd HH:mm:ss',$reply1.writeTime) </small>
@@ -80,19 +80,19 @@
 											#if($user)
 											#if($user.BSiteDto.logo)
                                             <div class="chat-user text-center">
-                                                <img class="img-container" src="#rootUrl()/$user.BSiteDto.logo">
+                                                <img class="img-container" src="$home_url/$user.BSiteDto.logo">
                                             </div>
 											#else
 										    <div class="chat-user text-center">
-                                                <img class="img-container" src="#rootUrl()/images/face.png">
+                                                <img class="img-container" src="$home_url/images/face.png">
                                             </div>
 											#end
 											<div class="chat-user-name">$user.nickname</div>
 											#else
 											<div class="chat-user">
 												<p>您还没有登陆，请先登陆了再进行评论</p>
-												<a class="text-info" href="#rootUrl()/login">登陆</a>
-                                                <a class="text-info" href="#rootUrl()/register">注册</a>
+												<a class="text-info" href="$home_url/login">登陆</a>
+                                                <a class="text-info" href="$home_url/register">注册</a>
 											</div>
 											#end
 											

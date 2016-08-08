@@ -17,4 +17,4 @@
 #set($CdataTables="<link href='http://cdn.staticfile.org/datatables/1.10.10/css/dataTables.bootstrap.min.css' rel='stylesheet' />")
 
 ##my-css
-#set($Cstyle="<link href='static/my/css/style.css?v=1.0' rel='stylesheet'>")
+#set($Cstyle="<link href='$Cmycss/style.css?v=1.0' rel='stylesheet'>")

@@ -34,7 +34,7 @@
                     <div>
                         <h3>欢迎创建新文学社</h3>
                         <p id="error_text" class="text-danger text-left"></p>
-                        <form class="m-t" id="clubCreateForm" role="form" action="#rootUrl()/system/club/createCheck">
+                        <form class="m-t" id="clubCreateForm" role="form" action="$home_url/system/club/createCheck">
                             <div class="form-group has-feedback">
                                 <input type="text" id="wxs_name" name="name" class="form-control" placeholder="请输入文学社名字" required="">
                                 <span id="feedback-name" class="form-control-feedback glyphicon"></span>

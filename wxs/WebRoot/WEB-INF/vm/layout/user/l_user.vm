@@ -7,7 +7,7 @@
 		<link href='#libstatic()/js/plugins/cropper/cropper.min.css' rel='stylesheet' />
 	#end
 </head>
-<body class="top-navigation gray-bg">## style="background: url(#rootUrl()/images/head_bg.jpg) no-repeat 0 0;background-color: #E2E2E2;">
+<body class="top-navigation gray-bg">## style="background: url($home_url/images/head_bg.jpg) no-repeat 0 0;background-color: #E2E2E2;">
 #parse("layout/header.vm")
 <div id="wrapper">
 <div id="page-wrapper">
@@ -28,9 +28,9 @@
 </div>
                         <div class="blog_titil">
 							<div>#if($author.username==$user.username) 
-							<div id="face-photo" class="avatar-view"  title="点击更新头像"><img class="img-circle" #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" #else src="#rootUrl()/images/face.png" #end title="$author.nickname" style="width: 100px;height: 100px;" /></div>	
+							<div id="face-photo" class="avatar-view"  title="点击更新头像"><img class="img-circle" #if($author.BSiteDto.logo)  src="$home_url$author.BSiteDto.logo" #else src="$home_url/images/face.png" #end title="$author.nickname" style="width: 100px;height: 100px;" /></div>	
 						    #else
-								<img class="img-circle" #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" title="$author.nickname" #else src="#rootUrl()/images/face.png" #end   style="width: 100px;height: 100px;"/>
+								<img class="img-circle" #if($author.BSiteDto.logo)  src="$home_url$author.BSiteDto.logo" title="$author.nickname" #else src="$home_url/images/face.png" #end   style="width: 100px;height: 100px;"/>
 							#end
                             
 							</div>
@@ -39,13 +39,13 @@
                             <h3 class="no-margins"><small class="text-info">#if($author.USignDto) $author.USignDto.content #end</small></h3>
 							##不显示主页地址
 							##if($author.BSiteDto)
-                            ##<h3 class="no-margins"><small><a href="#rootUrl()$author.BSiteDto.siteUrl">#rootUrl()$author.BSiteDto.siteUrl</a></small></h3>
+                            ##<h3 class="no-margins"><small><a href="$home_url$author.BSiteDto.siteUrl">$home_url$author.BSiteDto.siteUrl</a></small></h3>
 							##end
                         </div>
                         <div class="navbar navbar-default blog_nav">
                             <ul class="nav  navbar-top-links navbar-right ">
-                                <li><a href="#rootUrl()$author.BSiteDto.siteUrl">主页</a></li>|
-                                <li><a href="#rootUrl/$author.nickname/article/" style="">文字</a></li>|
+                                <li><a href="$home_url/$author.BSiteDto.siteUrl">主页</a></li>|
+                                <li><a href="$home_url/$author.nickname/article/" style="">文字</a></li>|
                                 <li><a style="">社团</a></li>|
                                 <li><a style="">关于我</a></li>
                             </ul>

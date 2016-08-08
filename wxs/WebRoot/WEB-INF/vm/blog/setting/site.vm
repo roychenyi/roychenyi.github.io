@@ -8,10 +8,10 @@
     <div class="ibox">
         <div class="ibox-content">
     <ul class="nav nav-pills nav-stacked ">
-        <li ><a href="#rootUrl()/$user.nickname/set/index">基本信息</a></li>
-        <li class="active"><a href="#rootUrl()/$user.nickname/set/site">空间设置</a></li>
-        <li ><a href="#rootUrl()/$user.nickname/set/avatar">用户头像</a></li>
-        <li class="hidden"><a href="#rootUrl()/$user.nickname/set/privacy">隐私设置</a></li>
+        <li ><a href="$home_url/$user.nickname/set/index">基本信息</a></li>
+        <li class="active"><a href="$home_url/$user.nickname/set/site">空间设置</a></li>
+        <li ><a href="$home_url/$user.nickname/set/avatar">用户头像</a></li>
+        <li class="hidden"><a href="$home_url/$user.nickname/set/privacy">隐私设置</a></li>
         <li class="hidden"><a>消息设置</a></li>
         <li class="hidden"><a>偏好设置</a></li>
     </ul>
@@ -29,7 +29,7 @@
                     </div>
                     <div id="title" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <form class="form-horizontal" id="title_form" action="#rootUrl()/$user.nickname/set/updateSiteInfo">
+                            <form class="form-horizontal" id="title_form" action="$home_url/$user.nickname/set/updateSiteInfo">
                                 <h5>您个人空间的标题，最长不得超过10个字</h5>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">标题</label>
@@ -59,7 +59,7 @@
                     </div>
                     <div id="pull" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <form class="form-horizontal" id="pull_form" action="#rootUrl()/$user.nickname/set/pullConfig">
+                            <form class="form-horizontal" id="pull_form" action="$home_url/$user.nickname/set/pullConfig">
                                 <h5>系统默认您的文章为可投递状态(即您可以投递你的文章到文学社或平台首页)，您可以通过下面的选择进行修改</h5>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">投递状态</label>
@@ -103,16 +103,16 @@
 										<li class="list-group-item" id="$catalog.catalogId">个人日记(此分类不支持编辑及删除)</li>
 									#else
 										<li class="list-group-item" id="$catalog.catalogId">
-                                    <form  class="form-horizontal hidden" action="#rootUrl()/$user.nickname/set/setCatalog?UUserDto.userId=$user.userId&catalogId=$catalog.catalogId" ><div class='form-group'><div class='col-sm-5'><input type='text' name='catalogName' data-url='#rootUrl()/$user.nickname/set/checkCatalog?UUserDto.userId=$user.userId' class='form-control' value="$catalog.catalogName"></div> <input type="button" name='sure' class='btn btn-info' value="确定" /> &nbsp;&nbsp;<input type="button" name='reset' class='btn btn-info' value="取消"/></div></form>
+                                    <form  class="form-horizontal hidden" action="$home_url/$user.nickname/set/setCatalog?UUserDto.userId=$user.userId&catalogId=$catalog.catalogId" ><div class='form-group'><div class='col-sm-5'><input type='text' name='catalogName' data-url='$home_url/$user.nickname/set/checkCatalog?UUserDto.userId=$user.userId' class='form-control' value="$catalog.catalogName"></div> <input type="button" name='sure' class='btn btn-info' value="确定" /> &nbsp;&nbsp;<input type="button" name='reset' class='btn btn-info' value="取消"/></div></form>
 
-                                    <div class=""><span>$catalog.catalogName</span><a class="pull-right" title="delete" href="javascript:;" data-url="#rootUrl()/$user.nickname/set/setCatalog?UUserDto.userId=$user.userId&catalogId=$catalog.catalogId&status=delete"  >删除</a>&nbsp;&nbsp;<a class="pull-right" href="javascript:;"  title="edite" >编辑</a>
+                                    <div class=""><span>$catalog.catalogName</span><a class="pull-right" title="delete" href="javascript:;" data-url="$home_url/$user.nickname/set/setCatalog?UUserDto.userId=$user.userId&catalogId=$catalog.catalogId&status=delete"  >删除</a>&nbsp;&nbsp;<a class="pull-right" href="javascript:;"  title="edite" >编辑</a>
                                     </div>
                                    </li>
 									#end
 								#end
                                  #end
                                    <li class="list-group-item hidden" id="catalog_new" >
-                                     <form  class="form-horizontal" action="#rootUrl()/$user.nickname/set/setCatalog?UUserDto.userId=$user.userId" ><div class='form-group'><div class='col-sm-5'><input type='text' name='catalogName' data-url='#rootUrl()/$user.nickname/set/checkCatalog?UUserDto.userId=$user.userId' class='form-control' value=''></div> <input type="submit"  class='btn btn-info' value="确定" /> &nbsp;&nbsp;<input type="button" name='reset' class='btn btn-info' value="取消"/></div></form>
+                                     <form  class="form-horizontal" action="$home_url/$user.nickname/set/setCatalog?UUserDto.userId=$user.userId" ><div class='form-group'><div class='col-sm-5'><input type='text' name='catalogName' data-url='$home_url/$user.nickname/set/checkCatalog?UUserDto.userId=$user.userId' class='form-control' value=''></div> <input type="submit"  class='btn btn-info' value="确定" /> &nbsp;&nbsp;<input type="button" name='reset' class='btn btn-info' value="取消"/></div></form>
 									</li>
                                </ul>
                                 <a id="catalog_add" class="text-danger" href="javascript:;">添加分类</a>

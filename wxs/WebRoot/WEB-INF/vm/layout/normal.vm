@@ -10,8 +10,8 @@
 ##parse("layout/footer.vm")	
 #jquery
 <!-- Custom and plugin javascript -->
-<script src="#rootUrl()/js/plugins/pace/pace.min.js"></script>
-<script src="#rootUrl()/js/main.js"></script>
+<script src="$home_url/js/plugins/pace/pace.min.js"></script>
+<script src="$home_url/js/main.js"></script>
 #if($extjs)
 $extjs
 #end

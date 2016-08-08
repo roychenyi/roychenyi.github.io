@@ -2,16 +2,16 @@
 #set($page_title="注册验证结果页")
 #parse("layout/global.vm")
 #set($extcss=$CtimeCircles)
-##set($extcss="<link href='#rootUrl()/css/TimeCireles/TimeCircles.css' rel='stylesheet' />")
+##set($extcss="<link href='$home_url/css/TimeCireles/TimeCircles.css' rel='stylesheet' />")
 
 set($extjs=$JTimeCircles+$Jtimer
-+"<script>setInterval(function(){window.location='#rootUrl()/login';},1000*5);</script>")
++"<script>setInterval(function(){window.location='$home_url/login';},1000*5);</script>")
 
 <!--验证成功界面-->
 	<div class="middle-box text-center animated fadeInDown">
 		#if($user)
 			     <h3>欢迎登陆:$user.nickname</h3>
-        <h5 class="text-success">您已经验证成功,5秒后您将自动跳转到登陆界面<br>或者您点击<a href="#rootUrl()/login" > 登陆</a>按钮进行登陆</h5>
+        <h5 class="text-success">您已经验证成功,5秒后您将自动跳转到登陆界面<br>或者您点击<a href="$home_url/login" > 登陆</a>按钮进行登陆</h5>
         <div>
          <div id="CountDownTimer" data-timer="5" style="width: 400px; height: 400px;"></div>
          </div>

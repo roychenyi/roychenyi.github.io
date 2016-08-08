@@ -13,7 +13,7 @@
 $test.getBaseUrl($request)<br>
 $test1.getBaseUrl($request)<br>
 $html.image_src($user.portrait)<br>
-#rootUrl()<br>
+$home_url<br>
 	$link.getContextURL()
 						 </div>
                      </div>
@@ -61,7 +61,7 @@ $html.image_src($user.portrait)<br>
 			-->
 
 
-<section id="page1" class="index-page" style="background: url(#rootUrl()/static/lib/images/index1.jpg) no-repeat 0 0;background-position:center center; ">
+<section id="page1" class="index-page" style="background: url($home_url/static/lib/images/index1.jpg) no-repeat 0 0;background-position:center center; ">
 
 
     <div class="slogan">
@@ -82,7 +82,7 @@ $html.image_src($user.portrait)<br>
 <!-- /Section: intro -->
 
 <!-- Section: about -->
-<section id="page2" class=" index-page text-center" style="background: url(#rootUrl()/static/lib/images/index2.jpg) no-repeat 0 0;background-position:center center;">
+<section id="page2" class=" index-page text-center" style="background: url($home_url/static/lib/images/index2.jpg) no-repeat 0 0;background-position:center center;">
 <div class="slogan">
     <h3>陌生的城市里你是否会感受一份寂寞醉人？</h3>
     <h3>有时候，你也会感觉疲倦</h3>
@@ -95,7 +95,7 @@ $html.image_src($user.portrait)<br>
 
 
 <!-- Section: services -->
-<section id="page3" class="index-page" style="background: url(#rootUrl()/static/lib/images/index3.jpg) no-repeat 0 0;background-position:center center;">
+<section id="page3" class="index-page" style="background: url($home_url/static/lib/images/index3.jpg) no-repeat 0 0;background-position:center center;">
     <div class="slogan">
         <h2>致喜欢文字有梦想你</h2>
         <h4>不开心是一天，开心也是一天，何不开开心心每一天</h4>
@@ -124,7 +124,7 @@ $html.image_src($user.portrait)<br>
 					 <p id="error_text" class="text-danger text-left"><small>账号或密码错误请检查后输入</small></p>
 					 #end
 					 <p id="error_text" class="text-danger text-left"></p>					 
-                    <form class="m-t" role="form" id="loginform" action="#rootUrl()/login1" method="post">
+                    <form class="m-t" role="form" id="loginform" action="$home_url/login1" method="post">
                         <div class="form-group has-feedback">
 							<input type="hidden" id="prev_url" name="prev_url" value='$prev_url' />
                             <input type="text" id="username" name="username" class="form-control" placeholder="账号" required="" >
@@ -143,7 +143,7 @@ $html.image_src($user.portrait)<br>
                                     <span id="feedback-verifyCode" class="form-control-feedback glyphicon"></span>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 no-padding">
-                                <img id="CreateCheckCode" alt="验证码" src="#rootUrl()/servlet/verify.img" onclick="this.src=this.src+'?'"/>
+                                <img id="CreateCheckCode" alt="验证码" src="$home_url/servlet/verify.img" onclick="this.src=this.src+'?'"/>
                                 <a href="javascript:document.getElementById('CreateCheckCode').onclick()" >换一张</a>
                             </div>
                             </div>
@@ -151,7 +151,7 @@ $html.image_src($user.portrait)<br>
                         <button type="button" id="login" class="btn btn-primary block full-width m-b">登 录</button>
 
 
-                        <p class="text-muted text-center"> <a href="#rootUrl()/forgot"  target="_blank" > 忘记密码了？</a> | <a href="register">注册一个新账号</a>
+                        <p class="text-muted text-center"> <a href="$home_url/forgot"  target="_blank" > 忘记密码了？</a> | <a href="register">注册一个新账号</a>
                         </p>
 			
 

@@ -7,10 +7,10 @@
     <div class="ibox">
         <div class="ibox-content">
     <ul class="nav nav-pills nav-stacked ">
-        <li ><a href="#rootUrl()/$user.nickname/set/index">基本信息</a></li>
-        <li ><a href="#rootUrl()/$user.nickname/set/site">空间设置</a></li>
-        <li ><a href="#rootUrl()/$user.nickname/set/avatar">用户头像</a></li>
-        <li class="active"><a href="#rootUrl()/$user.nickname/set/privacy">隐私设置</a></li>
+        <li ><a href="$home_url/$user.nickname/set/index">基本信息</a></li>
+        <li ><a href="$home_url/$user.nickname/set/site">空间设置</a></li>
+        <li ><a href="$home_url/$user.nickname/set/avatar">用户头像</a></li>
+        <li class="active"><a href="$home_url/$user.nickname/set/privacy">隐私设置</a></li>
         <li class="hidden"><a>消息设置</a></li>
         <li class="hidden"><a>偏好设置</a></li>
     </ul>

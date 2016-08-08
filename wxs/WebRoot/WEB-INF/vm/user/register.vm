@@ -2,7 +2,7 @@
 #set($page_title="注册")
 #parse("layout/global.vm")
 #set($extjs=$Jlayer+$JuserCheck)
-##set($extjs="<!--javascrpt-plugins-layer--><script src='$link.getContextURL()/js/plugins/layer/layer.js'></script><script src='#rootUrl()/js/user-check.js'></script>")
+##set($extjs="<!--javascrpt-plugins-layer--><script src='$link.getContextURL()/js/plugins/layer/layer.js'></script><script src='$home_url/js/user-check.js'></script>")
 
 
 <div class="middle-box text-center loginscreen   animated fadeInDown no-padding">
@@ -15,7 +15,7 @@
                 <h3>欢迎注册文学社平台</h3>
                 <p>创建一个新账户</p>
                <p id="error_text" class="text-danger text-left"></p>
-                <form class="m-t" id="reg_form" role="form" action="#rootUrl()/register1">
+                <form class="m-t" id="reg_form" role="form" action="$home_url/register1">
                     <div class="form-group has-feedback">
                         <input type="text" id="reg_username" name="username" class="form-control" placeholder="请输入邮箱进行注册" required="">
 					    <input type="hidden" id="prev_url" name="prev_url" value="$prev_url">

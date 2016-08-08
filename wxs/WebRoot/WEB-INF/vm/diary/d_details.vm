@@ -10,7 +10,7 @@
 <div class="row">
 	 <div class="article">
 
-                            <div class="ibox-title"><p><input type="hidden" name="dairy_id" value="$diary.diaryId"><h2>$diary.title <small><a href="#rootUrl/$diary.UUserDto.nickname/article?page=$diary.page" class="pull-right  text-info">返回文章列表</a></small></h2></p>
+                            <div class="ibox-title"><p><input type="hidden" name="dairy_id" value="$diary.diaryId"><h2>$diary.title <small><a href="$home_url/$diary.UUserDto.nickname/article?page=$diary.page" class="pull-right  text-info">返回文章列表</a></small></h2></p>
 									<span><small class="small text-info">$date.format('yyyy/MM/dd HH:mm:ss',$diary.writeTime)</small></span>
                                 #parse("layout/diary/l_article_tool.vm")
 							</div>	

@@ -19,7 +19,7 @@
                     <div class="ibox-title">个人资料</div>
                     <div class="ibox-content">
 						<div class="text-center">
-						<img  #if($author.BSiteDto.logo)  src="#rootUrl()/$author.BSiteDto.logo" title="$author.nickname" #else src="#rootUrl()/images/face.png" #end   style="width: 100px;height: 100px;"/>
+						<img  #if($author.BSiteDto.logo)  src="$home_url$author.BSiteDto.logo" title="$author.nickname" #else src="$home_url/images/face.png" #end   style="width: 100px;height: 100px;"/>
                         <h1 > $author.nickname</h1>
                         <p ><div id="friend" class="hidden"><a id="follow" class="btn btn-success" href="javascript:;" onclick="friend.add()">勾搭</a>
 						   <span id="followed" class="dropdown" name="dropdown">&nbsp;
@@ -78,7 +78,7 @@
 					<div class="ibox no-padding">
 						<div class="ibox-title">
 							<h3>
-                        <a href="#rootUrl/$author.nickname/article/details/$diary.diaryId" target='_blank'>$diary.title</a>
+                        <a href="$home_url/$author.nickname/article/details/$diary.diaryId" target='_blank'>$diary.title</a>
 						<span class="pull-right small">($date.format('yyyy/MM/dd HH:mm:ss',$diary.writeTime))</span>
 							</h3>	
 					    </div>
@@ -92,14 +92,14 @@
 								<li ><i class="fa fa-comment-o"></i>评论<span>#if($diary.replyCount)($diary.replyCount)#else (0) #end</span>&nbsp;&nbsp;&nbsp;</li>
 								<li ><i class=" fa #if($favorite) fa-star #else fa-star-o #end">
 								</i>收藏<span>#if($diary.favoriteCount)($diary.favoriteCount)#else (0) #end</span></li>
-							     <li class="pull-right"><a href="#rootUrl/$author.nickname/article/details/$diary.diaryId" target='_blank'>查看更多&nbsp;&gt;&gt;&gt;</a></li>
+							     <li class="pull-right"><a href="$home_url/$author.nickname/article/details/$diary.diaryId" target='_blank'>查看更多&nbsp;&gt;&gt;&gt;</a></li>
 							</ul>
 							</div>
                         </div>
                     </div>
 				#end
 				<div class="ibox no-padding">
-						<div id="articleLoading" class="ibox-title text-center" data-url="#rootUrl/$author.nickname/article/article_list" >
+						<div id="articleLoading" class="ibox-title text-center" data-url="$home_url/$author.nickname/article/article_list" >
 							<a href="javascript:;" onclick="UserMain.loadArticle();"><i class="fa fa-spinner fa-spin"></i>加载更多</a>
 							<input type="hidden" id="loadFlag" value="1">
 						</div>

@@ -5,7 +5,7 @@
                 <ul class="nav navbar-nav no-padding">
                     <li #if(!$role||$role==1) class="active" #end><a href="#rootUrl/$author.nickname/article">我的文章</a></li>
                     <li #if($role==0) class="active" #end><a href="#rootUrl/$author.nickname/article?role=0">私密文章</a></li>
-                    <li><a href="#rootUrl()/$user.nickname/article/article_add">写文章</a></li>
+                    <li><a href="$home_url/$user.nickname/article/article_add">写文章</a></li>
                 </ul>
                 <ul class="nav navbar-top-links navbar-right">
                     <li #if($role==2) class="active" #end><a href="#rootUrl/$author.nickname/article?role=2">草稿箱</a></li>

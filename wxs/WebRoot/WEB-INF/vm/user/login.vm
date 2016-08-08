@@ -2,7 +2,7 @@
 #set($page_title="登陆")
 #parse("layout/global.vm")
 #set($extjs=$Jlayer+$JuserCheck)
-##set($extjs="<!--javascrpt-plugins-layer--><script src='#rootUrl()/js/plugins/layer/layer.js'></script><script src='#rootUrl()/js/user-check.js'></script>")
+##set($extjs="<!--javascrpt-plugins-layer--><script src='$home_url/js/plugins/layer/layer.js'></script><script src='$home_url/js/user-check.js'></script>")
 ##页面主体
  <div class="middle-box text-center loginscreen  animated fadeInDown">
                 <div>
@@ -19,7 +19,7 @@
 					 <p id="error_text" class="text-danger text-left"><small>账号或密码错误请检查后输入</small></p>
 					 #end
 					 <p id="error_text" class="text-danger text-left"></p>					 
-                    <form class="m-t" role="form" id="loginform" action="#rootUrl()/login1" method="post">
+                    <form class="m-t" role="form" id="loginform" action="$home_url/login1" method="post">
                         <div class="form-group has-feedback">
 							<input type="hidden" id="prev_url" name="prev_url" value='$prev_url' />
                             <input type="text" id="username" name="username" class="form-control" placeholder="账号" required="" >
@@ -38,7 +38,7 @@
                                     <span id="feedback-verifyCode" class="form-control-feedback glyphicon"></span>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 no-padding">
-                                <img id="CreateCheckCode" alt="验证码" src="#rootUrl()/servlet/verify.img" onclick="this.src=this.src+'?'"/>
+                                <img id="CreateCheckCode" alt="验证码" src="$home_url/servlet/verify.img" onclick="this.src=this.src+'?'"/>
                                 <a href="javascript:document.getElementById('CreateCheckCode').onclick()" >换一张</a>
                             </div>
                             </div>
@@ -46,7 +46,7 @@
                         <button type="button" id="login" class="btn btn-primary block full-width m-b">登 录</button>
 
 
-                        <p class="text-muted text-center"> <a href="#rootUrl()/forgot"  target="_blank" > 忘记密码了？</a> | <a href="register">注册一个新账号</a>
+                        <p class="text-muted text-center"> <a href="$home_url/forgot"  target="_blank" > 忘记密码了？</a> | <a href="register">注册一个新账号</a>
                         </p>
 			
 

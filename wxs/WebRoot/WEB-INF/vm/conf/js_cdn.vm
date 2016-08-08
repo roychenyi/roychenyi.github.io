@@ -35,7 +35,7 @@
 ##主函数
 #set($Jmian="<script src='$Jmyjs/main.js'></script><br>")
 ##cropper
-#set($Jcropper="http://cdn.staticfile.org/cropper/2.2.1/cropper.min.js")
+#set($Jcropper="<script src='http://cdn.staticfile.org/cropper/2.2.1/cropper.min.js'></script>")
 #set($Jcropper-tool="<script src='$Jlibjs/plugins/cropper/cropper-tool.js'></script>")
 #set($Jcropper-tool1="<script src='$Jlibjs/plugins/cropper/cropper-tool1.js'></script>")
 ##setting

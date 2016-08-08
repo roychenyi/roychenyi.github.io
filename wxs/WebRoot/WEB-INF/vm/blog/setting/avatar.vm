@@ -9,10 +9,10 @@
     <div class="ibox">
         <div class="ibox-content">
     <ul class="nav nav-pills nav-stacked ">
-        <li ><a href="#rootUrl()/$user.nickname/set/index">基本信息</a></li>
-        <li ><a href="#rootUrl()/$user.nickname/set/site">空间设置</a></li>
-        <li class="active"><a href="#rootUrl()/$user.nickname/set/avatar">用户头像</a></li>
-        <li class="hidden"><a href="#rootUrl()/$user.nickname/set/privacy">隐私设置</a></li>
+        <li ><a href="$home_url/$user.nickname/set/index">基本信息</a></li>
+        <li ><a href="$home_url/$user.nickname/set/site">空间设置</a></li>
+        <li class="active"><a href="$home_url/$user.nickname/set/avatar">用户头像</a></li>
+        <li class="hidden"><a href="$home_url/$user.nickname/set/privacy">隐私设置</a></li>
         <li class="hidden"><a>消息设置</a></li>
         <li class="hidden"><a>偏好设置</a></li>
     </ul>
@@ -23,7 +23,7 @@
 <div class="ibox">
     <div class="ibox-title">头像设置</div>
 <div class="ibox-content">
-    <form class="avatar-form" id="avatar_form" action="#rootUrl()/$user.nickname/image/updateuserlogo" enctype="multipart/form-data" method="post">
+    <form class="avatar-form" id="avatar_form" action="$home_url/$user.nickname/image/updateuserlogo" enctype="multipart/form-data" method="post">
         <div class="modal-body">
             <div class="avatar-body">
 
@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="avatar-wrapper">
-                            <img id="image" #if($user.BSiteDto.logo)  src="#rootUrl()/$user.BSiteDto.logo" #else src="#rootUrl()/images/face.png" #end  alt="Picture">
+                            <img id="image" #if($user.BSiteDto.logo)  src="$home_url/$user.BSiteDto.logo" #else src="$home_url/images/face.png" #end  alt="Picture">
                         </div>
                     </div>
                     <div class="col-md-3">

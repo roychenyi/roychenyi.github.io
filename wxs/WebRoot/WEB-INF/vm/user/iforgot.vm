@@ -2,14 +2,14 @@
 #set($page_title="找回密码")
 #parse("layout/global.vm")
 #set($extjs=$Jlayer+$JuserCheck)
-##set($extjs="<!--javascrpt-plugins-layer--><script src='#rootUrl()/js/plugins/layer/layer.js'></script><script src='#rootUrl()/js/user-check.js'></script>")
+##set($extjs="<!--javascrpt-plugins-layer--><script src='$home_url/js/plugins/layer/layer.js'></script><script src='$home_url/js/user-check.js'></script>")
 
 <!--主体部分-->
         <div class="middle-box text-center loginscreen  animated fadeInDown">
             <div>
                 <h3>找回密码</h3>
                 <p id="error_text" class="text-danger text-left"></p>
-                <form class="m-t" role="form" id="forgotform" action="#rootUrl()/forgot/result">
+                <form class="m-t" role="form" id="forgotform" action="$home_url/forgot/result">
                     <div class="form-group">
                         <input type="text" id="username" name="username" class="form-control" placeholder="用户名" required="" onblur="usercheck(this)">
 							<input type="hidden" id="prev_url" name="prev_url" value='$prev_url' />
@@ -25,7 +25,7 @@
 
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 no-padding">
-                                <img id="CreateCheckCode" alt="验证码" src="#rootUrl()/servlet/verify.img" onclick="this.src=this.src+'?'"/>
+                                <img id="CreateCheckCode" alt="验证码" src="$home_url/servlet/verify.img" onclick="this.src=this.src+'?'"/>
                                 <a href="javascript:document.getElementById('CreateCheckCode').onclick()" >换一张</a>
                             </div>
                         </div>

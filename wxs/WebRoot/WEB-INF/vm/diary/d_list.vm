@@ -23,13 +23,13 @@
                         <li id="$diary.row" class="list-group-item"><a #if($role==3) href="#rootUrl/$diary.UUserDto.nickname/article/details/$diary.diaryId" #else href="#rootUrl/$author.nickname/article/details/$diary.diaryId" #end>$diary.title</a>
                             #if($user.userId==$author.userId)
                         <span class="pull-right dropdown" name="dropdown">&nbsp;
-							<a class="dropdown-toggle active" href="#rootUrl()/$author.nickname/article/article_edite/$diary.diaryId" data-toggle="data-toggle">编辑<span class="caret"></span></a>
+							<a class="dropdown-toggle active" href="$home_url/$author.nickname/article/article_edite/$diary.diaryId" data-toggle="data-toggle">编辑<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li id="d_modify" name="d_modify"><a href="#rootUrl()/$author.nickname/article/article_edite/$diary.diaryId">编辑</a></li>
-                                            <li id='d_toCommen' name='d_toCommen'><a data-url='#rootUrl()/$author.nickname/article/tocommen/$diary.diaryId' href='javascript:;' >公开发布文章</a></li>
-											<li id="d_toTrash" name="d_toTrash"><a data-url="#rootUrl()/$author.nickname/article/totrash/$diary.diaryId" href="javascript:;">删除</a></li>
-                                            <li id="d_delete" name="d_delete"><a data-url="#rootUrl()/$author.nickname/article/todelete/$diary.diaryId" href="javascript:;">彻底删除</a></li>
-											<li id="d_private" name="d_private"><a data-url="#rootUrl()/$author.nickname/article/toprivate/$diary.diaryId" href="javascript:;">转为私密文章</a></li>
+                                            <li id="d_modify" name="d_modify"><a href="$home_url/$author.nickname/article/article_edite/$diary.diaryId">编辑</a></li>
+                                            <li id='d_toCommen' name='d_toCommen'><a data-url='$home_url/$author.nickname/article/tocommen/$diary.diaryId' href='javascript:;' >公开发布文章</a></li>
+											<li id="d_toTrash" name="d_toTrash"><a data-url="$home_url/$author.nickname/article/totrash/$diary.diaryId" href="javascript:;">删除</a></li>
+                                            <li id="d_delete" name="d_delete"><a data-url="$home_url/$author.nickname/article/todelete/$diary.diaryId" href="javascript:;">彻底删除</a></li>
+											<li id="d_private" name="d_private"><a data-url="$home_url/$author.nickname/article/toprivate/$diary.diaryId" href="javascript:;">转为私密文章</a></li>
                                         </ul></span>
                             #end
                             <div class="pull-right">$date.format('yyyy/MM/dd',$diary.writeTime)&nbsp;($diary.replyCount/$diary.viewCount)</div>

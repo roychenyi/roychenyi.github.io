@@ -9,19 +9,19 @@
                 
                   #if($user.BSiteDto.logo)
 					
-					<a href="#rootUrl()/$user.nickname" aria-controls="navbar" aria-expanded="false" data-target="#navbar1" data-toggle="collapse" class="navbar-toggle collapsed no-padding " > <img src="#rootUrl()/$user.BSiteDto.logo" style="width:30px;hight:30px;"/></a> #else <a aria-controls="navbar" aria-expanded="false" data-target="#navbar1" data-toggle="collapse" class="navbar-toggle collapsed" type="button" #if($user) href="#rootUrl()/$user.nickname" #else href="#rootUrl()/login" #end><i class="fa fa-user"></i></a> #end
+					<a href="$home_url/$user.nickname" aria-controls="navbar" aria-expanded="false" data-target="#navbar1" data-toggle="collapse" class="navbar-toggle collapsed no-padding " > <img src="$home_url$user.BSiteDto.logo" style="width:30px;hight:30px;"/></a> #else <a aria-controls="navbar" aria-expanded="false" data-target="#navbar1" data-toggle="collapse" class="navbar-toggle collapsed" type="button" #if($user) href="$home_url/$user.nickname" #else href="$home_url/login" #end><i class="fa fa-user"></i></a> #end
                 
 
                 <button  aria-controls="navbar" aria-expanded="false" data-target="#search" data-toggle="collapse" class="navbar-toggle collapsed" type="button" id="top-search">
                     <i class="fa fa-search"></i>
                 </button>
-                <a href="#rootUrl()" class="navbar-brand">文学社平台</a>
+                <a href="$home_url" class="navbar-brand">文学社平台</a>
             </div>
 
             <div class="navbar-collapse collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a aria-expanded="false" role="button" href="#rootUrl()"><i class="fa fa-home"></i> 首页</a>
+                        <a aria-expanded="false" role="button" href="$home_url"><i class="fa fa-home"></i> 首页</a>
                     </li>
                     <li >
                         <a aria-expanded="false" rele="button" href="#"><i class="fa fa-inbox"></i>社团</a>
@@ -35,38 +35,38 @@
 				#if(!$user.nickname)
                 <ul class="nav navbar-top-links navbar-right">
 
-                    <li ><a href="#rootUrl()/login">登陆</a></li>
-                    <li><a href="#rootUrl()/register">注册</a></li>
+                    <li ><a href="$home_url/login">登陆</a></li>
+                    <li><a href="$home_url/register">注册</a></li>
                 </ul>
 				#else
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown">
-                        <a aria-expanded="false" role="button" href="#rootUrl()$user.BSiteDto.siteUrl" class="dropdown-toggle" data-toggle="dropdown"> #if($user.BSiteDto.logo) <img src="#rootUrl()/$user.BSiteDto.logo" style="width:24px;hight:24px;"/> #else<i class="fa fa-user"></i> #end $user.nickname<input type="hidden" id="U_userId" value="$user.userId" ><span class="caret"></span></a>
+                        <a aria-expanded="false" role="button" href="$home_url$user.BSiteDto.siteUrl" class="dropdown-toggle" data-toggle="dropdown"> #if($user.BSiteDto.logo) <img src="$home_url$user.BSiteDto.logo" style="width:24px;hight:24px;"/> #else<i class="fa fa-user"></i> #end $user.nickname<input type="hidden" id="U_userId" value="$user.userId" ><span class="caret"></span></a>
                         <ul role="menu" class="dropdown-menu">
-                            <li><a href="#rootUrl()$user.BSiteDto.siteUrl">个人中心</a>
+                            <li><a href="$home_url$user.BSiteDto.siteUrl">个人中心</a>
                             </li>
-                            <li><a href="#rootUrl()/$user.nickname/article/article_add"><i class="fa fa-edit"></i>写日志</a>
+                            <li><a href="$home_url/$user.nickname/article/article_add"><i class="fa fa-edit"></i>写日志</a>
                             </li>
                      <!--       <li><a href="">消息</a>
                             </li>
 							-->
-							<li><a href="#rootUrl()/change/newpassword">修改密码</a>
+							<li><a href="$home_url/change/newpassword">修改密码</a>
                             </li>
 							<li>
-                        <a href="#rootUrl()/logout"  > ##onclick="javascript:jQuery.cookie('user', null);"
+                        <a href="$home_url/logout"  > ##onclick="javascript:jQuery.cookie('user', null);"
                             <i class="fa fa-sign-out"></i> 退出
                         </a>
                     </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#rootUrl()/$user.nickname/set/index">
+                        <a href="$home_url/$user.nickname/set/index">
                             <i class="fa fa-cog"></i> 设置
                         </a>
                     </li>
                 </ul>
 				#end
-                <form action="#rootUrl/search" id="search" class="navbar-form navbar-right hidden-xs" role="search">
+                <form action="$home_url/search" id="search" class="navbar-form navbar-right hidden-xs" role="search">
                     <div class="form-group">
                         <input type="text" name="content" class="form-control" placeholder="Search">
                         <button type="button" class="btn btn-sm btn-primary" >搜索</button>

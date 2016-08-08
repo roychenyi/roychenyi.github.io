@@ -3,24 +3,24 @@
 
 <ul >
                                         <li id="d_view"><a  href="javascript:;"><i class="fa fa-eye"></i>阅读<span>#if($diary.viewCount)($diary.viewCount)#else (0) #end</span></a></li>
-                                        <li id="d_upvote"><a data-url="#rootUrl()/$author.nickname/article/toupvote/$diary.diaryId" href="javascript:;" ><i class=" fa #if($upvote) fa-thumbs-up text-warning #else fa-thumbs-o-up #end"></i>点赞<span>#if($diary.upvoteCount)($diary.upvoteCount)#else (0) #end</span></a></li>
+                                        <li id="d_upvote"><a data-url="$home_url/$author.nickname/article/toupvote/$diary.diaryId" href="javascript:;" ><i class=" fa #if($upvote) fa-thumbs-up text-warning #else fa-thumbs-o-up #end"></i>点赞<span>#if($diary.upvoteCount)($diary.upvoteCount)#else (0) #end</span></a></li>
 										<li id="d_comment"><a href="#comment"><i class="fa fa-comment-o"></i>评论<span>#if($diary.replyCount)($diary.replyCount)#else (0) #end</span></a></li>
 										#if($user.userId!=$author.userId)
-										<li id="d_favorite"><a data-url="#rootUrl()/$author.nickname/article/tofavorite/$diary.diaryId" href="javascript:;"> <i class=" fa #if($favorite) fa-star text-warning #else fa-star-o #end"></i>收藏<span>#if($diary.favoriteCount)($diary.favoriteCount)#else (0) #end</span></a></li>
+										<li id="d_favorite"><a data-url="$home_url/$author.nickname/article/tofavorite/$diary.diaryId" href="javascript:;"> <i class=" fa #if($favorite) fa-star text-warning #else fa-star-o #end"></i>收藏<span>#if($diary.favoriteCount)($diary.favoriteCount)#else (0) #end</span></a></li>
 										<li id="d_tip-offs"><a data-url="" href="javascript:;"><i class="fa fa-warning text-warning"></i>举报</a></li>
                                         #else
-										<li id="edit_dropdown" class="dropdown"><a data-url="" href="#rootUrl()/$author.nickname/article/article_edite/$diary.diaryId" class="dropdown-toggle" data-toggle="data-toggle"><i class="fa fa-edit"></i>编辑<span class="caret"></span></a>
+										<li id="edit_dropdown" class="dropdown"><a data-url="" href="$home_url/$author.nickname/article/article_edite/$diary.diaryId" class="dropdown-toggle" data-toggle="data-toggle"><i class="fa fa-edit"></i>编辑<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li id="d_modify"><a data-url="" href="#rootUrl()/$author.nickname/article/article_edite/$diary.diaryId">编辑</a></li>
-                                            <li id="d_toTrash"><a data-url="#rootUrl()/$author.nickname/article/totrash/$diary.diaryId" href="javascript:;">删除</a></li>
+                                            <li id="d_modify"><a data-url="" href="$home_url/$author.nickname/article/article_edite/$diary.diaryId">编辑</a></li>
+                                            <li id="d_toTrash"><a data-url="$home_url/$author.nickname/article/totrash/$diary.diaryId" href="javascript:;">删除</a></li>
                                         </ul>
                                         </li>
 										#end
- <li class="pull-right">#if($next_diary.title)<a href="#rootUrl()/$author.nickname/article/details/$next_diary.diaryId">下一篇:$next_diary.title</a>#else <a>已经是最后一篇了</a> #end
+ <li class="pull-right">#if($next_diary.title)<a href="$home_url/$author.nickname/article/details/$next_diary.diaryId">下一篇:$next_diary.title</a>#else <a>已经是最后一篇了</a> #end
 </li>  <li class="pull-right">|</li>                                
 
 <li class="pull-right">
-	#if($prev_diary.title)<a href="#rootUrl()/$author.nickname/article/details/$prev_diary.diaryId">上一篇：$prev_diary.title</a> #else <a>已经是第一篇了</a> #end
+	#if($prev_diary.title)<a href="$home_url/$author.nickname/article/details/$prev_diary.diaryId">上一篇：$prev_diary.title</a> #else <a>已经是第一篇了</a> #end
 </li>
  </ul>
 </div>

@@ -8,7 +8,7 @@
 
 <!--文字编辑器-->
  <div class="ibox">
-                            <form class="form-horizontal" id="article_add_form" data-url="#rootUrl()/$user.nickname/article/details" action="#rootUrl()/$user.nickname/article/article_save">
+                            <form class="form-horizontal" id="article_add_form" data-url="$home_url/$user.nickname/article/details" action="$home_url/$user.nickname/article/article_save">
                             <div class="ibox-title">写日志
                             <div class="pull-right"><a  href="#rootUrl/$author.nickname/article?role=2">草稿箱</a>|<a href="javascript:;" onclick="history.go(-1);">返回</a></div>
                             </div>
@@ -76,7 +76,7 @@
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary" >发布</button>
-                                    <button type="button" id="draft_save" data-url="#rootUrl()/$user.nickname/article/article_draft_save" class="btn btn-default pull-right" >存草稿</button>
+                                    <button type="button" id="draft_save" data-url="$home_url/$user.nickname/article/article_draft_save" class="btn btn-default pull-right" >存草稿</button>
 								  <span class="pull-right">&nbsp; &nbsp;</span> <button type="button" id="preview" data-url="" class="btn btn-default pull-right" >预览</button>
                                 </div>
                             </div>

@@ -8,10 +8,10 @@
     <div class="ibox">
         <div class="ibox-content">
     <ul class="nav nav-pills nav-stacked ">
-        <li class="active"><a href="#rootUrl()/$user.nickname/set/index">基本信息</a></li>
-        <li ><a href="#rootUrl()/$user.nickname/set/site">空间设置</a></li>
-        <li ><a href="#rootUrl()/$user.nickname/set/avatar">用户头像</a></li>
-        <li class="hidden"><a href="#rootUrl()/$user.nickname/set/privacy">隐私设置</a></li>
+        <li class="active"><a href="$home_url/$user.nickname/set/index">基本信息</a></li>
+        <li ><a href="$home_url/$user.nickname/set/site">空间设置</a></li>
+        <li ><a href="$home_url/$user.nickname/set/avatar">用户头像</a></li>
+        <li class="hidden"><a href="$home_url/$user.nickname/set/privacy">隐私设置</a></li>
         <li class="hidden"><a>消息设置</a></li>
         <li class="hidden"><a>偏好设置</a></li>
     </ul>
@@ -45,7 +45,7 @@
                     </div>
                     <div id="info" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <form role="form" class="form-horizontal" id="default_info_form" action="#rootUrl()/$user.nickname/set/setUserInfo">
+                            <form role="form" class="form-horizontal" id="default_info_form" action="$home_url/$user.nickname/set/setUserInfo">
                                 <h4 class="text-info">基本信息</h4>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">性别</label>

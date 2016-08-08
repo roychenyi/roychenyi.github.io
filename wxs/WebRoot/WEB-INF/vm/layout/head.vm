@@ -11,10 +11,10 @@
 
 <title>$page_title -文学社平台</title>
 
-<link rel="shortcut icon" type="image/x-icon" mce-fref="#rootUrl()/images/wen.ico" href="#libstatic()/images/wen.ico"/>
-<link rel="icon" type="image/x-icon" mce-fref="#rootUrl()/images/wen.ico" href="#libstatic()/images/wen.ico"/>
-##<script src="#rootUrl()/js/jquery-2.1.4.min.js"></script>
-##<script src='#rootUrl()/js/plugins/cookie/jquery.cookie.js'></script>
+<link rel="shortcut icon" type="image/x-icon" mce-fref="$home_url/images/wen.ico" href="#libstatic()/images/wen.ico"/>
+<link rel="icon" type="image/x-icon" mce-fref="$home_url/images/wen.ico" href="#libstatic()/images/wen.ico"/>
+##<script src="$home_url/js/jquery-2.1.4.min.js"></script>
+##<script src='$home_url/js/plugins/cookie/jquery.cookie.js'></script>
 ##bootstrap()
 ##<link href="static/my/css/style.css?v=1.0" rel="stylesheet">
 $Cbootstrap
@@ -24,6 +24,6 @@ $Cstyle
 #if($extcss)
 $extcss
 #end
-
+<script > var homePath="$home_url";</script>
 
 
