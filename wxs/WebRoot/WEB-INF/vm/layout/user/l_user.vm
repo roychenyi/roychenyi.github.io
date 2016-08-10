@@ -44,7 +44,7 @@
                         </div>
                         <div class="navbar navbar-default blog_nav">
                             <ul class="nav  navbar-top-links navbar-right ">
-                                <li><a href="$home_url/$author.BSiteDto.siteUrl">主页</a></li>|
+                                <li><a href="$home_url$author.BSiteDto.siteUrl">主页</a></li>|
                                 <li><a href="$home_url/$author.nickname/article/" style="">文字</a></li>|
                                 <li><a style="">社团</a></li>|
                                 <li><a style="">关于我</a></li>

@@ -15,7 +15,7 @@
 				#foreach($diary in ${diaryList})
 					<div class="ibox no-padding">
 						<div class="ibox-title">
-                        <a href="#rootUrl/$diary.UUserDto.nickname/article/details/$diary.diaryId">$diary.title</a>
+                        <a href="$home_url/$diary.UUserDto.nickname/article/details/$diary.diaryId">$diary.title</a>
 						</div>
                         <div class="ibox-content">
                             $diary.content

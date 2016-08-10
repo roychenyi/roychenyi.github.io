@@ -101,11 +101,9 @@ $(document).ready(function () {
 
         initComplete: function () {
             //    $("#mytool").append('<button id="datainit" type="button" class="btn btn-primary btn-sm">增加基础数据</button>&nbsp');
-<<<<<<< HEAD
+
             $("#mytool").append('<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">添加</button>');
-=======
-            $("#mytool").append('<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">添加</button>');
->>>>>>> 4d5552cfa9bc600fbb644ebed2eb9b80a9a074c4
+
             //    $("#datainit").on("click", initData);
         }
 
@@ -160,10 +158,7 @@ var SysIllegal={
                 $("#myModalLabel").text("新增");
                 SysIllegal.clear();
                 console.log("结果" + data);
-<<<<<<< HEAD
-                
-=======
->>>>>>> 4d5552cfa9bc600fbb644ebed2eb9b80a9a074c4
+
             }
         });
     }
