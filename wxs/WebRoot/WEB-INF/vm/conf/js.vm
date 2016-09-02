@@ -20,11 +20,13 @@
 #set($JdataTables="<script src='$Jlibjs/plugins/dataTables/jquery.dataTables.js'></script>"
      +"<script src='$Jlibjs/plugins/dataTables/dataTables.bootstrap.js'></script>" )
 ##wow
-#set($Jwow="<script src='$Jlibjs/pligins/wow.min.js'></script>")
+#set($Jwow="<script src='$Jlibjs/pligins/wow/wow.min.js'></script>")
 ##easing
-#set($Jeasing="<script src='$Jlibjs/pligins/jquery.easing.min.js'></script>")
+#set($Jeasing="<script src='$Jlibjs/pligins/easing/jquery.easing.min.js'></script>")
 ##scrollTo
-#set($JscrollTo="<script src='$Jlibjs/pligins/jquery.scrollTo.min.js'></script>")
+#set($JscrollTo="<script src='$Jlibjs/pligins/scrollTo/jquery.scrollTo.min.js'></script>")
+##bootbox
+#set($Jbootbox="<script src='$Jlibjs/pligins/bootbox/bootbox.min.js'></script>")
 	 
 ##定时器
 #set($Jtimer="<script src='$Jmyjs/timer.js'></script><br>")

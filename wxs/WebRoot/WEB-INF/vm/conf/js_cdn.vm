@@ -26,6 +26,8 @@
 #set($Jeasing="<script src='http://cdn.staticfile.org/jquery-easing/1.3/jquery.easing.min.js'></script>")
 ##scrollTo
 #set($JscrollTo="<script src='http://apps.bdimg.com/libs/jquery-scrollUp/2.1.0/jquery.scrollUp.js'></script>")
+##bootbox
+#set($Jbootbox="<script src='http://cdn.staticfile.org/bootbox.js/4.4.0/bootbox.min.js'></script>")
 
 ##my js
 ##定时器

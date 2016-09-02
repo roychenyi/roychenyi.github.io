@@ -238,7 +238,7 @@ function submitEnd(){
 }
 //提交失败
 function submitFail(msg){
-    layer.alert(msg);
+    bootbox.alter(msg);
 }
 //简单ajax函数
 function ajax(url,data_str,success_func){

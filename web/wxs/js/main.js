@@ -195,6 +195,31 @@ function WinMove() {
         .disableSelection();
 };
 
+var Main=function(){
+this.a="test";
+};
+Main.prototype={
+
+    loading:function(){
+        var html="<div id='model-loading' style='position: fixed; top: 0;left: 0;width: 100%;height: 100%; z-index: 200000;'>"
+            +"<div style='position: relative;top:calc(50% - 2em);left:calc(50% - 2em) ;color: #1c84c6'>" +
+            "<i class='fa fa-spinner fa-spin fa-4x'></i></div></div>";
+        $('body').append(html);
+    },
+    loadingMove:function(){
+        $('#model-loading').remove();
+    },
+    submitStart:function(){
+        this.loading();
+    },
+    submitEnd:function(){
+        this.loadingMove();
+    },
+    submitFail:function(msg){
+        bootbox.alert(msg);
+    }
+}
+
 //提交开始
 function submitStart() {
     layer.load();

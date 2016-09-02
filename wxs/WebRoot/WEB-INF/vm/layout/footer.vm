@@ -45,4 +45,15 @@
         </div>
     </div>
 </footer>
-
+##jquery
+$Jjquery
+$Jbootstarp
+$JmetisMenu
+$Jslimscroll
+$Jbootbox
+<!-- Custom and plugin javascript -->
+$Jmian
+##<script src="#mystatic()/js/main.js"></script>
+#if($extjs)
+$extjs
+#end
