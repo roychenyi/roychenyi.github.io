@@ -180,6 +180,7 @@
                         <div class="ibox">
                             <div class="ibox-content">
                                 日志二
+                                <div id="pagePagination"></div>
                             </div>
                         </div>
                     </div>
@@ -252,15 +253,17 @@
                 "<i class='fa fa-spinner fa-spin fa-4x'></i></div></div>";
         $('body').append(html);*/
 
-        test.submitFail(Main.prototype.a+" "+test.a);
-        Main.prototype.submitStart();
+    //    test.submitFail(Main.prototype.a+" "+test.a);
+        Main.submitStart();
 
       //test.loading();
        setTimeout(function(){Main.submitFail("测试");},3000);
-        setTimeout(function(){test.submitEnd();},3000);
+    //    setTimeout(function(){test.submitEnd();},3000);
      //   test.submitStart();
     //    test.test();
     });
+    $('#pagePagination').html(createPagination(3,10,test));
+    $('li#page'+3).addClass("active");
     var test=new Main();
     test.submitStart=function(){
         bootbox.alert("测试！");

@@ -9,7 +9,7 @@
 <meta name="Robots" content="noindex,nofollow"/>
 #end
 
-<title>$page_title -文学社平台</title>
+<title>$page_title -早安.我爱你</title>
 
 <link rel="shortcut icon" type="image/x-icon" mce-fref="$home_url/images/wen.ico" href="#libstatic()/images/wen.ico"/>
 <link rel="icon" type="image/x-icon" mce-fref="$home_url/images/wen.ico" href="#libstatic()/images/wen.ico"/>
@@ -25,5 +25,14 @@ $Cstyle
 $extcss
 #end
 <script > var homePath="$home_url";</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?60d5c647711b11531eb35dfac0a74a5f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
