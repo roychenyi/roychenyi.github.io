@@ -1,0 +1,47 @@
+$fontStack: Helvetica,sans-serif;
+$bodyColor:#333;
+$navColor:#3ff;
+$hoverColor:#33f;
+
+@mixin radius-box($radisSize:10px){
+  border: 1px solid $bodyColor;
+  -moz-border-radius: $radisSize;
+  -webkit-border-radius: $radisSize;
+  border-radius: $radisSize;
+}
+body{
+  font-family: $fontStack;
+  color: $bodyColor;
+  content: "</br>121243";
+
+
+}
+nav{
+  ul{
+    color: $navColor;
+    background-color: #fffff;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    li{
+      display: inline-block;
+      a{
+        display: block;
+        padding: 0 10px;
+        text-decoration: none;
+        @include radius-box();
+        &:hover{
+        color: darken($navColor,20%);
+             }
+        &:before{
+        transform: height 0.3s, opacity 0.3s, transform 0.3s;
+             }
+      }
+
+    }
+  }
+}
+a{
+  @include radius-box(50%);
+}
