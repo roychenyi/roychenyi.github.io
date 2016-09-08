@@ -1,25 +1,35 @@
+@charset "UTF-8";
 $fontStack: Helvetica,sans-serif;
-$bodyColor:#333;
+$bodyColor:#444;
+$bodyColor:#333!default;
 $navColor:#3ff;
 $hoverColor:#33f;
+$borderColor:#011;
+$borderColor:#000!default;
 
 @mixin radius-box($radisSize:10px){
-  border: 1px solid $bodyColor;
+  border: 1px solid $borderColor;
   -moz-border-radius: $radisSize;
   -webkit-border-radius: $radisSize;
   border-radius: $radisSize;
 }
 body{
   font-family: $fontStack;
-  color: $bodyColor;
+  background-color: $bodyColor;
   content: "</br>121243";
-
-
+  &:before{
+    content: "<p>测试before</p>";
+  }
 }
+
 nav{
   ul{
     color: $navColor;
     background-color: #fffff;
+    background: {
+      //   color: #00cccc;
+      size: 5px;
+    };
     margin: 0;
     padding: 0;
     list-style: none;
@@ -32,11 +42,11 @@ nav{
         text-decoration: none;
         @include radius-box();
         &:hover{
-        color: darken($navColor,20%);
-             }
+          color: darken($navColor,20%);
+        }
         &:before{
-        transform: height 0.3s, opacity 0.3s, transform 0.3s;
-             }
+          transform: height 0.3s, opacity 0.3s, transform 0.3s;
+        }
       }
 
     }
@@ -44,4 +54,16 @@ nav{
 }
 a{
   @include radius-box(50%);
+  text-decoration: blink;
+}
+
+.test {
+  color: #00cccc;
+  background-color: #ffffff;
+  width: 100%;
+  @include  radius-box(25px);
+  border: 1px solid #FF9900 {
+    left: 0px;
+    right: 0px;
+  };
 }

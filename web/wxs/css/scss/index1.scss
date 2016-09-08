@@ -1,0 +1,120 @@
+@charset "UTF-8";
+//@import "bootstrap.css";
+$fontStack: Helvetica,sans-serif;
+//$bodyColor:#444;
+/*$bodyColor:#444;*/
+$bodyColor:#333!default;
+$navColor:#3ff;
+$hoverColor:#33f;
+$borderColor:#011;
+$borderColor:#000!default;
+
+$px :(1rem 2rem) (3rem 4rem);
+$colorMap:(a:#000,b:#01f,c:#f1f,d:#623);
+
+$color:#4ff;
+
+@mixin radius-box($radisSize:10px){
+  border: 1px solid $borderColor;
+  -moz-border-radius: $radisSize;
+  -webkit-border-radius: $radisSize;
+  border-radius: $radisSize;
+}
+
+
+@mixin child{
+  div{
+    @include radius-box();
+  }
+  &:after{
+    content: "测试";
+  }
+}
+body{
+  font-family: $fontStack;
+  background-color: $bodyColor;
+  content: "</br>121243";
+  &:before{
+    content: "<p>测试before</p>";
+  }
+}
+
+nav{
+  ul{
+    color: $navColor;
+    background-color: #000;
+    background: {
+   //   color: #00cccc;
+      size: 5px;
+    };
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    li{
+      display: inline-block;
+      a{
+        display: block;
+        padding: 0 10px;
+        text-decoration: none;
+        @include radius-box();
+        &:hover{
+          color: darken($navColor,20%);
+        }
+        &:before{
+          transform: height 0.3s, opacity 0.3s, transform 0.3s;
+        }
+      }
+     &:first-child{
+       color: map_get($colorMap, d);
+       font-size:nth(nth($px,1),1) ;
+     }
+      &:last-child{
+        color: map_get($colorMap,b);
+        font-size: nth(nth($px,2),1) ;
+      }
+      &:nth-child(2n){
+        color: map_get($colorMap,c);
+        font-size: nth(nth($px,1),2) ;
+      }
+
+    }
+
+  }
+}
+a{
+  @include radius-box(50%);
+  text-decoration: blink;
+}
+
+.test {
+
+  color: $color;
+  $color:red!global;
+  background-color: #ffffff;
+  width: 100%;
+  @include  radius-box(25px);
+  border: 1px solid #FF9900 {
+    left: 0px;
+    right: 0px;
+  };
+  @include child;
+}
+.test a{
+  color: red;
+}
+
+.test2{
+  /*border: 1px solid #FF9900;
+  @include child;*/
+
+  @extend .test;
+  color: $color;
+  &:before{
+  content: "TTTT";
+}
+}
+a.disabled{
+  @extend a;
+  color: gray;
+}

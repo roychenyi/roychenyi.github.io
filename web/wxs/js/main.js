@@ -247,7 +247,15 @@ var Main={
 	    },
 	    submitFail:function(msg){
 	        bootbox.alert(msg);
-	    }
+	    },
+        loadJs:function(file){
+            var head = $('head').remove('#loadscript');
+            $('<script>').attr({src:file,type:'text/javascript',id:'loadscript'}).appendTo(head);
+        },
+        loadCss:function(file){
+            var head = $('head').remove('#loadcss');
+            $('<link>').attr({href:file,rel:'stylesheet',id:'loadcss'}).appendTo(head);
+        }
 	}
 
 //提交开始

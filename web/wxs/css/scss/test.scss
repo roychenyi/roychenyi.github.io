@@ -1,14 +1,12 @@
 @import "index";
+$bodyColor:#fff;
 
 body{
   border: 1px solid #000;
-  background-color: #914751;
+  background-color: $bodyColor;
 
 }
 a{
   text-decoration: none;
-  color: #FF9900;
-
-
 
 }

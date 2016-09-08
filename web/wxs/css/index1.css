@@ -1,14 +1,15 @@
 @charset "UTF-8";
+/*$bodyColor:#444;*/
 body {
   font-family: Helvetica, sans-serif;
-  background-color: #444;
+  background-color: #333;
   content: "</br>121243"; }
   body:before {
     content: "<p>测试before</p>"; }
 
 nav ul {
   color: #3ff;
-  background-color: #fffff;
+  background-color: #000;
   background-size: 5px;
   margin: 0;
   padding: 0;
@@ -16,7 +17,7 @@ nav ul {
   width: 100%; }
   nav ul li {
     display: inline-block; }
-    nav ul li a {
+    nav ul li a, nav ul li a.disabled {
       display: block;
       padding: 0 10px;
       text-decoration: none;
@@ -26,18 +27,27 @@ nav ul {
       border-radius: 10px; }
       nav ul li a:hover {
         color: #00cccc; }
-      nav ul li a:before {
+      nav ul li a:before, nav ul li a.disabled:before {
         transform: height 0.3s, opacity 0.3s, transform 0.3s; }
+    nav ul li:first-child {
+      color: #623;
+      font-size: 1rem; }
+    nav ul li:last-child {
+      color: #01f;
+      font-size: 3rem; }
+    nav ul li:nth-child(2n) {
+      color: #f1f;
+      font-size: 2rem; }
 
-a {
+a, a.disabled {
   border: 1px solid #011;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   text-decoration: blink; }
 
-.test {
-  color: #00cccc;
+.test, .test2 {
+  color: #4ff;
   background-color: #ffffff;
   width: 100%;
   border: 1px solid #011;
@@ -47,12 +57,25 @@ a {
   border: 1px solid #FF9900;
     border-left: 0px;
     border-right: 0px; }
+  .test div, .test2 div {
+    border: 1px solid #011;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; }
+  .test:after, .test2:after {
+    content: "测试"; }
 
-body {
-  border: 1px solid #000;
-  background-color: #fff; }
+.test a, .test2 a {
+  color: red; }
 
-a {
-  text-decoration: none; }
+.test2 {
+  /*border: 1px solid #FF9900;
+  @include child;*/
+  color: red; }
+  .test2:before {
+    content: "TTTT"; }
 
-/*# sourceMappingURL=test.css.map */
+a.disabled {
+  color: gray; }
+
+/*# sourceMappingURL=index1.css.map */
