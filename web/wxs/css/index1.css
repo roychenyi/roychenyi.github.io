@@ -6,11 +6,14 @@ body {
   content: "</br>121243"; }
   body:before {
     content: "<p>测试before</p>"; }
+  @media (max-width: 480px) {
+    body {
+      float: none;
+      width: 100%; } }
 
 nav ul {
   color: #3ff;
   background-color: #000;
-  background-size: 5px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -38,6 +41,34 @@ nav ul {
     nav ul li:nth-child(2n) {
       color: #f1f;
       font-size: 2rem; }
+    nav ul li:nth-child(1) {
+      width: 2rem; }
+    nav ul li:nth-child(2) {
+      width: 4rem; }
+    nav ul li:nth-child(3) {
+      width: 6rem; }
+    nav ul li:nth-child(4) {
+      width: 8rem; }
+    nav ul li:nth-child(5) {
+      width: 10rem; }
+    nav ul li:nth-child(6) {
+      width: 12rem; }
+    nav ul li:nth-child(7) {
+      width: 14rem; }
+    nav ul li:nth-child(8) {
+      width: 16rem; }
+    nav ul li:nth-child(9) {
+      width: 18rem; }
+    nav ul li:nth-child(10) {
+      width: 20rem; }
+    nav ul li:nth-child(1) {
+      font-size: 1rem; }
+    nav ul li:nth-child(2) {
+      font-size: 2rem; }
+    nav ul li:nth-child(3) {
+      font-size: 3rem; }
+    nav ul li:nth-child(4) {
+      font-size: 4rem; }
 
 a, a.disabled {
   border: 1px solid #011;
@@ -46,10 +77,14 @@ a, a.disabled {
   border-radius: 50%;
   text-decoration: blink; }
 
-.test, .test2 {
+.test, .testthree, .test2 {
+  font-size: 1.5rem; }
+
+.test, .testthree, .test2 {
   color: #4ff;
   background-color: #ffffff;
   width: 100%;
+  padding: 12.5px;
   border: 1px solid #011;
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
@@ -57,16 +92,28 @@ a, a.disabled {
   border: 1px solid #FF9900;
     border-left: 0px;
     border-right: 0px; }
-  .test div, .test2 div {
+  .test div, .testthree div, .test2 div {
     border: 1px solid #011;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px; }
-  .test:after, .test2:after {
+  .test:after, .testthree:after, .test2:after {
     content: "测试"; }
-
-.test a, .test2 a {
-  color: red; }
+  .test a, .testthree a, .test2 a {
+    color: #990000;
+    font-size: 2rem; }
+  .test--one {
+    width: 100%;
+    background-color: #FF9900; }
+  .test-two {
+    width: 50%;
+    height: 100px;
+    border: 1px solid #011;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px; }
+  .testthree {
+    background-color: #006621; }
 
 .test2 {
   /*border: 1px solid #FF9900;

@@ -8,11 +8,18 @@ $navColor:#3ff;
 $hoverColor:#33f;
 $borderColor:#011;
 $borderColor:#000!default;
+$baseFontSize:1rem!default;
+$active1:false;
 
 $px :(1rem 2rem) (3rem 4rem);
 $colorMap:(a:#000,b:#01f,c:#f1f,d:#623);
 
 $color:#4ff;
+
+@function fontSizeChange($size){
+  @return $size * $baseFontSize;
+}
+
 
 @mixin radius-box($radisSize:10px){
   border: 1px solid $borderColor;
@@ -37,16 +44,18 @@ body{
   &:before{
     content: "<p>测试before</p>";
   }
+  @media (max-width: 480px) {
+    & {
+      float: none;
+      width: 100%;
+    }
+  }
 }
 
 nav{
   ul{
     color: $navColor;
     background-color: #000;
-    background: {
-   //   color: #00cccc;
-      size: 5px;
-    };
     margin: 0;
     padding: 0;
     list-style: none;
@@ -77,6 +86,21 @@ nav{
         color: map_get($colorMap,c);
         font-size: nth(nth($px,1),2) ;
       }
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}){
+          width: 2rem * $i;
+      }
+      }
+      $c :1;
+      @each $a in $px{
+        @each $b in $a {
+          &:nth-child(#{$c}){
+             font-size: $b;
+          }
+          $c : $c + 1;
+        }
+      }
+
 
     }
 
@@ -87,22 +111,52 @@ a{
   text-decoration: blink;
 }
 
+%span{
+ font-size: 1.5rem;
+}
+%p{
+  color: map_get($colorMap,a);
+  font-size: 2.5rem;
+}
+
 .test {
 
   color: $color;
   $color:red!global;
   background-color: #ffffff;
   width: 100%;
+  padding: (25px / 2);
   @include  radius-box(25px);
   border: 1px solid #FF9900 {
     left: 0px;
     right: 0px;
   };
   @include child;
+  a {
+    @if $active1 == true {
+      color: lighten(red,30%);
+    } @else {
+      color: darken(red,20%);
+    }
+
+    font-size: fontSizeChange(2);
+  }
+  @extend %span;
+  &--one{
+    width: 100%;
+    background-color: #FF9900;
+  }
+  &-two{
+    width: 50%;
+    height: 100px;
+    @include  radius-box(25px);
 }
-.test a{
-  color: red;
+  &three{
+    @extend .test;
+    background-color: #006621;
+  }
 }
+
 
 .test2{
   /*border: 1px solid #FF9900;

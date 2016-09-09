@@ -1,0 +1,15 @@
+{
+  "name": "wxs",
+  "version": "0.0.1",
+  "description": "這是陳義的第一個項目",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "author": "roychenyi",
+  "license": "MIT"
+}
