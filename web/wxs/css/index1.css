@@ -29,7 +29,7 @@ nav ul {
       -webkit-border-radius: 10px;
       border-radius: 10px; }
       nav ul li a:hover {
-        color: #00cccc; }
+        color: #006666; }
       nav ul li a:before, nav ul li a.disabled:before {
         transform: height 0.3s, opacity 0.3s, transform 0.3s; }
     nav ul li:first-child {
@@ -124,5 +124,11 @@ a, a.disabled {
 
 a.disabled {
   color: gray; }
+
+.color-test {
+  color: #00B4A6; }
+
+.color-test1 {
+  color: #00685f; }
 
 /*# sourceMappingURL=index1.css.map */

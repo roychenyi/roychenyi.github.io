@@ -4,7 +4,10 @@
   "description": "這是陳義的第一個項目",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "multer": "^1.2.0"
   },
   "devDependencies": {},
   "scripts": {

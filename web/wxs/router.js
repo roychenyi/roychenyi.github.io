@@ -29,6 +29,7 @@ function start(route) {
         })
         route(pathname);
 
+
       /*  response.writeHead(200, {"Content-Type": "text/plain"});
         response.write("Hello World"+__filename);
         response.end();*/

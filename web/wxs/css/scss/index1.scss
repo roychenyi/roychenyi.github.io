@@ -69,7 +69,7 @@ nav{
         text-decoration: none;
         @include radius-box();
         &:hover{
-          color: darken($navColor,20%);
+          color: darken($navColor,40%);
         }
         &:before{
           transform: height 0.3s, opacity 0.3s, transform 0.3s;
@@ -172,4 +172,10 @@ a{
 a.disabled{
   @extend a;
   color: gray;
+}
+.color-test{
+  color: #00B4A6;
+}
+.color-test1{
+  color:  darken(#00B4A6,15%);
 }
