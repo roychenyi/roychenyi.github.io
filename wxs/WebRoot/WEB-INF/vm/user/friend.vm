@@ -1,0 +1,5 @@
+#set($layout = "layout/index.vm")
+#set($page_title="找回密码")
+#parse("layout/global.vm")
+#set($extjs=$Jlayer+$JuserCheck)
+##set($extjs="<!--javascrpt-plugins-layer--><script src='$home_url/js/plugins/layer/layer.js'></script><script src='$home_url/js/user-check.js'></script>")
